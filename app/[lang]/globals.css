@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'DejaVuSerif';
+  src: url('./../../public/assets/fonts/DejaVuSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSerif';
+  src: url('./../../public/assets/fonts/DejaVuSerif-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+*{
+  margin:0;
+  padding:0;
+  font-family: "DejaVuSerif", sans-serif;
+}
+
+:root {
+  --primary-color: #2D70B2;
+  --base-color: #000000;
+  --secondary-color: #FFFFFF;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  
+}
+
+body {
+  color: var(--base-color);
+}
+

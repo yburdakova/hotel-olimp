@@ -1,0 +1,37 @@
+{   
+    "language": "English language",
+    "code": "en",
+    "hero-component": {
+        "title": "Welcome"
+    },
+    "menu": {
+        "resort": "Resort",
+        "hotel": "Hotel",
+        "rooms": "Rooms",
+        "restaurant": "Restaurant",
+        "contacts": "Contacts"
+    },
+    "resort-component": {
+        "title": "Resort",
+        "text": "Shekvetili resort is located in the Kvemo Kartli region, surrounded by majestic mountains, allowing you to enjoy stunning landscapes. The climate here is mild and temperate, with warm summers and mild winters. Thanks to this, the resort of Shekvetili is an attractive place to relax at any time of the year.",
+        "sights": {
+            "card1":{
+                "title": "Park Tsitsinatela",
+                "description": "A unique amusement park with a wide range of attractions."
+            },
+            "card2":{
+                "title": "Black Sea Arena",
+                "description": "Concert venue for music concerts and festivals."
+            },
+            "card3":{
+                "title": "Arboretum",
+                "description": "Incredible park with giant trees and a mini zoo."
+            },
+            "card4":{
+                "title": "Musicians Park",
+                "description": "Great place to experience music."
+            }
+        }
+    }
+}
+
