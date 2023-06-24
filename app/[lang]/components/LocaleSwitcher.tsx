@@ -7,7 +7,7 @@ import { i18n } from '../../../i18n-config';
 import styles from './styles.module.css';
 
 
-export default function LocaleSwitcher({language}:any) {
+export default function LocaleSwitcher({lang}:any) {
 
   
   const pathName = usePathname()
@@ -27,8 +27,8 @@ export default function LocaleSwitcher({language}:any) {
 
   useEffect (()=> {
     
-    setLanguageLinks(languageLinks.filter(link => link !== language))
-  }, [language])
+    setLanguageLinks(languageLinks.filter(link => link !== lang))
+  }, [lang])
 
   return (
     <div>

@@ -2,7 +2,8 @@
     "language": "English language",
     "code": "en",
     "hero-component": {
-        "title": "Welcome"
+        "hotelName": "Hotel olimp",
+        "resortName": "Shekvetili"
     },
     "menu": {
         "resort": "Resort",

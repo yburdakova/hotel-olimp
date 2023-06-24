@@ -37,17 +37,18 @@ function Resort({ title, text, cards }:any) {
 
     return (
         <div className={styles.component}>
+            <div className={styles.resort_bg}>
+                    <div>
+                        <Image src={resort_bg} alt="resort" className={styles.resort_bg_image }/>
+                    </div>
+                </div>
             <div className={styles.component_container}>
             <div className='flex relative'>
                 <div className='z-10 w-[50%] ml-10'>
                     <div className={`${styles.component_title} mt-20`}>{title}</div>
                     <div className={`${styles.component_text} mt-10`}>{text}</div>
                 </div>
-                <div className="resort__image-container">
-                    <div>
-                        <Image src={resort_bg} alt="resort" className='absolute top-0 right-0'/>
-                    </div>
-                </div>
+                
             </div>
             <div className={styles.sights_container}>
                 {sights.map ((card, index )=> 

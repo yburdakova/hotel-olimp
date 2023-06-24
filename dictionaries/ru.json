@@ -2,7 +2,6 @@
     "language": "Русский язык",
     "code": "ru",
     "hero-component": {
-        "title": "Добро пожаловать",
         "hotelName": "Отель Олимп",
         "resortName": "Шекветили"
     },

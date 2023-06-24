@@ -1,4 +1,4 @@
-import { sights } from '@/constants';
+
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Resort, LocaleSwitcher, Hero, Booking} from './components'
@@ -10,8 +10,13 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
 
   return (
     <div>
-      <Hero/>
-      <LocaleSwitcher language={lang}/>
+      <Hero 
+        title={dictionary["hero-component"].hotelName} 
+        subtitle={dictionary["hero-component"].resortName}
+        menu={dictionary["menu"]}
+        lang={lang}
+      />
+      
       <Booking/>
       <Resort 
         title={dictionary["resort-component"].title} 

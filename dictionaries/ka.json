@@ -2,7 +2,8 @@
     "language": "ქართული ენა",
     "code": "ka",
     "hero-component": {
-        "title": "მოგესალმებით"
+        "hotelName": "სასტუმრო ოლიმპი",
+        "resortName": "შეკვეთილი"
     },
     "menu":{
         "resort": "კურორტის შესახებ",
