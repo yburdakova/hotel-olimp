@@ -17,13 +17,13 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         lang={lang}
       />
       
-      <Booking/>
+      {/* <Booking/> */}
       <Resort 
         title={dictionary["resort-component"].title} 
         text={dictionary["resort-component"].text}
         cards={dictionary["resort-component"].sights}
       />
-
+    
     </div>
   )
 }

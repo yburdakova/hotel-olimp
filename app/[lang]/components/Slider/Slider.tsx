@@ -11,22 +11,34 @@ const Slider = ({ images }: any) => {
 
   const nextImage = () => {
     const nextIndex = currentImageIndex + 1;
-    setCurrentImageIndex(nextIndex);
+    const lastIndex = images.length - 1;
+    const newIndex = nextIndex > lastIndex ? 0 : nextIndex;
+    setCurrentImageIndex(newIndex);
   };
 
   const prevImage = () => {
     const prevIndex = currentImageIndex - 1;
-    setCurrentImageIndex(prevIndex);
+    const lastIndex = images.length - 1;
+    const newIndex = prevIndex < 0 ? lastIndex : prevIndex;
+    setCurrentImageIndex(newIndex);
   };
 
-  useEffect(()=> {
-    console.log (currentImageIndex)
-    setCurrentImage(images[currentImageIndex])
-  }, [currentImageIndex])
+  useEffect(() => {
+    console.log(currentImageIndex);
+    setCurrentImage(images[currentImageIndex]);
+  }, [currentImageIndex]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextImage();
+    }, 4000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [currentImageIndex]);
 
   return (
-
-      
       <div className={styles.slider}>
         <button onClick={prevImage} className={`${styles.button} left-2 rotate-180`}>&#10148;</button>
         <button onClick={nextImage} className={`${styles.button} right-2`}>&#10148;</button>
@@ -36,6 +48,7 @@ const Slider = ({ images }: any) => {
             className={styles.slider_img}
           />
       </div>
+      
   );
 };
 

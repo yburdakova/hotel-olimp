@@ -5,6 +5,7 @@ import styles from './hero.module.css'
 import { logo } from '@/public';
 import LocaleSwitcher from '../LocaleSwitcher';
 import { Slider } from '..';
+// import Slider from '../Slider02/Slider';
 import { sliderImages } from '@/constants';
 
 
@@ -33,7 +34,10 @@ function Hero({ title, subtitle, menu, lang }: any) {
                     <LocaleSwitcher lang={lang} />
                 </div>
             </div>
+            <div >
             <Slider images={sliderImages} />
+            </div>
+
 
 
         </div>
