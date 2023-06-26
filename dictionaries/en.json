@@ -1,6 +1,7 @@
 {   
     "language": "English language",
     "code": "en",
+    "button": "Book now",
     "hero-component": {
         "hotelName": "Hotel olimp",
         "resortName": "Shekvetili"
@@ -32,6 +33,20 @@
                 "title": "Musicians Park",
                 "description": "Great place to experience music."
             }
+        }
+    },
+    "hotel-component":{
+        "title": "Hotel",
+        "text": "The four-star Olimp Hotel in Shekvetili is located in the heart of the Shekvetili resort. Olimp Hotel offers easy access to all major attractions and the beach.",
+        "servises_title":"At guests' service",
+        "servises": {
+            "servise1": "24 hour front desk",
+            "servise2": "Bar and restaurant",
+            "servise3": "Garden and private beach",
+            "servise4": "Free WiFi",
+            "servise5": "Free parking",
+            "servise6": "Private bathroom",
+            "servise7": "Transfer from/to Batumi Airport"
         }
     }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from './styles.module.css'
+import styles from './booking.module.css'
 
 function Booking() {
     return (
-        <div className={styles.component}>
-            <div className='items-center border-2 h-[100px] bg-white w-[1300px] rounded-3xl justify-center flex align-middle mt-[-50px]'>
+        <div className='component z-10 '>
+            <div className='items-center shadow-lg border-2 h-[100px] bg-white w-[1300px] rounded-3xl justify-center flex align-middle mt-[-50px]'>
             BOOKING MODULE
             <Head>
                 <script

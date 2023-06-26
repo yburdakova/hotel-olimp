@@ -1,15 +1,15 @@
 'use client'
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-import { i18n } from '../../../i18n-config';
-import styles from './styles.module.css';
+import { i18n } from '../../../../i18n-config';
+import styles from './localeSwitcher.module.css';
 
 
-export default function LocaleSwitcher({lang}:any) {
+export default function LocaleSwitcher({ lang }: any) {
 
-  
+
   const pathName = usePathname()
   const redirectedPathName = (locale: string) => {
     if (!pathName) return '/'
@@ -25,22 +25,22 @@ export default function LocaleSwitcher({lang}:any) {
 
   // const toggling = () => setIsOpen(!isOpen);
 
-  useEffect (()=> {
-    
+  useEffect(() => {
+
     setLanguageLinks(languageLinks.filter(link => link !== lang))
   }, [lang])
 
   return (
     <div>
-{/* Variant 1 - buttons  */}
+      {/* Variant 1 - buttons  */}
       <div className={styles.language_container}>
-        {languageLinks.map(link => 
-        <Link key={link} href={redirectedPathName(link)} className={styles.language_button}>
-          {link == 'en' ? "ENG" : link == 'ka' ? "GEO" :  "РУС"}
-        </Link>)}
+        {languageLinks.map(link =>
+          <Link key={link} href={redirectedPathName(link)} className={styles.language_button}>
+            {link == 'en' ? "🇺🇸" : link == 'ka' ? "🇬🇪" : "🇷🇺"}
+          </Link>)}
       </div>
-      
-{/* Variant 2 - custom selection  */}
+
+      {/* Variant 2 - custom selection  */}
       {/* <div>
         <div onClick={toggling}>
           {selectedOption || "Select language..."}

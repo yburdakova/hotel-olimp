@@ -31,7 +31,7 @@ const Slider = ({ images }: any) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextImage();
-    }, 4000);
+    }, 8000);
 
     return () => {
       clearInterval(intervalId);

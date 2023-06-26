@@ -1,0 +1,15 @@
+
+.language_container{
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+.language_button {
+  font-size: 50px;
+  color: var(--primary-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+}
+

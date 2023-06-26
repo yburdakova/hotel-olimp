@@ -1,0 +1,26 @@
+.button_container{
+    max-width: 395px;
+    height: 77px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background: #3F9EDE;
+    margin-top: 20px;
+    transition: all 0.3s ease 0s;
+    border: 2px solid #fff;
+}
+.button_container:hover{
+    background: #FFF;
+    border: 2px solid #2D71B2;
+    cursor: pointer;
+
+}
+.button_text{
+    color: #FFF;
+    font-size: 40px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+}
+.button_text:hover{
+    color: #2D70B2;
+    cursor: pointer;
+}

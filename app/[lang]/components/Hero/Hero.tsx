@@ -1,43 +1,44 @@
 import React from 'react'
 import Image from 'next/image';
+import Link from 'next/link';
 
 import styles from './hero.module.css'
 import { logo } from '@/public';
-import LocaleSwitcher from '../LocaleSwitcher';
+import {LocaleSwitcher,  Booking } from '../';
 import { Slider } from '..';
-// import Slider from '../Slider02/Slider';
 import { sliderImages } from '@/constants';
+
 
 
 function Hero({ title, subtitle, menu, lang }: any) {
 
 
     return (
-        <div className={styles.component}>
+        <div className="component">
             <div className={styles.hero_header}>
                 <div className={styles.menu_block}>
-                    <div className={styles.menu_item}>{menu.resort}</div>
-                    <div className={styles.menu_item}>{menu.hotel}</div>
-                    <div className={styles.menu_item}>{menu.rooms}</div>
+                    <Link href="/" className={styles.menu_item}>{menu.resort}</Link>
+                    <Link href="/" className={styles.menu_item}>{menu.hotel}</Link>
+                    <Link href="/" className={styles.menu_item}>{menu.rooms}</Link>
                 </div>
                 <div className={styles.header_logo}>
                     <div className={styles.logo}>
-                        <Image src={logo} alt='logo' className={styles.logo_img}/>
+                        <Image src={logo} alt='logo' className={styles.logo_img} />
                         <div className={styles.logo_pod}></div>
                     </div>
                     <div className={styles.logo_title}>{title}</div>
                     <div className={styles.logo_subtitle}>{subtitle}</div>
                 </div>
                 <div className={styles.menu_block}>
-                    <div className={styles.menu_item}>{menu.restaurant}</div>
-                    <div className={styles.menu_item}>{menu.contacts}</div>
+                    <Link href="/" className={styles.menu_item}>{menu.restaurant}</Link>
+                    <Link  href="/"className={styles.menu_item}>{menu.contacts}</Link>
                     <LocaleSwitcher lang={lang} />
                 </div>
             </div>
             <div >
-            <Slider images={sliderImages} />
+                <Slider images={sliderImages} />
             </div>
-
+            <Booking/>
 
 
         </div>

@@ -36,3 +36,27 @@ body {
   color: var(--base-color);
 }
 
+.component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px
+}
+.component_container{
+  max-width: 1440px;
+}
+.component_title{
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.component_text{
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 150%;
+}
+.bold {
+  font-weight: bold;
+}

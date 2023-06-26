@@ -3,7 +3,9 @@ import game_park from './assets/images/game-park.jpeg';
 import arena from './assets/images/arena.jpeg';
 import dendropark from './assets/images/dendropark.jpeg';
 import music_park from './assets/images/music-park.jpg';
-import logo from './assets/images/logo.jpg'
+import logo from './assets/images/logo.jpg';
+import star from './assets/images/star.png';
+import hotel from './assets/images/hotel-olimp.jpeg'
 
 //slider
 import silde01 from './assets/images/caption.jpeg';
@@ -18,6 +20,8 @@ export {
     arena,
     dendropark,
     music_park,
+    star,
+    hotel,
 
     silde01,
     silde02,
