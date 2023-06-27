@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './button.module.css'
 
-function Button() {
+function Button( {text}:any) {
   return (
     <div className={styles.button_container}>
         <div className={styles.button_text}>
-            BOOKING
+            {text}
         </div>
     </div>
   )
 }
 
-export default Button
+export default Button;

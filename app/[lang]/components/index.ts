@@ -5,6 +5,10 @@ import Resort from './Resort/Resort';
 import Slider from './Slider/Slider';
 import Hotel from './Hotel/Hotel';
 import Button from './Button/Button';
+import Rooms from './Rooms/Rooms';
+import Room from './RoomItem/Room';
+import Restaurant from './Restaurant/Restaurant';
+
 
 
 export {
@@ -14,5 +18,8 @@ export {
     Booking,
     Resort,
     Hotel,
-    Button
+    Button,
+    Rooms,
+    Room,
+    Restaurant
 }

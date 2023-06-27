@@ -33,7 +33,6 @@ function Resort({ title, text, cards }: any) {
     ];
 
     const [active, setActive] = useState(2);
-    console.log(active)
 
     return (
         <div className="component mt-[100px]">

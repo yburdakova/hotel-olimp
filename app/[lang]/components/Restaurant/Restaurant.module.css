@@ -1,0 +1,6 @@
+.item_image{
+    transition: all 0.3s ease 0s;
+}
+.item_image:hover{
+    transform: scale(1.2) translateX(5px) translateY(5px);
+}

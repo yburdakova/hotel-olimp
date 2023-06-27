@@ -13,6 +13,23 @@ import silde02 from './assets/images/caption1.jpeg';
 import silde03 from './assets/images/caption2.jpeg';
 import silde04 from './assets/images/caption3.jpeg';
 
+import bglines from './assets/images/background.svg'
+
+//rooms
+import room1 from './assets/images/room1.png';
+import room2 from './assets/images/room2.png';
+import room3 from './assets/images/room3.png';
+
+//restaurant
+import alcohol from './assets/images/alcohol.png';
+import coffe from './assets/images/coffe.png';
+import desert from './assets/images/desert.jpg';
+import garnish from './assets/images/garnish.jpg';
+import maindish from './assets/images/maindish.jpg';
+import salads from './assets/images/salads.jpg';
+import pasta from './assets/images/pasta.jpg';
+import fromoven from './assets/images/fromoven.jpg';
+
 export {
     logo,
     resort_bg,
@@ -26,6 +43,21 @@ export {
     silde01,
     silde02,
     silde03,
-    silde04
+    silde04,
+
+    room1,
+    room2,
+    room3,
+
+    bglines,
+
+    alcohol,
+    coffe,
+    desert,
+    garnish,
+    maindish,
+    salads,
+    pasta,
+    fromoven
 
 }

@@ -24,7 +24,6 @@ const Slider = ({ images }: any) => {
   };
 
   useEffect(() => {
-    console.log(currentImageIndex);
     setCurrentImage(images[currentImageIndex]);
   }, [currentImageIndex]);
 

@@ -41,10 +41,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px
 }
 .component_container{
   max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 .component_title{
   color: var(--primary-color);
@@ -59,4 +60,11 @@ body {
 }
 .bold {
   font-weight: bold;
+}
+.button_container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px; 
+  margin-top: 15px;
 }

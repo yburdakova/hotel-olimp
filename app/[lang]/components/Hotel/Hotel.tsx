@@ -7,7 +7,39 @@ import styles from './hotel.module.css';
 import { star, hotel } from '@/public';
 import { Button} from '../'
 
-function Hotel({ title, text, servisesTitle, servises }: any) {
+function Hotel({ title, text, servisesTitle, servises, buttonTitle }: any) {
+
+const serviseItems = [
+    {
+        icon: <MdAvTimer/>,
+        text: servises.servise1
+    },
+    {
+        icon: <MdRestaurant/>,
+        text: servises.servise2
+    },
+    {
+        icon: <FaUmbrellaBeach/>,
+        text: servises.servise3
+    },
+    {
+        icon: <FaWifi/>,
+        text: servises.servise4
+    },
+    {
+        icon: <LuParkingCircle/>,
+        text: servises.servise5
+    },
+    {
+        icon: <FaShower/>,
+        text: servises.servise6
+    },
+    {
+        icon: <MdLocalAirport/>,
+        text: servises.servise7
+    }
+    
+]
 
     return (
         <div className="component mt-16">
@@ -29,40 +61,16 @@ function Hotel({ title, text, servisesTitle, servises }: any) {
                         <div className="component_text">{text}</div>
                         <div className="hotel_servises">
                             <div className="component_text mt-6 bold">{servisesTitle}</div>
-                            
-
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><MdAvTimer size={36}/></div>
-                                <div className="component_text ml-6">{servises.servise1}</div>
-                            </div>
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><MdRestaurant size={36}/></div>
-                                <div className="component_text ml-6">{servises.servise2}</div>
-                            </div>
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><FaUmbrellaBeach/></div>
-                                <div className="component_text ml-6">{servises.servise3}</div>
-                            </div>
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><FaWifi/></div>
-                                <div className="component_text ml-6">{servises.servise4}</div>
-                            </div>
-                            
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><LuParkingCircle/></div>
-                                <div className="component_text ml-6">{servises.servise5}</div>
-                            </div>
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><FaShower/></div>
-                                <div className="component_text ml-6">{servises.servise6}</div>
-                            </div>
-                            <div className={styles.servise_item}>
-                                <div className="text-3xl"><MdLocalAirport /></div>
-                                <div className="component_text ml-6">{servises.servise7}</div>
-                            </div>
-                            
+                            {serviseItems.map((servise, index) =>
+                                <div className={styles.servise_item} key={`servise-${index}`}>
+                                    <div className="text-3xl">{servise.icon}</div>
+                                    <div className="component_text ml-6">{servise.text}</div>
+                                </div>
+                            )}
                         </div>
-                        <Button/>
+                        <div className={styles.button_container}>
+                            <Button text={buttonTitle}/>
+                        </div>
                     </div>
                 </div>
             </div>

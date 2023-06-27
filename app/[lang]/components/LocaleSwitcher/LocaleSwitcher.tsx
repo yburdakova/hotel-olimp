@@ -36,7 +36,7 @@ export default function LocaleSwitcher({ lang }: any) {
       <div className={styles.language_container}>
         {languageLinks.map(link =>
           <Link key={link} href={redirectedPathName(link)} className={styles.language_button}>
-            {link == 'en' ? "🇺🇸" : link == 'ka' ? "🇬🇪" : "🇷🇺"}
+            {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}
           </Link>)}
       </div>
 

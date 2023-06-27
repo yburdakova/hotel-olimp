@@ -1,7 +1,7 @@
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
-import { Resort, Hero, Booking, Hotel} from './components'
+import { Resort, Hero, Hotel, Rooms, Restaurant} from './components'
 import './globals.css';
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
@@ -26,7 +26,21 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           text={dictionary["hotel-component"].text}
           servisesTitle={dictionary["hotel-component"].servises_title}
           servises={dictionary["hotel-component"].servises}
+          buttonTitle={dictionary.button}
+        />
+        <Rooms
+          title={dictionary["rooms-component"].title} 
+          text={dictionary["rooms-component"].text} 
+          roomsTitles={dictionary["rooms-component"]['rooms-titles']}
+          currencyLiteral={dictionary.currency}
+          time={dictionary['booking-time']}
+          roomDictionary={dictionary["rooms-component"].room}
+          buttonTitle={dictionary.button}
+        />
+        <Restaurant
+          dictionary={dictionary.restaurant}
         />
     </div>
+    
   )
 }

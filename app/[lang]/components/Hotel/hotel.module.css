@@ -50,6 +50,13 @@
     display: flex;
     margin-top: 20px;
 }
+.button_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 30px; 
+    margin-top: 15px;
+}
 
 @media (max-width: 768px) {
     .hotel_content{

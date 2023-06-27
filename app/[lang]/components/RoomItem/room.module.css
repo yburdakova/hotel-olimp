@@ -1,0 +1,56 @@
+.room_container{
+    width: 100%;
+    border-radius: 50px;
+    border: 2px solid #2D70B2;
+    background: #FFF;
+    display: flex;
+    margin: 70px auto;
+    padding-bottom: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+}
+.room_container:hover{
+    border: 2px solid #fff;
+    background: #D0EBFF;
+}
+.title{
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.info{
+    margin: 30px 30px 30px 0;
+}
+.beds{
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 150%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.facilities{
+    font-size: 26px;
+    line-height: 150%;
+    margin-top: 15px;
+}
+.room_image{
+    display: flex;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 50px;
+    margin: 30px
+}
+.price {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 150%;
+    margin-top: 25px;
+}
+
+.button_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px; 
+    margin-top: 15px;
+}

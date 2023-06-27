@@ -2,6 +2,8 @@
     "language": "English language",
     "code": "en",
     "button": "Book now",
+    "currency": "$",
+    "booking-time": "night",
     "hero-component": {
         "hotelName": "Hotel olimp",
         "resortName": "Shekvetili"
@@ -48,6 +50,42 @@
             "servise6": "Private bathroom",
             "servise7": "Transfer from/to Batumi Airport"
         }
+    },
+    "rooms-component":{
+        "title": "Rooms",
+        "text": "All rooms are equipped with air conditioning, a flat-screen TV with cable channels, a refrigerator, a kettle, a shower, a hairdryer and a wardrobe. The rooms are equipped with a private bathroom fitted with a bath.",
+        "rooms-titles": {
+            "room1-title": "Double Room",
+            "room2-title": "Family apartment",
+            "room3-title": "Suite with Sea View"
+        },
+        "room":{
+            "numbersOfbeds": "Numbers of beds",
+            "facilities": "Facilities",
+            "facilitiesList": {
+                "ac": "air conditioner",
+                "tv": "TV",
+                "fridge": "refrigerator",
+                "pot": "teapot",
+                "bathroom": "private bathroom",
+                "hairdryer": "hair dryer",
+                "shower": "shower",
+                "bath": "bathtub",
+                "closet": "wardrobe"
+            }       
+        }
+        
+    },
+    "restaurant":{
+        "title": "Bar and restaurant",
+        "alcohol": "Alcohol",
+        "coffe": "Coffe",
+        "desert": "Desert",
+        "garnish": "Garnish",
+        "maindish": "Main dishes",
+        "salads": "Salads",
+        "pasta": "Pasta",
+        "fromoven": "Just from oven"
     }
 }
 
