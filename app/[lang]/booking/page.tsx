@@ -1,20 +1,27 @@
 import React from 'react';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
-function BookingPage() {
-    return (
-        <div>
-            <div>Страница бронирования</div>
-            <Script id="shelter-script" src="https://pms.frontdesk24.ru/onlineWidget/bookWidget.js" strategy="afterInteractive"></Script>
-            <div id="book-widget"></div>
-            <Script
-                id="shelter-widget"
-                dangerouslySetInnerHTML={{
-                    __html: `FD24BookWidget.createWidget(&quot;book-widget&quot;, &quot;44B8E6C8-3825-46E8-B693-8C551F0780E9&quot;, undefined);`,
-                }}
-            />
-        </div>
-    );
-}
+const BookingPage = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://pms.frontdesk24.ru/onlineWidget/bookWidget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (window.FD24BookWidget) {
+      window.FD24BookWidget.createWidget("book-widget", "44B8E6C8-3825-46E8-B693-8C551F0780E9", undefined);
+    }
+  }, []);
+
+  return <div id="book-widget" />;
+};
 
 export default BookingPage;
+
