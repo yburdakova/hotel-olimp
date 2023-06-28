@@ -1,7 +1,7 @@
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
-import { Resort, Hero, Hotel, Rooms, Restaurant} from './components'
+import { Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap} from './components'
 import './globals.css';
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
@@ -39,6 +39,13 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         />
         <Restaurant
           dictionary={dictionary.restaurant}
+        />
+        <Socials 
+          title={dictionary.socialsTitle}
+        />
+        <OlimpMap
+          lang={lang}
+          title={dictionary.contactsTitle}
         />
     </div>
     

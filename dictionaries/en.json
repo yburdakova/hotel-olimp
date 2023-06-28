@@ -4,6 +4,8 @@
     "button": "Book now",
     "currency": "$",
     "booking-time": "night",
+    "socialsTitle": "We are in socials",
+    "contactsTitle": "Contacts",
     "hero-component": {
         "hotelName": "Hotel olimp",
         "resortName": "Shekvetili"
@@ -74,7 +76,6 @@
                 "closet": "wardrobe"
             }       
         }
-        
     },
     "restaurant":{
         "title": "Bar and restaurant",

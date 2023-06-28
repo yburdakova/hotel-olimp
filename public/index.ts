@@ -30,6 +30,12 @@ import salads from './assets/images/salads.jpg';
 import pasta from './assets/images/pasta.jpg';
 import fromoven from './assets/images/fromoven.jpg';
 
+//socials icons
+import instagram from './assets/icons/insta-icon.svg';
+import telegram from './assets/icons/tg-icon.svg';
+import facebook from './assets/icons/fb-icon.svg';
+import whatsapp from './assets/icons/whatsapp-icon.svg';
+
 export {
     logo,
     resort_bg,
@@ -58,6 +64,11 @@ export {
     maindish,
     salads,
     pasta,
-    fromoven
+    fromoven,
+
+    instagram,
+    telegram,
+    facebook,
+    whatsapp
 
 }

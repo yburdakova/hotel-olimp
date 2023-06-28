@@ -52,7 +52,7 @@ function Restaurant( { dictionary }: any) {
     return (
         <div className='component'>
             <div className="title_container w-[1440px] px-8">
-            <div className="component_title w-[100%]">{dictionary.title}</div>
+                <div className="component_title w-[100%]">{dictionary.title}</div>
             </div>
             <div className="background_block bg-[#D0EBFF] w-[100%] mt-24">
             <div className="component_container">

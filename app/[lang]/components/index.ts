@@ -8,6 +8,8 @@ import Button from './Button/Button';
 import Rooms from './Rooms/Rooms';
 import Room from './RoomItem/Room';
 import Restaurant from './Restaurant/Restaurant';
+import Socials from './Socials/Socials';
+import OlimpMap from './OlimpMap/OlimpMap';
 
 
 
@@ -21,5 +23,7 @@ export {
     Button,
     Rooms,
     Room,
-    Restaurant
+    Restaurant,
+    Socials,
+    OlimpMap
 }
