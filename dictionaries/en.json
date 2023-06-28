@@ -15,7 +15,8 @@
         "hotel": "Hotel",
         "rooms": "Rooms",
         "restaurant": "Restaurant",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "socials": "Socials"
     },
     "resort-component": {
         "title": "Resort",

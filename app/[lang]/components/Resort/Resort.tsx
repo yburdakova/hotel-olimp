@@ -41,14 +41,18 @@ function Resort({ title, text, cards }: any) {
                     <Image src={resort_bg} alt="resort" className={styles.resort_bg_image} />
                 </div>
             </div>
-            <div className={styles.component_container}>
-                <div className='flex relative'>
-                    <div className='z-10 w-[50%] ml-10'>
-                        <div className="component_title">{title}</div>
-                        <div className="component_text mt-10">{text}</div>
-                    </div>
-
+            <div className="component_container">
+                <div className="component_title flex justify-center items-center">
+                    <div className="text-center mx-3">{title}</div>
+                    <div className='dot'></div>
+                    <div className='line'></div>
                 </div>
+                    
+                <div className='z-10 w-[50%] ml-10'>
+                    <div className="component_text mt-10">{text}</div>
+                </div>
+
+
                 <div className={styles.sights_container}>
                     {sights.map((card, index) =>
                         <SightCard

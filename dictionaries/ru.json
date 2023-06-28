@@ -15,7 +15,8 @@
         "hotel": "Наш отель",
         "rooms": "Наши номера",
         "restaurant": "Бар и ресторан",
-        "contacts": "Контакты"
+        "contacts": "Контакты",
+        "socials": "Мы в соцсетях"
     },
     "resort-component": {
         "title": "О курорте",

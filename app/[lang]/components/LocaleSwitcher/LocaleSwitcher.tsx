@@ -7,7 +7,7 @@ import { i18n } from '../../../../i18n-config';
 import styles from './localeSwitcher.module.css';
 
 
-export default function LocaleSwitcher({ lang }: any) {
+export default function LocaleSwitcher({ lang, flex }: any) {
 
 
   const pathName = usePathname()
@@ -33,7 +33,7 @@ export default function LocaleSwitcher({ lang }: any) {
   return (
     <div>
       {/* Variant 1 - buttons  */}
-      <div className={styles.language_container}>
+      <div className={`w-[120px] flex justify-between mx-5 flex-${flex}`}>
         {languageLinks.map(link =>
           <Link key={link} href={redirectedPathName(link)} className={styles.language_button}>
             {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}

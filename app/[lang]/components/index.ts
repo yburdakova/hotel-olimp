@@ -10,6 +10,7 @@ import Room from './RoomItem/Room';
 import Restaurant from './Restaurant/Restaurant';
 import Socials from './Socials/Socials';
 import OlimpMap from './OlimpMap/OlimpMap';
+import Footer from './Footer/Footer';
 
 
 
@@ -25,5 +26,6 @@ export {
     Room,
     Restaurant,
     Socials,
-    OlimpMap
+    OlimpMap,
+    Footer
 }

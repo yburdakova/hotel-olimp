@@ -44,14 +44,16 @@ const serviseItems = [
     return (
         <div className="component mt-16">
             <div className="component_container mt-1">
-                <div className={styles.hotel_title}>
+                <div className="component_title flex justify-center items-center">
                     <div className={styles.hotel_stars}>
                         <Image src={star} key='star-1' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-2' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-3' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-4' alt='star' className={styles.hotel_star}/>
                     </div>
-                    <div className={`component_title ${styles.hotel_name}`}>{title}</div>
+                    <div className="text-center mx-3">{title}</div>
+                    <div className='dot'></div>
+                    <div className='line'></div>
                 </div>
                 <div className={styles.hotel_content}>
                     <div className={styles.hotel_image}>

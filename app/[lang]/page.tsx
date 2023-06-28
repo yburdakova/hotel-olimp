@@ -1,15 +1,19 @@
-
+import Image from 'next/image';
+import Link from 'next/link';
+import Script from 'next/script';
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
-import { Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap} from './components'
+import { Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
+import { trLogo } from '@/public';
 import './globals.css';
+
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
   
   const dictionary = await getDictionary(lang)
 
   return (
-    <div>
+    <div className='relative'>
       <Hero 
         title={dictionary["hero-component"].hotelName} 
         subtitle={dictionary["hero-component"].resortName}
@@ -47,7 +51,18 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           lang={lang}
           title={dictionary.contactsTitle}
         />
+        <Footer
+          title={dictionary["hero-component"].hotelName} 
+          subtitle={dictionary["hero-component"].resortName}
+          menu={dictionary["menu"]}
+          lang={lang}
+        />
+        <Link href="/">
+          <div className="anchor flex fixed w-28 h-28 bottom-10 right-20 z-[100002] overflow-hidden">
+            <Image src={trLogo} alt="logo" className='w-[100%]'/>
+          </div>
+        </Link>
+        <Script src="https://api-maps.yandex.ru/2.1/?apikey=d48460db-1da4-45ae-b185-6a995ea048cd&lang=ru_RU" type="text/javascript"></Script>
     </div>
-    
   )
 }

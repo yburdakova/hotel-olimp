@@ -1,9 +1,11 @@
 'use client'
 import React, { useRef } from 'react';
+
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { PiPhoneBold } from 'react-icons/pi';
 import { BsGeoAlt } from 'react-icons/bs';
 import {MdOutlineEmail} from 'react-icons/md'
+
 
 function OlimpMap( { lang, title }: any) {
 
@@ -12,8 +14,14 @@ function OlimpMap( { lang, title }: any) {
     const ymaps = useRef(null);
 
     return (
-        <div>
-            <div className="component_title">{title}</div>
+        <div className='component'>
+            <div className="title_container w-[1440px] px-8">
+                <div className="component_title flex justify-center items-center">
+                    <div className="text-center mx-3">{title}</div>
+                    <div className='dot'></div>
+                    <div className='line'></div>
+                </div>
+            </div>
             <div className="map relative">
                 <div className="contacts_container absolute z-10 top-56 left-10 w-[350px] xl:w-[440px] 2xl:left-96">
                     <div className="contacts_item flex">
@@ -43,7 +51,7 @@ function OlimpMap( { lang, title }: any) {
                     />
                     </Map>
             </YMaps>
-                
+            
             </div> 
             
             

@@ -32,7 +32,7 @@ function Hero({ title, subtitle, menu, lang }: any) {
                 <div className={styles.menu_block}>
                     <Link href="/" className={styles.menu_item}>{menu.restaurant}</Link>
                     <Link  href="/"className={styles.menu_item}>{menu.contacts}</Link>
-                    <LocaleSwitcher lang={lang} />
+                    <LocaleSwitcher lang={lang} flex="row"/>
                 </div>
             </div>
             <div >

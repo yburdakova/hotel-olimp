@@ -4,6 +4,7 @@ import arena from './assets/images/arena.jpeg';
 import dendropark from './assets/images/dendropark.jpeg';
 import music_park from './assets/images/music-park.jpg';
 import logo from './assets/images/logo.jpg';
+import trLogo from './assets/images/logo-wbg.png'
 import star from './assets/images/star.png';
 import hotel from './assets/images/hotel-olimp.jpeg'
 
@@ -13,7 +14,7 @@ import silde02 from './assets/images/caption1.jpeg';
 import silde03 from './assets/images/caption2.jpeg';
 import silde04 from './assets/images/caption3.jpeg';
 
-import bglines from './assets/images/background.svg'
+import wave from './assets/images/background.svg'
 
 //rooms
 import room1 from './assets/images/room1.png';
@@ -38,6 +39,7 @@ import whatsapp from './assets/icons/whatsapp-icon.svg';
 
 export {
     logo,
+    trLogo,
     resort_bg,
     game_park,
     arena,
@@ -55,7 +57,7 @@ export {
     room2,
     room3,
 
-    bglines,
+    wave,
 
     alcohol,
     coffe,

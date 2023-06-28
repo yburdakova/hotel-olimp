@@ -1,17 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { room1, room2, room3, bglines } from '@/public';
+import { room1, room2, room3, wave } from '@/public';
 import { Room } from '../'
 import styles from './rooms.module.css'
 
 function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: any) {
-
-    // const containerStyle = {
-    //     backgroundImage: `url(${bglines.src})`,
-    //     backgroundRepeat: `no-repeat`,
-    //     backgroundPosition: `50% 50%`,
-    //     backgroundAttachment:` fixed`,
-    //   };
 
     const rooms = [
         {
@@ -43,7 +36,13 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
     return (
         <div className='component mt-20'>
             <div className="component_container" >
-                <div className="component_title text-center">{title}</div>
+                <div className="component_title flex justify-center items-center">
+                    <div className='line'></div>
+                    <div className='dot'></div>
+                    <div className="text-center mx-3">{title}</div>
+                    <div className='dot'></div>
+                    <div className='line'></div>
+                </div>
                 <div className="component_text text-center mt-6 bold">{text}</div>
                 {rooms.map ((room, index) => 
                     <Room
