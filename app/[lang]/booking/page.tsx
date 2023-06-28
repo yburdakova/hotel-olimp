@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Script from 'next/script';
 import { useEffect } from 'react';
@@ -10,7 +11,7 @@ const BookingPage = () => {
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+        document.body.removeChild(script);
     };
   }, []);
 
