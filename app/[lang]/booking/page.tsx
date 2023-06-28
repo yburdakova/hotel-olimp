@@ -1,7 +1,6 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 const BookingPage = () => {
   useEffect(() => {
@@ -11,7 +10,7 @@ const BookingPage = () => {
     document.body.appendChild(script);
 
     return () => {
-        document.body.removeChild(script);
+      document.body.removeChild(script);
     };
   }, []);
 
@@ -21,8 +20,13 @@ const BookingPage = () => {
     }
   }, []);
 
-  return <div id="book-widget" />;
+  return (
+    <div>
+      <div>BOOKING PAGE</div>
+      <div id="book-widget" />
+      <Script id="book-widget-script">{`FD24BookWidget.createWidget(&quot;book-widget&quot;, &quot;44B8E6C8-3825-46E8-B693-8C551F0780E9&quot;, undefined);`}</Script>
+    </div>
+  );
 };
 
 export default BookingPage;
-
