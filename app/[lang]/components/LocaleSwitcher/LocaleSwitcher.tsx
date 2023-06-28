@@ -26,9 +26,8 @@ export default function LocaleSwitcher({ lang, flex }: any) {
   // const toggling = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-
     setLanguageLinks(languageLinks.filter(link => link !== lang))
-  }, [lang])
+  }, [lang, languageLinks])
 
   return (
     <div>

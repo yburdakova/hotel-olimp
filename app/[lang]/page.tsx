@@ -62,7 +62,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
             <Image src={trLogo} alt="logo" className='w-[100%]'/>
           </div>
         </Link>
-        <Script src="https://api-maps.yandex.ru/2.1/?apikey=d48460db-1da4-45ae-b185-6a995ea048cd&lang=ru_RU" type="text/javascript"></Script>
+        <Script id="map" src="https://api-maps.yandex.ru/2.1/?apikey=d48460db-1da4-45ae-b185-6a995ea048cd&lang=ru_RU" type="text/javascript"></Script>
     </div>
   )
 }
