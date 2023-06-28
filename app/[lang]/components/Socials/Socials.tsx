@@ -13,7 +13,7 @@ function Socials({ title }: any) {
                 <div className='dot'></div>
                 <div className="icons_container flex mx-10">
                         { socials. map ( item => 
-                            <a href={item.link} target="_blank">
+                            <a href={item.link} target="_blank" key={`socialslink-{index}`}>
                                 <div className="flex ">
                                     <Image src={item.image} alt={item.name} className=''/>
                                 </div>
