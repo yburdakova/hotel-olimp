@@ -10,7 +10,7 @@ function BookingPage() {
         <div id="book-widget"></div>
         <Script 
             id="shelter-widget" 
-            src={`FD24BookWidget.createWidget("book-widget", "44B8E6C8-3825-46E8-B693-8C551F0780E9", undefined);`}>
+            src={`FD24BookWidget.createWidget(&quotbook-widget&quot, &quot44B8E6C8-3825-46E8-B693-8C551F0780E9&quot, undefined);`}>
         </Script>
         </div>
     );
