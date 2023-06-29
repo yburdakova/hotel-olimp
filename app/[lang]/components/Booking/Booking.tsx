@@ -1,17 +1,18 @@
 import React from 'react';
-import Script from 'next/script';
 
 function Booking() {
 
     
     
     return (
-        <div className='component z-10 '>
-            <div className='items-center shadow-lg border-2 h-[100px] bg-white w-[1300px] rounded-3xl justify-center flex align-middle mt-[-50px]'>
-            BOOKING MODULE
-           
+        <div className="z-10 component">
+            <div className='component_container'>
+                <div className='shadow-lg border-2 h-[80px] bg-white w-[100%] rounded-3xl justify-center flex align-middle mt-[-40px]'>
+                    BOOKING MODULE
+                </div>
+            </div>
         </div>
-        </div>
+        
     );
 }
 

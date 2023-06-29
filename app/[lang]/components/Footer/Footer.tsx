@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import styles from './Footer.module.css';
 import { logo, wave } from '@/public';
 import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
@@ -21,29 +23,29 @@ function Footer( {title, subtitle, menu, lang}: any) {
             <div className='dot'></div>
             <div className='line'></div>
         </div>
-        <div className="items_container flex  flex-wrap">
-          <div className="left_items basis-6/12 border-2 flex">
-            <div className="hotel_links flex flex-col mr-6">
-              <div className={styles.menu_item}>{menu.resort}</div>
-              <div className={styles.menu_item}>{menu.hotel}</div>
-              <div className={styles.menu_item}>{menu.rooms}</div>
+        <div className="flex flex-wrap items_container">
+          <div className="flex border-2 left_items basis-6/12">
+            <div className="flex flex-col mr-6 hotel_links">
+              <Link href="#resort" className={styles.menu_item}>{menu.resort}</Link>
+              <Link href="#hotel" className={styles.menu_item}>{menu.hotel}</Link>
+              <Link href="#rooms" className={styles.menu_item}>{menu.rooms}</Link>
               <div className={styles.menu_item}>{menu.restaurant}</div>
             </div>
-            <div className="contact_links flex flex-col">
-              <div className={styles.menu_item}>{menu.contacts}</div>
-              <div className={styles.menu_item}>{menu.socials}</div>
+            <div className="flex flex-col contact_links">
+              <Link href="#restaurant" className={styles.menu_item}>{menu.contacts}</Link>
+              <Link href="#socials" className={styles.menu_item}>{menu.socials}</Link>
             </div>
           </div>
-          <div className="right_items basis-6/12 border-2 flex justify-end">
+          <div className="flex justify-end border-2 right_items basis-6/12">
             <LocaleSwitcher lang={lang} flex="col "/>
-            <div className="currency ml-6">
+            <div className="ml-6 currency">
               Currency MODULE
             </div>
           </div>
         </div>
       </div>
       <div className='w-[100%]'><Image src={wave} className='w-[100%]' alt="wave"/></div>
-        <div className="developer mb-5 text-gray-300"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
+        <div className="mb-5 text-gray-300 developer"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
     </div>
   )
 }

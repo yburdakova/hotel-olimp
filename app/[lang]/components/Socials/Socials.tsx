@@ -6,21 +6,21 @@ import { socials } from '@/constants';
 
 function Socials({ title }: any) {
     return (
-        <div className='component relative mt-20'>
+        <div className='relative mt-20 component' id="socials">
             <div className="title_container w-[1440px] px-8">
-                <div className="component_title flex justify-center items-center">
+                <div className="flex items-center justify-center component_title">
                 <div className='line'></div>
                 <div className='dot'></div>
-                <div className="icons_container flex mx-10">
+                <div className="flex mx-10 icons_container">
                         { socials. map ( item => 
-                            <a href={item.link} target="_blank" key={`socialslink-{index}`}>
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" key={`link-${item.name}}`}>
                                 <div className="flex ">
                                     <Image src={item.image} alt={item.name} className=''/>
                                 </div>
                             </a>
                         )}
                     </div>
-                <div className="text-center mx-3">{title}</div>
+                <div className="mx-3 text-center">{title}</div>
                     
             </div>
         </div>

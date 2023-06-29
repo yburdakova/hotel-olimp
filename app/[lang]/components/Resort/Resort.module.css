@@ -1,0 +1,13 @@
+
+.sights_container{
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media(max-width: 1200px){
+  .sights_container{
+    flex-direction: column;
+  }
+}

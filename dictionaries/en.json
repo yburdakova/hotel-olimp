@@ -27,7 +27,7 @@
                 "description": "A unique amusement park with a wide range of attractions."
             },
             "card2":{
-                "title": "Black Sea Arena",
+                "title": "BlackSea Arena",
                 "description": "Concert venue for music concerts and festivals."
             },
             "card3":{
@@ -37,6 +37,10 @@
             "card4":{
                 "title": "Musicians Park",
                 "description": "Great place to experience music."
+            },
+            "card5":{
+                "title": "Inverted house",
+                "description": "An exciting attraction inside a house turned upside down."
             }
         }
     },

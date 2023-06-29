@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
+
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
@@ -57,12 +57,12 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           menu={dictionary["menu"]}
           lang={lang}
         />
-        <Link href="/">
+        <Link href="#top">
           <div className="anchor flex fixed w-28 h-28 bottom-10 right-20 z-[100002] overflow-hidden">
             <Image src={trLogo} alt="logo" className='w-[100%]'/>
           </div>
         </Link>
-        <Script id="map" src="https://api-maps.yandex.ru/2.1/?apikey=d48460db-1da4-45ae-b185-6a995ea048cd&lang=ru_RU" type="text/javascript"></Script>
+        
     </div>
   )
 }

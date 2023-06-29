@@ -50,17 +50,17 @@ function Restaurant( { dictionary }: any) {
     ]
 
     return (
-        <div className='component'>
+        <div className='component' id="restaurant">
             <div className="title_container w-[1440px] px-8">
-            <div className="component_title flex justify-center items-center">
-                    <div className="text-center mx-3">{dictionary.title}</div>
+            <div className="flex items-center justify-center component_title">
+                    <div className="mx-3 text-center">{dictionary.title}</div>
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
             </div>
             <div className="background_block bg-[#D0EBFF] w-[100%] mt-24">
             <div className="component_container">
-                <div className="items_container grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-6 my-16" >
+                <div className="grid grid-cols-1 gap-6 my-16 items_container sm:grid-cols-2 lg:grid-cols-4" >
                     {restaurantItems.map( (item, index)  => 
                         <a href={item.url} target="_blank" key={`link-${index}`}>
                             <div className={`${styles.restaurant_item} relative overflow-hidden rounded-3xl `}>

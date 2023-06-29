@@ -42,16 +42,16 @@ const serviseItems = [
 ]
 
     return (
-        <div className="component mt-16">
-            <div className="component_container mt-1">
-                <div className="component_title flex justify-center items-center">
+        <div className="component" id="hotel">
+            <div className="mt-10  component_container">
+                <div className="flex items-center justify-center component_title">
                     <div className={styles.hotel_stars}>
                         <Image src={star} key='star-1' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-2' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-3' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-4' alt='star' className={styles.hotel_star}/>
                     </div>
-                    <div className="text-center mx-3">{title}</div>
+                    <div className="mx-3 text-center">{title}</div>
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
@@ -62,11 +62,11 @@ const serviseItems = [
                     <div className={styles.hotel_info}>
                         <div className="component_text">{text}</div>
                         <div className="hotel_servises">
-                            <div className="component_text mt-6 bold">{servisesTitle}</div>
+                            <div className="mt-6 component_text bold">{servisesTitle}</div>
                             {serviseItems.map((servise, index) =>
                                 <div className={styles.servise_item} key={`servise-${index}`}>
                                     <div className="text-3xl">{servise.icon}</div>
-                                    <div className="component_text ml-6">{servise.text}</div>
+                                    <div className="ml-6 component_text">{servise.text}</div>
                                 </div>
                             )}
                         </div>

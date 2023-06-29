@@ -1,11 +1,9 @@
 'use client'
-
 import React, { useState } from 'react';
-import Image from 'next/image';
 
-import styles from './styles.module.css';
-import { resort_bg, game_park, arena, dendropark, music_park } from '@/public';
-import SightCard from '../SightCard';
+import styles from './Resort.module.css';
+import { game_park, arena, dendropark, music_park, inverted_house } from '@/public';
+import SightCard from '../SightCard/SightCard';
 
 function Resort({ title, text, cards }: any) {
 
@@ -29,27 +27,25 @@ function Resort({ title, text, cards }: any) {
             title: cards.card4.title,
             description: cards.card4.description,
             image: music_park
+        },
+        {
+            title: cards.card5.title,
+            description: cards.card5.description,
+            image: inverted_house
         }
     ];
 
-    const [active, setActive] = useState(2);
+    const [active, setActive] = useState(1);
 
     return (
-        <div className="component mt-[100px]">
-            <div className={styles.resort_bg}>
-                <div>
-                    <Image src={resort_bg} alt="resort" className={styles.resort_bg_image} />
-                </div>
-            </div>
-            <div className="component_container">
-                <div className="component_title flex justify-center items-center">
-                    <div className="text-center mx-3">{title}</div>
-                    <div className='dot'></div>
-                    <div className='line'></div>
+        <div className="component" id="resort">
+            <div className="mt-10 component_container">
+                <div className="flex items-center justify-start component_title">
+                    {title}
                 </div>
                     
-                <div className='z-10 w-[50%] ml-10'>
-                    <div className="component_text mt-10">{text}</div>
+                <div className='w-[100%] lg:w-[50%]'>
+                    <div className="mt-10 component_text">{text}</div>
                 </div>
 
 

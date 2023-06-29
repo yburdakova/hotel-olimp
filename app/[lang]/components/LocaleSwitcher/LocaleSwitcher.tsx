@@ -27,14 +27,14 @@ export default function LocaleSwitcher({ lang, flex }: any) {
 
   useEffect(() => {
     setLanguageLinks(languageLinks.filter(link => link !== lang))
-  }, [lang, languageLinks])
+  }, [lang])
 
   return (
     <div>
       {/* Variant 1 - buttons  */}
       <div className={`w-[120px] flex justify-between mx-5 flex-${flex}`}>
         {languageLinks.map(link =>
-          <Link key={link} href={redirectedPathName(link)} className={styles.language_button}>
+          <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
             {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}
           </Link>)}
       </div>

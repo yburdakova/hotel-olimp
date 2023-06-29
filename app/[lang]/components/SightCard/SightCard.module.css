@@ -1,95 +1,82 @@
-.component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.component_container{
-  max-width: 1440px;
-}
-
-.resort_bg{
-  z-index: -5;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.resort_bg_image {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
-
-.sights_container{
-  display: flex;
-  margin-top: 40px;
-}
+/* card */
 .sightcard{
-  width: 260px;
-  height: 660px;
-  display: flex;
-  position: relative;
-  border: 1px solid #2D71B2;
-  border-radius: 50px;
-  margin: 10px;
-  transition: all 0.3s ease 0s;
-  align-items:flex-end;
-}
-.activesightcard {
-  width: 630px;
-  height: 660px;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: center;
+  width: 180px;
+  height: 480px;
   position: relative;
   border-radius: 50px;
-  margin: 10px;
-  transition: all 0.5s ease 0s;
+  transition: all 1s ease 0s;
+  transform-origin: 0 100%;
+  transition: all 1s ease 0s;
 }
-
 .sightcard:hover, .activesightcard:hover{
   cursor: pointer;
 }
 .sightcard_text{
   position: absolute;
-  margin: 10px;
   z-index: 5;
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
   transform-origin: 0 0;
-}
-.activesightcard_text{
-  margin-left: 30px;
-  transform-origin: 0 0;
+  top: 85%;
+  left: 10%;
   transition: all 1s ease 0s;
-
 }
 .sightcard_title{
-  font-size: 40px;
+  font-size: 2rem;
   text-transform: uppercase;
   color: #fff;
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: bold;
+  transition: all 1s ease 0s;
 }
+.card_description{
+  opacity: 0;
+}
+
+/* active card */
+.activesightcard {
+  width: 630px;
+  height: 480px;
+  position: relative;
+  border-radius: 50px;
+  transition: all 1s ease 0s;
+  transform-origin: 0 100%;
+  
+}
+
+.activesightcard_text{
+  position: absolute;
+  z-index: 5;
+  transform: rotate(0deg);
+  transform-origin: 0 0;
+  top: 85%;
+  left: 10%;
+  transition: all 1s ease 0s;
+}
+
 .activesightcard_title{
-  font-size: 40px;
+  font-size: 2rem;
   text-transform: uppercase;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: bold;
+  transition: all 1s ease 0s;
 }
 
-.activesightcart_description{
-  font-size: 30px;
+.activesightcard_description{
+  position: absolute;
+  font-size: 1.5rem;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  opacity: 1;
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
   transition: all 0.3s ease 0s;
   -webkit-text-stroke: 0.5px #000;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease 0.3s;
 }
 .sightcard_img{
   height: 100%;
@@ -133,5 +120,15 @@
   .sightcard_img{
     width: 100%;
   }
+  .sightcard_text{
+    top: 65%;
+    left: 10%;
+  }
+
+  .activesightcard_text{
+    top: 85%;
+    left: 10%;
+  }
+
 
 }

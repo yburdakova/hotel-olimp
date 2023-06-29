@@ -1,10 +1,41 @@
 
 
-.language_button {
+.lang_item{
   font-size: 22px;
   color: var(--primary-color);
   font-weight: 800;
   text-transform: uppercase;
   text-align: center;
+  transition: all 0.3s ease 0s;
+  background-image: linear-gradient(
+    to right,
+    #6AB0EB,
+    #6AB0EB 50%,
+    var(--primary-color) 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
-
+.lang_item:before{
+  content: '';
+  background: #6AB0EB;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.lang_item:hover {
+  background-position: 0;
+}
+.lang_item:hover::before{
+  width: 100%;
+}

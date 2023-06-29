@@ -34,16 +34,16 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
     ];
 
     return (
-        <div className='component mt-20'>
+        <div className='mt-20 component' id="rooms">
             <div className="component_container" >
-                <div className="component_title flex justify-center items-center">
+                <div className="flex items-center justify-center component_title">
                     <div className='line'></div>
                     <div className='dot'></div>
-                    <div className="text-center mx-3">{title}</div>
+                    <div className="mx-3 text-center">{title}</div>
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
-                <div className="component_text text-center mt-6 bold">{text}</div>
+                <div className="mt-6 text-center component_text bold">{text}</div>
                 {rooms.map ((room, index) => 
                     <Room
                         key={`room-${index}`}
