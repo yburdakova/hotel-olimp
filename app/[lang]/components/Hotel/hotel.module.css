@@ -1,36 +1,22 @@
-.hotel_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center
-}
 .hotel_stars{
     display: flex;
-    margin-right: 60px;
-    
+    margin-right: min(max(10px, 1vw), 60px)
 }
 .hotel_star{
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: min(max(16px, 4vw), 60px);
+    height: min(max(16px, 4vw), 60px);
+    margin-right: min(max(10px, 1vw), 20px)
+}
+.hotel_star:last-child{
+    margin-right:0;
 }
 .hotel_content{
     display: flex;
     margin-top: 60px;
 }
-.hotel_name{
-    display: flex;
-    text-align: center;
-    justify-content: flex-start; 
-    width: 100%;        
-    margin-left: 60px;
-    overflow: hidden; 
-    
-}
-
 .hotel_image{
     display: flex;
-    width: 40%;
+    width: min(max(400px, 40vw), 600px);
     overflow: hidden;
     border-radius: 50px;
     border: 2px solid #2D71B2;
@@ -39,7 +25,7 @@
 }
 .hotel_img{
     object-fit: cover;
-
+    width: 100%;
 }
 
 .hotel_info{
@@ -58,17 +44,17 @@
     margin-top: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hotel_content{
         display: flex;
         flex-direction: column;
     }
-    .hotel_star{
-        width: 30px;
-        height: 30px;
-    }
     .hotel_image{
-      
         width: 100%;
-}
+    }
+    .hotel_info{
+        margin-top: 20px;
+        margin-left: 0px;
+        width: 100%;
+    }
 }

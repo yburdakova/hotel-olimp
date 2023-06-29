@@ -37,7 +37,7 @@ function Footer( {title, subtitle, menu, lang}: any) {
             </div>
           </div>
           <div className="flex justify-end border-2 right_items basis-6/12">
-            <LocaleSwitcher lang={lang} flex="col "/>
+            <LocaleSwitcher lang={lang} row={false}/>
             <div className="ml-6 currency">
               Currency MODULE
             </div>

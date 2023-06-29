@@ -1,5 +1,4 @@
 
-
 .lang_item{
   font-size: 22px;
   color: var(--primary-color);
@@ -21,6 +20,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+  padding-right: 10px;
 }
 .lang_item:before{
   content: '';
@@ -38,4 +38,9 @@
 }
 .lang_item:hover::before{
   width: 100%;
+}
+@media (max-width: 768px){
+  .lang_item{
+    padding-right: 5px;
+  }
 }

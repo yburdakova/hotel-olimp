@@ -6,8 +6,10 @@ import Link from 'next/link';
 import { i18n } from '../../../../i18n-config';
 import styles from './localeSwitcher.module.css';
 
+import { LocaleSwitcherProps } from '@/constants/interfaces';
 
-export default function LocaleSwitcher({ lang, flex }: any) {
+
+export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
 
 
   const pathName = usePathname()
@@ -32,7 +34,7 @@ export default function LocaleSwitcher({ lang, flex }: any) {
   return (
     <div>
       {/* Variant 1 - buttons  */}
-      <div className={`w-[120px] flex justify-between mx-5 flex-${flex}`}>
+      <div className={`flex justify-between first:pl-0 last:pr-0  lg:flex-${row? "row": "col"} flex-col` }>
         {languageLinks.map(link =>
           <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
             {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}

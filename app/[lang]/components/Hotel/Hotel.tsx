@@ -6,8 +6,9 @@ import {LuParkingCircle} from 'react-icons/lu';
 import styles from './hotel.module.css';
 import { star, hotel } from '@/public';
 import { Button} from '../'
+import { HotelProps } from '@/constants/interfaces';
 
-function Hotel({ title, text, servisesTitle, servises, buttonTitle }: any) {
+function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps) {
 
 const serviseItems = [
     {
@@ -42,8 +43,8 @@ const serviseItems = [
 ]
 
     return (
-        <div className="component" id="hotel">
-            <div className="mt-10  component_container">
+        <div className="mt-20 component" id="hotel">
+            <div className="mt-10 component_container">
                 <div className="flex items-center justify-center component_title">
                     <div className={styles.hotel_stars}>
                         <Image src={star} key='star-1' alt='star' className={styles.hotel_star}/>
@@ -51,7 +52,7 @@ const serviseItems = [
                         <Image src={star} key='star-3' alt='star' className={styles.hotel_star}/>
                         <Image src={star} key='star-4' alt='star' className={styles.hotel_star}/>
                     </div>
-                    <div className="mx-3 text-center">{title}</div>
+                    <div className="mx-3 text-left">{title}</div>
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>

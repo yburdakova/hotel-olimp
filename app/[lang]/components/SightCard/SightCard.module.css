@@ -23,7 +23,7 @@
   transition: all 1s ease 0s;
 }
 .sightcard_title{
-  font-size: 2rem;
+  font-size: min(max(16px, 6vw), 36px);
   text-transform: uppercase;
   color: #fff;
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5);
@@ -56,7 +56,7 @@
 }
 
 .activesightcard_title{
-  font-size: 2rem;
+  font-size: min(max(20px, 6vw), 26px);
   text-transform: uppercase;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -66,17 +66,17 @@
 
 .activesightcard_description{
   position: absolute;
-  font-size: 1.5rem;
+  font-size: min(max(16px, 4vw), 22px);
   top: 10%;
   left: 10%;
   right: 10%;
   opacity: 1;
   color: #fff;
   margin-bottom: 2rem;
-  transition: all 0.3s ease 0s;
-  -webkit-text-stroke: 0.5px #000;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(6, 6, 10), 0 0 0.2em rgb(0, 0, 0);
   transition: all 1s ease 0.3s;
+
+  
 }
 .sightcard_img{
   height: 100%;

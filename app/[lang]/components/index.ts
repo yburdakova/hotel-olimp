@@ -11,10 +11,12 @@ import Restaurant from './Restaurant/Restaurant';
 import Socials from './Socials/Socials';
 import OlimpMap from './OlimpMap/OlimpMap';
 import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 
 
 export {
+    Header,
     Hero,
     Slider,
     LocaleSwitcher,

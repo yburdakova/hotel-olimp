@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './button.module.css'
 
-function Button( {text}:any) {
+import { ButtonProps } from '@/constants/interfaces';
+
+function Button( {text}:ButtonProps) {
   return (
     <div className={styles.button_container}>
         <div className={styles.button_text}>

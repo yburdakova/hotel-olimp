@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
-import { Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
+import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
 import { trLogo } from '@/public';
 import './globals.css';
 
@@ -15,30 +15,30 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
   return (
     <div className='relative'>
       <Hero 
-        title={dictionary["hero-component"].hotelName} 
-        subtitle={dictionary["hero-component"].resortName}
-        menu={dictionary["menu"]}
+        title={dictionary.heroComponent.hotelName} 
+        subtitle={dictionary.heroComponent.resortName}
+        menu={dictionary.menu}
         lang={lang}
       />
       <Resort 
-        title={dictionary["resort-component"].title} 
-        text={dictionary["resort-component"].text}
-        cards={dictionary["resort-component"].sights}
+        title={dictionary.resortComponent.title} 
+        text={dictionary.resortComponent.text}
+        cards={dictionary.resortComponent.sights}
       />
         <Hotel
-          title={dictionary["hotel-component"].title} 
-          text={dictionary["hotel-component"].text}
-          servisesTitle={dictionary["hotel-component"].servises_title}
-          servises={dictionary["hotel-component"].servises}
+          title={dictionary.hotelComponent.title} 
+          text={dictionary.hotelComponent.text}
+          servisesTitle={dictionary.hotelComponent.servisesTitle}
+          servises={dictionary.hotelComponent.servises}
           buttonTitle={dictionary.button}
         />
         <Rooms
-          title={dictionary["rooms-component"].title} 
-          text={dictionary["rooms-component"].text} 
-          roomsTitles={dictionary["rooms-component"]['rooms-titles']}
+          title={dictionary.roomsComponent.title} 
+          text={dictionary.roomsComponent.text} 
+          roomsTitles={dictionary.roomsComponent.roomsTitles}
           currencyLiteral={dictionary.currency}
-          time={dictionary['booking-time']}
-          roomDictionary={dictionary["rooms-component"].room}
+          time={dictionary.bookingTime}
+          roomDictionary={dictionary.roomsComponent.room}
           buttonTitle={dictionary.button}
         />
         <Restaurant
@@ -52,9 +52,9 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           title={dictionary.contactsTitle}
         />
         <Footer
-          title={dictionary["hero-component"].hotelName} 
-          subtitle={dictionary["hero-component"].resortName}
-          menu={dictionary["menu"]}
+          title={dictionary.heroComponent.hotelName} 
+          subtitle={dictionary.heroComponent.resortName}
+          menu={dictionary.menu}
           lang={lang}
         />
         <Link href="#top">

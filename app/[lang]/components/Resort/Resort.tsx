@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import styles from './Resort.module.css';
 import { game_park, arena, dendropark, music_park, inverted_house } from '@/public';
 import SightCard from '../SightCard/SightCard';
+import { ResortProps } from '@/constants/interfaces';
 
-function Resort({ title, text, cards }: any) {
+function Resort({ title, text, cards }: ResortProps) {
 
     const sights = [
         {
@@ -38,7 +39,7 @@ function Resort({ title, text, cards }: any) {
     const [active, setActive] = useState(1);
 
     return (
-        <div className="component" id="resort">
+        <div className="mt-6 component" id="resort">
             <div className="mt-10 component_container">
                 <div className="flex items-center justify-start component_title">
                     {title}
