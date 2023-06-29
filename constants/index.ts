@@ -17,21 +17,21 @@ export const socials = [
     {
         name: 'Instagram',
         image: instagram,
-        link: 'https://www.instagram.com/yaburdakova/'
+        link: 'https://www.instagram.com/olimp_shekvetili/'
     },
     {
         name: 'Telegram',
         image: telegram,
-        link: 'https://www.instagram.com/yaburdakova/'
+        link: 'https://www.instagram.com/olimp_shekvetili/'
     },
     {
         name: 'Facebook',
         image: facebook,
-        link: 'https://www.instagram.com/yaburdakova/'
+        link: 'https://www.instagram.com/olimp_shekvetili/'
     },
     {
         name: 'WhatsAppp',
         image: whatsapp,
-        link: 'https://www.instagram.com/yaburdakova/'
+        link: 'https://www.instagram.com/olimp_shekvetili/'
     }
 ]

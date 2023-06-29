@@ -3,8 +3,9 @@ import Image from 'next/image';
 
 import { alcohol, coffe, desert, garnish, maindish, salads, pasta, fromoven } from '@/public';
 import styles from './Restaurant.module.css';
+import { RestaurantProps } from '@/constants/interfaces';
 
-function Restaurant( { dictionary }: any) {
+function Restaurant( { dictionary }: RestaurantProps) {
 
     const restaurantItems = [
         {
@@ -51,14 +52,16 @@ function Restaurant( { dictionary }: any) {
 
     return (
         <div className='component' id="restaurant">
-            <div className="title_container w-[1440px] px-8">
-            <div className="flex items-center justify-center component_title">
+            <div className="component_container">
+            <div className="px-8 mt-10 title_container">
+                <div className="flex items-center justify-center component_title">
                     <div className="mx-3 text-center">{dictionary.title}</div>
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
             </div>
-            <div className="background_block bg-[#D0EBFF] w-[100%] mt-24">
+            </div>
+            <div className="bg-[#D0EBFF] w-[100%] mt-24 flex justify-center items-center">
             <div className="component_container">
                 <div className="grid grid-cols-1 gap-6 my-16 items_container sm:grid-cols-2 lg:grid-cols-4" >
                     {restaurantItems.map( (item, index)  => 

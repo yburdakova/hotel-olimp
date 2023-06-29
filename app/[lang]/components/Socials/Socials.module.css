@@ -1,0 +1,37 @@
+.icons_container{
+display: flex;
+}
+.icon{
+margin-left: 10px;
+transition: all 0.3s ease 0s;
+}
+.icon:hover{
+    -webkit-transform: rotateZ(27deg) scale(1.1);
+    -ms-transform: rotate(27deg) scale(1.1);
+    transform: rotateZ(27deg) scale(1.1);
+}
+.icon_img{
+
+}
+.dot{
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+.line{
+    flex-grow: 1;
+    overflow: hidden;
+    border-bottom: 4px solid #2D70B2;
+}
+
+
+@media (max-width:780px){
+    .dot, .line{
+        display: none;
+    }
+    .icons_container{
+        margin-bottom: 20px;
+    }
+
+}

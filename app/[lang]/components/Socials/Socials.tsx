@@ -3,27 +3,28 @@ import React from 'react';
 import Image from 'next/image';
 
 import { socials } from '@/constants';
+import styles from './Socials.module.css';
+import { SocialsProps } from '@/constants/interfaces';
 
-function Socials({ title }: any) {
+function Socials({ title }: SocialsProps) {
     return (
         <div className='relative mt-20 component' id="socials">
-            <div className="title_container w-[1440px] px-8">
-                <div className="flex items-center justify-center component_title">
-                <div className='line'></div>
-                <div className='dot'></div>
-                <div className="flex mx-10 icons_container">
-                        { socials. map ( item => 
-                            <a href={item.link} target="_blank" rel="noopener noreferrer" key={`link-${item.name}}`}>
-                                <div className="flex ">
-                                    <Image src={item.image} alt={item.name} className=''/>
-                                </div>
-                            </a>
-                        )}
-                    </div>
-                <div className="mx-3 text-center">{title}</div>
-                    
+            <div className="component_container">
+                <div className="flex flex-col items-center justify-center component_title md:flex-row">
+                    <div className='line'></div>
+                    <div className='dot'></div>
+                    <div className={styles.icons_container}>
+                            { socials. map ( item => 
+                                <a href={item.link} target="_blank" rel="noopener noreferrer" key={`link-${item.name}}`}>
+                                    <div className={styles.icon}>
+                                        <Image src={item.image} alt={item.name} className={styles.icon_img}/>
+                                    </div>
+                                </a>
+                            )}
+                        </div>
+                    <div className="mx-3 text-center">{title}</div>
+                </div>
             </div>
-        </div>
             <div className="component_container">
             </div>
             <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></Script>

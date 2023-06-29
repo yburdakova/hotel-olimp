@@ -17,25 +17,28 @@ function OlimpMap({ lang, title }: OlimpMapProps) {
 
     return (
         <div className='component' id="contacts">
-            <div className="title_container w-[1440px] px-8">
-                <div className="flex items-center justify-center component_title">
-                    <div className="mx-3 text-center">{title}</div>
-                    <div className='dot'></div>
-                    <div className='line'></div>
+            <div className="component_container">
+                <div className="px-8 title_continer">
+                    <div className="flex items-center justify-center component_title">
+                        <div className="mx-3 text-center">{title}</div>
+                        <div className='dot'></div>
+                        <div className='line'></div>
+                    </div>
                 </div>
             </div>
-            <div className="relative map">
-                <div className="contacts_container absolute z-10 top-56 left-10 w-[350px] xl:w-[440px] 2xl:left-96">
-                    <div className="flex contacts_item">
-                        <div className="item_icon"><PiPhoneBold/></div>
+
+            <div className="relative map w-[100%] mt-6">
+                <div className="z-10 w-[350px] xl:w-[440px] absolute left-20 top-[20%]">
+                    <div className="flex items-center mb-6">
+                        <div className="mr-6"><PiPhoneBold/></div>
                         <div className="item_text"><a href="tel:+995595536060" type='phone'>+995 595 53 60 60</a></div>
                     </div>
-                    <div className="flex contacts_item">
-                        <div className="item_icon"><BsGeoAlt/></div>
+                    <div className="flex items-start mb-6">
+                        <div className="mr-6"><BsGeoAlt/></div>
                         <div className="item_text">WQP8+H8Q, Ozurgeti, Natanebi, Shekvetili, Shekhvetili 3500, Georgia</div>
                     </div>
-                    <div className="flex contacts_item">
-                        <div className="item_icon"><MdOutlineEmail/></div>
+                    <div className="flex items-center mb-6">
+                        <div className="mr-6"><MdOutlineEmail/></div>
                         <div className="item_text"><a href="mailto:olimp-shekvetili@gmail.com" type='email'>olimp-shekvetili@gmail.com</a></div>
                     </div>
                 </div>

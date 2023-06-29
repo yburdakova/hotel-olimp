@@ -90,3 +90,8 @@ body {
   overflow: hidden;
   border-bottom: 4px solid #2D70B2;
 }
+@media (max-width:780px){
+  .dot, .line{
+      display: none;
+  }
+}

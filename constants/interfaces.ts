@@ -140,3 +140,11 @@ export interface HotelProps {
   servises: DictionaryProps["hotelComponent"]["servises"];
   buttonTitle: DictionaryProps["button"]
 }
+
+export interface RestaurantProps {
+  dictionary: DictionaryProps["restaurant"]
+}
+
+export interface SocialsProps {
+  title: DictionaryProps["menu"]["socials"]
+}
