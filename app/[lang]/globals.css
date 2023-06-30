@@ -86,12 +86,7 @@ body {
   z-index: 100002;
   overflow: hidden;
 }
-@media(max-width:600px){
-  .anchor{
-    width: 18px;
-    height:18px;
-  }
-}
+
 .dot{
   width: 16px;
   height: 16px;
@@ -106,6 +101,10 @@ body {
 @media (max-width:780px){
   .dot, .line{
       display: none;
+  }
+  .anchor{
+    width: 22px;
+    height:22px;
   }
 
 }
