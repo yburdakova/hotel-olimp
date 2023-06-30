@@ -20,9 +20,11 @@ function Room({  title, image, price, beds, facilities, facilitiesList, buttonTi
                     <span className='bold'>{facilities}:</span>
                     {facilitiesList.map((item:any, index:number) => <span key={`fasilities-${index}`}>{item}, </span>)}
                 </div>
+                <a href="https://cloud.shelter.ru/hotels/HotelOlimp" target='_blank'>
                 <div className={styles.button_container}>
                     <Button text={buttonTitle}/>
                 </div>
+                </a>
             </div>
         </div>
     )
