@@ -9,8 +9,8 @@ import { SocialsProps } from '@/constants/interfaces';
 function Socials({ title }: SocialsProps) {
     return (
         <div className='relative mt-20 component' id="socials">
-            <div className="component_container">
-                <div className="flex flex-col items-center justify-center component_title md:flex-row">
+            <div className="mt-10 component_container">
+                <div className="flex flex-col items-center justify-center mb-20 component_title md:flex-row ">
                     <div className='line'></div>
                     <div className='dot'></div>
                     <div className={styles.icons_container}>
@@ -24,8 +24,6 @@ function Socials({ title }: SocialsProps) {
                         </div>
                     <div className="mx-3 text-center">{title}</div>
                 </div>
-            </div>
-            <div className="component_container">
             </div>
             <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></Script>
             <div className="elfsight-app-9de58e30-bda8-4008-807c-ffa5e3c40ad5"></div>

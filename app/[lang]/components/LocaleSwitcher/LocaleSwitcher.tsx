@@ -34,7 +34,7 @@ export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
   return (
     <div>
       {/* Variant 1 - buttons  */}
-      <div className={`flex justify-between first:pl-0 last:pr-0  lg:flex-${row? "row": "col"} flex-col` }>
+      <div className={`flex justify-between first:pl-0 last:pr-0  ${row? "lg:flex-row": "lg:flex-col"} flex-col` }>
         {languageLinks.map(link =>
           <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
             {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}

@@ -3,19 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './Footer.module.css';
-import { logo, wave } from '@/public';
+import { trLogo, wave } from '@/public';
 import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
+import { FooterProps } from '@/constants/interfaces';
 
-function Footer( {title, subtitle, menu, lang}: any) {
+function Footer( {title, subtitle, menu, lang}: FooterProps) {
   return (
     <div className="component">
-      <div className="component_container">
-        <div className="component_title w-[1440px] px-8 flex justify-center items-center">
+      <div className="relative component_container">
+        <div className="flex items-center justify-center mt-10 component_title">
             <div className='line'></div>
             <div className='dot'></div>
             <div className={styles.header_logo}>
               <div className={styles.logo}>
-                  <Image src={logo} alt='logo' className={styles.logo_img} />
+                  <Image src={trLogo} alt='logo' className={styles.logo_img} />
               </div>
               <div className={styles.logo_title}>{title}</div>
               <div className={styles.logo_subtitle}>{subtitle}</div>
@@ -23,9 +24,9 @@ function Footer( {title, subtitle, menu, lang}: any) {
             <div className='dot'></div>
             <div className='line'></div>
         </div>
-        <div className="flex flex-wrap items_container">
-          <div className="flex border-2 left_items basis-6/12">
-            <div className="flex flex-col mr-6 hotel_links">
+        <div className="xl:absolute flex flex-wrap items_container w-[100%] xl:top-[240px] z-999">
+          <div className="flex flex-wrap left_items grow ">
+            <div className="flex flex-col mr-10 hotel_links">
               <Link href="#resort" className={styles.menu_item}>{menu.resort}</Link>
               <Link href="#hotel" className={styles.menu_item}>{menu.hotel}</Link>
               <Link href="#rooms" className={styles.menu_item}>{menu.rooms}</Link>
@@ -36,16 +37,17 @@ function Footer( {title, subtitle, menu, lang}: any) {
               <Link href="#socials" className={styles.menu_item}>{menu.socials}</Link>
             </div>
           </div>
-          <div className="flex justify-end border-2 right_items basis-6/12">
+          <div className="w-[307px]"></div>
+          <div className="flex flex-wrap justify-end right_items grow">
             <LocaleSwitcher lang={lang} row={false}/>
-            <div className="ml-6 currency">
+            <div className="h-10 ml-6 border w-80 currency">
               Currency MODULE
             </div>
           </div>
         </div>
       </div>
       <div className='w-[100%]'><Image src={wave} className='w-[100%]' alt="wave"/></div>
-        <div className="mb-5 text-gray-300 developer"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
+        <div className="mb-5 text-sm text-gray-300 md:text-base developer"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
     </div>
   )
 }

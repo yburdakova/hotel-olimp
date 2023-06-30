@@ -11,7 +11,7 @@ function SightCard( {id, title, description, image, active, handleClick }: Sight
     return (
         <div onClick={() => handleClick(id)} className={activeCard? styles.activesightcard: styles.sightcard}>
             <div className={activeCard? styles.activesightcard_text: styles.sightcard_text}>
-                <div className={styles.sightcard_title}>{title}</div>
+                <div className={activeCard? styles.activesightcard_title: styles.sightcard_title}>{title}</div>
             </div>
             {!activeCard &&  <div className={styles.sightcard_glassmorphism}></div>}
             <Image src={image} alt="resort" className={styles.sightcard_img}/>

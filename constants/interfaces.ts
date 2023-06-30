@@ -148,3 +148,10 @@ export interface RestaurantProps {
 export interface SocialsProps {
   title: DictionaryProps["menu"]["socials"]
 }
+
+export interface FooterProps{
+  title: string;
+  subtitle: string;
+  menu: DictionaryProps["menu"];
+  lang: string;
+}
