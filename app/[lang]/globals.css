@@ -79,8 +79,8 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   position: fixed;
-  width: min(max(14px, 4vw), 28px);
-  height: min(max(14px, 4vw), 28px);
+  width: 28px;
+  height:28px;
   bottom: 10px ;
   right: 20px;
   z-index: 100002;
