@@ -58,7 +58,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           lang={lang}
         />
         <Link href="#top">
-          <div className="anchor flex fixed w-28 h-28 bottom-10 right-20 z-[100002] overflow-hidden">
+          <div className="anchor">
             <Image src={trLogo} alt="logo" className='w-[100%]'/>
           </div>
         </Link>
