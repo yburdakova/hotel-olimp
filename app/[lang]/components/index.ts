@@ -12,6 +12,7 @@ import Socials from './Socials/Socials';
 import OlimpMap from './Contacts/Contacts';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import Currency from './Currency/Currency';
 
 
 
@@ -29,5 +30,6 @@ export {
     Restaurant,
     Socials,
     OlimpMap,
-    Footer
+    Footer,
+    Currency
 }

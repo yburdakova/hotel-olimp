@@ -175,3 +175,30 @@ export interface RoomItemProps {
   facilitiesList: string[];
   buttonTitle: DictionaryProps["button"]
 }
+
+export interface JsonProps {
+
+}
+
+
+export interface CurrencyDataProps {
+  0: CurrencyDataItemProps[];
+}
+
+export interface CurrencyDataItemProps {
+  date: string;
+  currencies: CurrencyInfoProps[]
+}
+export interface CurrencyInfoProps {
+  code: string;
+  date?: string;
+  diff?: number;
+  diffFormated?:string;
+  name: string;
+  quantity?: number;
+  rate?: number;
+  rateFormated?: string;
+  validFromDate?: string;
+  image?: StaticImageData,
+  filter?: CurrencyInfoProps | ((prevState: CurrencyInfoProps | null) => CurrencyInfoProps | null)
+}

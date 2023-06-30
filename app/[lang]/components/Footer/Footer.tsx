@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import styles from './Footer.module.css';
 import { trLogo, wave } from '@/public';
-import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
+import { LocaleSwitcher, Currency} from '../';
 import { FooterProps } from '@/constants/interfaces';
 
 function Footer( {title, subtitle, menu, lang}: FooterProps) {
@@ -40,9 +40,7 @@ function Footer( {title, subtitle, menu, lang}: FooterProps) {
           <div className="w-[307px]"></div>
           <div className="flex flex-wrap justify-end right_items grow">
             <LocaleSwitcher lang={lang} row={false}/>
-            <div className="h-10 ml-6 border w-80 currency">
-              Currency MODULE
-            </div>
+            <Currency/>
           </div>
         </div>
       </div>

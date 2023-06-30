@@ -3,14 +3,10 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-import { i18n } from '../../../../i18n-config';
 import styles from './localeSwitcher.module.css';
-
 import { LocaleSwitcherProps } from '@/constants/interfaces';
 
-
 export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
-
 
   const pathName = usePathname()
   const redirectedPathName = (locale: string) => {
@@ -20,28 +16,38 @@ export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
     return segments.join('/')
   }
 
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [selectedOption, setSelectedOption] = useState(null);
-
   const [languageLinks, setLanguageLinks] = useState(['ka', 'en', 'ru'])
-
-  // const toggling = () => setIsOpen(!isOpen);
+  
+  const [isLang, setIsLang] = useState (false)
 
   useEffect(() => {
-    setLanguageLinks(languageLinks.filter(link => link !== lang))
+    setLanguageLinks(languageLinks.filter(link => link !== lang));
+    setIsLang(true);
   }, [lang])
 
   return (
     <div>
-      {/* Variant 1 - buttons  */}
-      <div className={`flex justify-between first:pl-0 last:pr-0  ${row? "lg:flex-row": "lg:flex-col"} flex-col` }>
-        {languageLinks.map(link =>
-          <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
-            {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}
-          </Link>)}
-      </div>
+      { isLang &&
+        <div className={`flex justify-between first:pl-0 last:pr-0  ${row? "lg:flex-row": "lg:flex-col"} flex-col` }>
+          {languageLinks.map(link =>
+            <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
+              {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}
+            </Link>
+          )}
+        </div>
+    }
+    </div>
+  )
+}
 
-      {/* Variant 2 - custom selection  */}
+// Variant 2 - custom selection 
+
+  // import { i18n } from '../../../../i18n-config';
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [selectedOption, setSelectedOption] = useState(null);
+  // const toggling = () => setIsOpen(!isOpen);
+
+  
       {/* <div>
         <div onClick={toggling}>
           {selectedOption || "Select language..."}
@@ -56,6 +62,3 @@ export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
             </div>
           )}
       </div> */}
-    </div>
-  )
-}

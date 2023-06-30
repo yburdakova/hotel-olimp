@@ -1,0 +1,41 @@
+.container{
+    width: 340px;
+    margin-left: 30px;
+}
+.item{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
+.flag{
+    display: flex;
+    width: 20px;
+}
+.flag_img{
+    width: 100%;
+    object-fit:contain;
+}
+.text{
+    display: flex;
+    width: 200px;
+    color: #2D70B2;
+}
+.code{
+    font-weight: bold;
+    margin-left: 10px;
+}
+.name{
+    margin-left: 10px;
+}
+.input{
+    width: 80px;
+    border: 1px solid #2D70B2;
+    border-radius: 5px;
+    padding: 2px;
+    background: transparent;
+}
+@media(max-width:600px){
+    .container{
+        margin-top: 20px;
+    }
+}

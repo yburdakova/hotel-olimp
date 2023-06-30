@@ -44,7 +44,7 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
-                <div className="mt-6 text-center component_text bold">{text}</div>
+                <div className="mt-6 text-center component_text">{text}</div>
                 {rooms.map ((room, index) => 
                     <Room
                         key={`room-${index}`}

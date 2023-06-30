@@ -39,6 +39,12 @@ import telegram from './assets/icons/tg-icon.svg';
 import facebook from './assets/icons/fb-icon.svg';
 import whatsapp from './assets/icons/whatsapp-icon.svg';
 
+//flags
+import usaflag from './assets/images/flagusa.png';
+import geoflag from './assets/images/flaggeo.png';
+import rusflag from './assets/images/flagrus.png';
+import euroflag from './assets/images/flageur.png';
+
 export {
     logo,
     trLogo,
@@ -75,6 +81,10 @@ export {
     instagram,
     telegram,
     facebook,
-    whatsapp
+    whatsapp,
 
+    usaflag,
+    geoflag,
+    rusflag,
+    euroflag
 }
