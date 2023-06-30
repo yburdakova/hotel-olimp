@@ -85,4 +85,7 @@ width: 100%;
     .logo_subtitle{
         font-size: 12px;
     }
+    .menu_container{
+        margin-top: 20px;
+    }
 }

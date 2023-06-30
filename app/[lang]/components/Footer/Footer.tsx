@@ -24,7 +24,7 @@ function Footer( {title, subtitle, menu, lang}: FooterProps) {
             <div className='dot'></div>
             <div className='line'></div>
         </div>
-        <div className="xl:absolute flex flex-wrap items_container w-[100%] xl:top-[240px] z-999">
+        <div className={`xl:absolute flex flex-wrap items_container w-[100%] xl:top-[240px] z-999 ${styles.menu_container}`}>
           <div className="flex flex-wrap left_items grow ">
             <div className="flex flex-col mr-10 hotel_links">
               <Link href="#resort" className={styles.menu_item}>{menu.resort}</Link>

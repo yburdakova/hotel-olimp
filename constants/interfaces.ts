@@ -149,9 +149,29 @@ export interface SocialsProps {
   title: DictionaryProps["menu"]["socials"]
 }
 
-export interface FooterProps{
+export interface FooterProps {
   title: string;
   subtitle: string;
   menu: DictionaryProps["menu"];
   lang: string;
+}
+
+export interface RoomsProps {
+  title: DictionaryProps["roomsComponent"]["title"];
+  text: DictionaryProps["roomsComponent"]["text"];
+  roomsTitles: DictionaryProps["roomsComponent"]["roomsTitles"];
+  currencyLiteral: DictionaryProps["currency"];
+  time: DictionaryProps["bookingTime"];
+  buttonTitle: DictionaryProps["button"];
+  roomDictionary: DictionaryProps["roomsComponent"]["room"]
+}
+
+export interface RoomItemProps {
+  title: DictionaryProps["roomsComponent"]["title"];
+  image: StaticImageData;
+  price: string;
+  beds: string;
+  facilities: string;
+  facilitiesList: string[];
+  buttonTitle: DictionaryProps["button"]
 }

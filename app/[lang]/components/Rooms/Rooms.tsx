@@ -3,12 +3,13 @@ import Image from 'next/image';
 import { room1, room2, room3, wave } from '@/public';
 import { Room } from '../'
 import styles from './rooms.module.css'
+import { RoomsProps } from '@/constants/interfaces';
 
-function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: any) {
+function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: RoomsProps) {
 
     const rooms = [
         {
-            title: roomsTitles["room1-title"],
+            title: roomsTitles.room1Title,
             price:`${2500} ${currencyLiteral} / ${time}`,
             beds: `${roomDictionary.numbersOfbeds}: 2`,
             facilities: roomDictionary.facilities,
@@ -16,7 +17,7 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
             image: room1
         },
         {
-            title: roomsTitles["room2-title"],
+            title: roomsTitles.room2Title,
             price:`${3500} ${currencyLiteral} / ${time}`,
             beds: `${roomDictionary.numbersOfbeds}: 4`,
             facilities: roomDictionary.facilities,
@@ -24,7 +25,7 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
             image: room2
         },
         {
-            title: roomsTitles["room3-title"],
+            title: roomsTitles.room3Title,
             price:`${5500} ${currencyLiteral} / ${time}`,
             beds: `${roomDictionary.numbersOfbeds}: 2`,
             facilities: roomDictionary.facilities,

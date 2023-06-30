@@ -3,12 +3,14 @@ import Image from 'next/image';
 import styles from './room.module.css';
 import { Button } from '../';
 
-function Room({  title, image, price, beds, facilities, facilitiesList, buttonTitle }: any) {
+import { RoomItemProps } from '@/constants/interfaces';
+
+function Room({  title, image, price, beds, facilities, facilitiesList, buttonTitle }: RoomItemProps) {
 
     return (
         <div className={styles.room_container}>
             <div className={styles.room_image}>
-                <Image src={image} alt='room-image'/>
+                <Image src={image} alt='room-image' className={styles.room_img}/>
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>{title}</div>

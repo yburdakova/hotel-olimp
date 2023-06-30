@@ -31,3 +31,9 @@
     color: #2D70B2;
     cursor: pointer;
 }
+@media(max-width:600px){
+    .button_container{
+        border-radius: 30px;
+    }
+    
+}

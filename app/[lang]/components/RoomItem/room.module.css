@@ -9,12 +9,13 @@
     opacity: 0.8;
     transition: all 0.3s ease 0s;
 }
+
 .room_container:hover{
     border: 2px solid #fff;
     background: #D0EBFF;
 }
 .title{
-    font-size: 36px;
+    font-size: min(max(16px, 4vw), 26px);
     text-transform: uppercase;
     margin-top: 10px;
 }
@@ -22,26 +23,30 @@
     margin: 30px 30px 30px 0;
 }
 .beds{
-    font-size: 26px;
+    font-size: min(max(16px, 4vw), 26px);
     font-weight: 800;
     line-height: 150%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 .facilities{
-    font-size: 26px;
+    font-size: min(max(16px, 4vw), 26px);
     line-height: 150%;
     margin-top: 15px;
 }
 .room_image{
     display: flex;
-    width: 50%;
+    width: 100%;
     overflow: hidden;
     border-radius: 50px;
     margin: 30px
 }
+.room_img{
+    width: 100%;
+    object-fit: cover;
+}
 .price {
-    font-size: 36px;
+    font-size: min(max(16px, 4vw), 26px);
     font-weight: 800;
     line-height: 150%;
     margin-top: 25px;
@@ -53,4 +58,20 @@
     justify-content: flex-end;
     padding-right: 30px; 
     margin-top: 15px;
+}
+@media(max-width:768px){
+    .room_container{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .room_image{
+        width: 100%;
+        margin: 0;
+    }
+    .info{
+        margin: 5px;
+    }
+    .button_container{
+        padding-right: 0px; 
+    }
 }
