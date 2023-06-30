@@ -85,7 +85,12 @@ body {
   right: 20px;
   z-index: 100002;
   overflow: hidden;
-
+}
+@media(max-width:600px){
+  .anchor{
+    width: 18px;
+    height:18px;
+  }
 }
 .dot{
   width: 16px;
