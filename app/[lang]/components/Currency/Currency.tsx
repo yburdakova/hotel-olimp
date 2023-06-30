@@ -1,18 +1,17 @@
 'use client'
-import React, {useState, useEffect, SetStateAction} from 'react';
+import React, {useState, useEffect} from 'react';
 import Image from 'next/image';
 
-import {CurrencyInfoProps, CurrencyDataProps } from '@/constants/interfaces';
+import {CurrencyInfoProps, CurrencyDataItemProps } from '@/constants/interfaces';
 import styles from './Currency.module.css'
 import { rusflag, usaflag, geoflag, euroflag } from '@/public'
-import { assert } from 'console';
 
 function Currency() {
     
     const [value, setValue] = useState(1);
-    const [actualData, setActualData] = useState([]);
-    const [localData, setLocalData] = useState(null);
-    const [currencyData, setCurrencyData] = useState(null);
+    const [actualData, setActualData] = useState<CurrencyInfoProps[]>([]);
+    const [localData, setLocalData] = useState<CurrencyDataItemProps["currencies"] | null>(null);
+    const [currencyData, setCurrencyData] = useState<CurrencyDataItemProps | null>(null);
 
     //getting formatted Date for json request
     const today = new Date();
@@ -46,14 +45,15 @@ function Currency() {
             const filteredArray = localData.filter((item) => {
                 return item.code === 'USD' || item.code === 'RUB' || item.code === 'EUR';
             });
-            setActualData(filteredArray)
+            setActualData(() => filteredArray); 
         }
         console.log(actualData)
     }, [localData]);
 
 
-    const handleChange = (e) => {
-        setValue(e.target.value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = parseInt(e.target.value, 10);
+        setValue(newValue);
     }
 
     useEffect(() => {
@@ -83,11 +83,11 @@ function Currency() {
                             <div className={styles.code}>{item.code}</div>
                             <div className={styles.name}>{item.name}</div>
                         </div>
-                        <input type="text" className={styles.input} value={(value / item.rate * item.quantity).toFixed(2)} readOnly/>
+                        <input type="text" className={styles.input} value={item.rate && item.quantity ? (value / item.rate * item.quantity).toFixed(2) : ''} readOnly/>
                     </div>
                 )
             }
-            <div className="text-xs text-gray-500">National Bank of Georgia, {formattedDate} </div>
+            <div className={styles.source}>National Bank of Georgia, {formattedDate} </div>
         </div>
         
     )

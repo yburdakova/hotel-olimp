@@ -187,7 +187,8 @@ export interface CurrencyDataProps {
 
 export interface CurrencyDataItemProps {
   date: string;
-  currencies: CurrencyInfoProps[]
+  currencies: CurrencyInfoProps[];
+  [index: number]: CurrencyDataItemProps;
 }
 export interface CurrencyInfoProps {
   code: string;
