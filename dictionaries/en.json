@@ -6,6 +6,12 @@
     "bookingTime": "night",
     "socialsTitle": "We are in socials",
     "contactsTitle": "Contacts",
+    "guests": {
+        "title": "Guests",
+        "one": "Guest",
+        "several": "Guests",
+        "many": "Guests"
+    },
     "heroComponent": {
         "hotelName": "Hotel olimp",
         "resortName": "Shekvetili"
@@ -39,8 +45,8 @@
                 "description": "Great place to experience music."
             },
             "card5":{
-                "title": "Inverted house",
-                "description": "An exciting attraction inside a house turned upside down."
+                "title": "Botanical Garden",
+                "description": "Huge area with great flora. Paradise for eyes and soul."
             }
         }
     },

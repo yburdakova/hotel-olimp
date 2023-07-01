@@ -9,6 +9,12 @@ export interface DictionaryProps {
   bookingTime : string;
   socialsTitle : string;
   contactsTitle :  string;
+  guests: {
+    title?: string;
+    one: string,
+    several?: string;
+    many?: string;
+},
   heroComponent : {
     hotelName :  string;
     resortName :  string;
@@ -110,6 +116,7 @@ export interface HeaderProps {
   lang: string;
   ModalBooking?: boolean;
   buttonTitle?: DictionaryProps["button"];
+  bookingDictionary?: DictionaryProps["guests"]
 }
 
 export interface ResortProps {

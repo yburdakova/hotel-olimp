@@ -4,6 +4,8 @@ import trLogo from './assets/images/logo-wbg.png'
 import star from './assets/images/star.png';
 import hotel from './assets/images/hotel-olimp.jpeg'
 import wave from './assets/images/background.svg'
+import footerwave from './assets/images/wave-footer.png'
+import wave02 from './assets/images/wave02.svg'
 
 //slider
 import silde01 from './assets/images/caption.jpeg';
@@ -17,6 +19,7 @@ import arena from './assets/images/arena.jpeg';
 import dendropark from './assets/images/dendropark.jpeg';
 import music_park from './assets/images/music-park.jpg';
 import inverted_house from './assets/images/Inverted-housel.jpg'
+import botanicgarden from './assets/images/botanic2.jpeg'
 
 //rooms
 import room1 from './assets/images/room1.png';
@@ -56,7 +59,7 @@ export {
     arena,
     dendropark,
     music_park,
-    inverted_house,
+    botanicgarden,
 
     silde01,
     silde02,
@@ -68,6 +71,8 @@ export {
     room3,
 
     wave,
+    wave02,
+    footerwave,
 
     alcohol,
     coffe,

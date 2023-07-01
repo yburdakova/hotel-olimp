@@ -31,11 +31,11 @@ function OlimpMap({ lang, title }: OlimpMapProps) {
                     </div>
                     <div className="flex items-start mb-6">
                         <div className="mr-6"><BsGeoAlt/></div>
-                        <div className="item_text">WQP8+H8Q, Ozurgeti, Natanebi, Shekvetili, Shekhvetili 3500, Georgia</div>
+                        <div className="item_text">3521 Black Sea, 10, Shekvetili, Shekhvetili Ozurgeti region, Georgia</div>
                     </div>
                     <div className="flex items-center mb-6 hover:text-[#2D70B2]">
                         <div className="mr-6"><MdOutlineEmail/></div>
-                        <div className="item_text"><a href="mailto:olimp-shekvetili@gmail.com" type='email'>olimp-shekvetili@gmail.com</a></div>
+                        <div className="item_text"><a href="mailto:olimp.batumi@gmail.com" type='email'>olimp.batumi@gmail.com</a></div>
                     </div>
                 </div>
             </div>

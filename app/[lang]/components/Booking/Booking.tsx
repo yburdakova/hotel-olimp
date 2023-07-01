@@ -3,9 +3,16 @@ import React, {useState, useEffect} from 'react';
 import styles from './Booking.module.css';
 import { Button, ModalBooking } from '../'
 
-function Booking({buttonTitle}:any) {
+function Booking({buttonTitle, guestsDictionary}:any) {
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    const [selectedDate, setSelectedDate] = useState(currentDate);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+    const handleDateChange = (e) => {
+        setSelectedDate(e.target.value);
+      };
+    
     const handleOpenPopup = () => {
         setIsPopupOpen(true);
     };
@@ -32,21 +39,31 @@ function Booking({buttonTitle}:any) {
                 <div className={styles.box}>
                     <div className={styles.container}>
                         <div className={styles.item}>
-                            <label htmlFor="startDate" className={styles.label}>Start date</label>
-                            <input type="date" name='startDate' className={styles.input}/>
+                            <label htmlFor="startDate" className={styles.label}>Check-in</label>
+                            <input 
+                                type="date" 
+                                value={selectedDate} 
+                                name='startDate' 
+                                className={styles.input}
+                                onChange={(e)=>handleDateChange(e)}/>
                         </div>
                         <div className={styles.item}>
-                            <label htmlFor="endDate" className={styles.label}>End date</label>
-                            <input type="date" name='endDate' className={styles.input}/>
+                            <label htmlFor="endDate" className={styles.label}>Check-out</label>
+                            <input 
+                                type="date" 
+                                value={selectedDate} 
+                                name='endDate' 
+                                className={styles.input}
+                                onChange={(e)=>handleDateChange(e)}/>
                         </div>
                         <div className={styles.item}>
-                            <label htmlFor="guests" className={styles.label}>Guests</label>
+                            <label htmlFor="guests" className={styles.label}>{guestsDictionary["title"]}</label>
                             <select name="guests" className={styles.input}>
-                                <option>1 гость</option>
-                                <option>2 гостя</option>
-                                <option>3 гостя</option>
-                                <option>4 гостя</option>
-                                <option>5 гостей</option>
+                                <option>1 <span>{guestsDictionary["one"]}</span></option>
+                                <option>2 <span>{guestsDictionary["several"]}</span></option>
+                                <option>3 <span>{guestsDictionary["several"]}</span></option>
+                                <option>4 <span>{guestsDictionary["several"]}</span></option>
+                                <option>5 <span>{guestsDictionary["many"]}</span></option>
                             </select>
                         </div>
                         {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}

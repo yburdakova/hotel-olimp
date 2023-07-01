@@ -65,7 +65,7 @@ function Currency() {
         <div className={styles.container}>
             <div className={styles.item} key='GEO'>
                 <div className={styles.flag}>
-                    <Image src={geoflag} alt='flag'/>
+                    <Image src={geoflag} alt='flag' className={styles.flag_img} />
                 </div>
                 <div className={styles.text}>
                     <div className={styles.code}>GEL</div>
@@ -77,13 +77,13 @@ function Currency() {
                 actualData.map(item =>
                     <div className={styles.item} key={item.code}>
                         <div className={styles.flag}>
-                            <Image src={item.code =="RUS" ? rusflag : item.code =="EUR"  ? euroflag: usaflag} alt="flag-geo" className={styles.flag_img}/>
+                            <Image src={item.code =="USD" ? usaflag : item.code =="EUR"  ? euroflag: rusflag} alt="flag-geo" className={styles.flag_img} />
                         </div>
                         <div className={styles.text}>
                             <div className={styles.code}>{item.code}</div>
                             <div className={styles.name}>{item.name}</div>
                         </div>
-                        <input type="text" className={styles.input} value={item.rate && item.quantity ? (value / item.rate * item.quantity).toFixed(2) : ''} readOnly/>
+                        <input type="text" className={styles.input} value={value ? (item.rate && item.quantity ? (value / item.rate * item.quantity).toFixed(2) : ''): ''} readOnly/>
                     </div>
                 )
             }

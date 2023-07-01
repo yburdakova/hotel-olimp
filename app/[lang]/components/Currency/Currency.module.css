@@ -10,10 +10,12 @@
 .flag{
     display: flex;
     width: 20px;
+    
 }
 .flag_img{
     width: 100%;
     object-fit:contain;
+    border: 0.3px solid #2D70B2;
 }
 .text{
     display: flex;

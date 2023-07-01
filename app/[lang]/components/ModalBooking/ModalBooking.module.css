@@ -1,6 +1,5 @@
 
   .open {
-    
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -13,8 +12,6 @@
     align-items: center;
     z-index: 100008;
   }
-
-  
   .title {
     font-size: 24px;
     margin-bottom: 10px;
@@ -22,12 +19,12 @@
   .iframe {
     width: 90%;
     height: 90%;
+
   }
   .text {
     font-size: 16px;
     margin-bottom: 20px;
   }
-  
   .button {
     background-color: #ff6347;
     color: white;

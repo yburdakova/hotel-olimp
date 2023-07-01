@@ -20,6 +20,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         menu={dictionary.menu}
         lang={lang}
         buttonTitle={dictionary.button}
+        bookingDictionary={dictionary.guests}
       />
       <Resort 
         title={dictionary.resortComponent.title} 

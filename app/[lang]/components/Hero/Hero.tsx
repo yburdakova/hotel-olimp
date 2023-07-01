@@ -8,7 +8,7 @@ import { Slider, Header, Booking } from '..';
 import { sliderImages } from '@/constants';
 import { HeaderProps } from '@/constants/interfaces';
 
-function Hero({title, subtitle, menu, lang, buttonTitle }: HeaderProps) {
+function Hero({title, subtitle, menu, lang, buttonTitle, bookingDictionary }: HeaderProps) {
 
 
     return (
@@ -22,7 +22,7 @@ function Hero({title, subtitle, menu, lang, buttonTitle }: HeaderProps) {
 
                 <Slider images={sliderImages} />
 
-            <Booking buttonTitle={buttonTitle}/>
+            <Booking buttonTitle={buttonTitle} guestsDictionary={bookingDictionary}/>
             <div className={`${styles.resort_bg} `}>
                 <div >
                     <Image src={resort_bg} alt="resort" className={styles.resort_bg_image} />

@@ -1,8 +1,8 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './Resort.module.css';
-import { game_park, arena, dendropark, music_park, inverted_house } from '@/public';
+import { game_park, arena, dendropark, music_park, botanicgarden } from '@/public';
 import SightCard from '../SightCard/SightCard';
 import { ResortProps } from '@/constants/interfaces';
 
@@ -32,12 +32,19 @@ function Resort({ title, text, cards }: ResortProps) {
         {
             title: cards.card5.title,
             description: cards.card5.description,
-            image: inverted_house
+            image: botanicgarden
         }
     ];
 
     const [active, setActive] = useState(1);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActive((prevActive) => (prevActive >= 4 ? 0 : prevActive + 1));
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+    
     return (
         <div className="mt-6 component" id="resort">
             <div className="mt-10 component_container">

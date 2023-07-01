@@ -74,7 +74,7 @@
 .header_logo {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 420px;
   justify-content: center;
   align-items: center;
   margin: 0 20px;
@@ -101,7 +101,7 @@
 .logo_title{
   font-size: 18px;
   line-height: 161.7%;
-  letter-spacing: -2px;
+  
   color: var(--primary-color);
   font-weight: 800;
   text-transform: uppercase;
@@ -139,12 +139,12 @@
   .burger{
     display: block;
   }
-.menu_item{
-  display: none;
-}
-.menu_block{
-  padding: 0;
-}
+  .menu_item{
+    display: none;
+  }
+  .menu_block{
+    padding: 0;
+  }
 }
 @media(max-width: 768px){
   .logo_title{
