@@ -3,17 +3,14 @@ import styles from './button.module.css'
 
 import { ButtonProps } from '@/constants/interfaces';
 
-function Button( {text}:ButtonProps) {
+function Button( { text, openModal }:ButtonProps) {
   return (
-   
-    <div className={styles.button_container}>
-      
+
+    <div className={styles.button_container} onClick={openModal}>
         <div className={styles.button_text}>
             {text}
         </div>
-      
     </div>
-
   )
 }
 

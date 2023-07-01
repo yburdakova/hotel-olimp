@@ -1,14 +1,36 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {MdRestaurant, MdLocalAirport, MdAvTimer} from 'react-icons/md'
 import {FaUmbrellaBeach, FaWifi, FaShower} from 'react-icons/fa'
 import {LuParkingCircle} from 'react-icons/lu';
 import styles from './hotel.module.css';
 import { star, hotel } from '@/public';
-import { Button} from '../'
+import { Button, ModalBooking} from '../'
 import { HotelProps } from '@/constants/interfaces';
 
 function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps) {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const handleOpenPopup = () => {
+        setIsPopupOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setIsPopupOpen(false);
+    };
+
+    useEffect(() => {
+        if (isPopupOpen) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = 'auto';
+        }
+        return () => {
+            document.documentElement.style.overflow = 'auto';
+        };
+    }, [isPopupOpen]);
+    
 
 const serviseItems = [
     {
@@ -71,8 +93,10 @@ const serviseItems = [
                                 </div>
                             )}
                         </div>
+                        {/* <button onClick={handleOpenPopup}>Open Popup</button> */}
+                        {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}
                         <div className={styles.button_container}>
-                            <Button text={buttonTitle}/>
+                            <Button text={buttonTitle} openModal={handleOpenPopup}/>
                         </div>
                     </div>
                 </div>

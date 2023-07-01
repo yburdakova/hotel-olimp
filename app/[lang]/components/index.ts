@@ -13,6 +13,7 @@ import OlimpMap from './Contacts/Contacts';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Currency from './Currency/Currency';
+import ModalBooking from './ModalBooking/ModalBooking';
 
 
 
@@ -31,5 +32,6 @@ export {
     Socials,
     OlimpMap,
     Footer,
-    Currency
+    Currency,
+    ModalBooking
 }

@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import {  MouseEventHandler } from "react";
 
 export interface DictionaryProps {
   language: string;
@@ -130,7 +131,8 @@ export interface SightCardprops {
 }
 
 export interface ButtonProps {
-  text: DictionaryProps["button"]
+  text: DictionaryProps["button"];
+  openModal: MouseEventHandler<HTMLDivElement>;
 }
 
 export interface HotelProps {
