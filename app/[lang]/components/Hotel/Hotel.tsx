@@ -96,7 +96,7 @@ const serviseItems = [
                         {/* <button onClick={handleOpenPopup}>Open Popup</button> */}
                         {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}
                         <div className={styles.button_container}>
-                            <Button text={buttonTitle} openModal={handleOpenPopup}/>
+                            <Button text={buttonTitle} openModal={handleOpenPopup} textsize='3xl'/>
                         </div>
                     </div>
                 </div>

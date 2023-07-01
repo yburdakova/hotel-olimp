@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 106px;
 }
 .button_container:hover{
     background: #FFF;
@@ -23,7 +24,6 @@
     justify-content: center;
     align-items: center;
     color: #FFF;
-    font-size: min(max(18px, 3vw), 40px);
     transition: all 0.3s ease 0s;
     text-transform: uppercase;
 }

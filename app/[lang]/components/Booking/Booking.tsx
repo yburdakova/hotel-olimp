@@ -1,8 +1,30 @@
-import React from 'react';
+"use client"
+import React, {useState, useEffect} from 'react';
 import styles from './Booking.module.css';
-import { Button } from '../'
+import { Button, ModalBooking } from '../'
 
-function Booking() {
+function Booking({buttonTitle}:any) {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const handleOpenPopup = () => {
+        setIsPopupOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setIsPopupOpen(false);
+    };
+
+    useEffect(() => {
+        if (isPopupOpen) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = 'auto';
+        }
+        return () => {
+            document.documentElement.style.overflow = 'auto';
+        };
+    }, [isPopupOpen]);
+    
 
     return (
         <div className="z-10 component">
@@ -27,7 +49,10 @@ function Booking() {
                                 <option>5 гостей</option>
                             </select>
                         </div>
-                        {/* <Button openModal={openModal} text={buttonTitle}/> */}
+                        {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}
+                        <div className={styles.button_container}>
+                            <Button text={buttonTitle} openModal={handleOpenPopup} textsize='lg'/>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -108,6 +108,8 @@ export interface HeaderProps {
   subtitle: string;
   menu: DictionaryProps["menu"];
   lang: string;
+  ModalBooking?: boolean;
+  buttonTitle?: DictionaryProps["button"];
 }
 
 export interface ResortProps {
@@ -133,6 +135,9 @@ export interface SightCardprops {
 export interface ButtonProps {
   text: DictionaryProps["button"];
   openModal: MouseEventHandler<HTMLDivElement>;
+  width?: number;
+  height?: number;
+  textsize?: string;
 }
 
 export interface HotelProps {

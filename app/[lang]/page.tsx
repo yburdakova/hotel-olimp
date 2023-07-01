@@ -19,6 +19,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         subtitle={dictionary.heroComponent.resortName}
         menu={dictionary.menu}
         lang={lang}
+        buttonTitle={dictionary.button}
       />
       <Resort 
         title={dictionary.resortComponent.title} 
@@ -57,11 +58,11 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           menu={dictionary.menu}
           lang={lang}
         />
-        {/* <Link href="#top">
+        <Link href="#top">
           <div className="anchor">
             <Image src={trLogo} alt="logo" className='w-[100%]'/>
           </div>
-        </Link> */}
+        </Link>
         
     </div>
   )
