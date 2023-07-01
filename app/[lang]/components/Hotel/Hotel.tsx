@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {MdRestaurant, MdLocalAirport, MdAvTimer} from 'react-icons/md'
 import {FaUmbrellaBeach, FaWifi, FaShower} from 'react-icons/fa'
 import {LuParkingCircle} from 'react-icons/lu';
-import styles from './hotel.module.css';
+import styles from './Hotel.module.css';
 import { star, hotel } from '@/public';
 import { Button, ModalBooking} from '../'
 import { HotelProps } from '@/constants/interfaces';

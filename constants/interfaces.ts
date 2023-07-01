@@ -134,7 +134,7 @@ export interface SightCardprops {
 
 export interface ButtonProps {
   text: DictionaryProps["button"];
-  openModal: MouseEventHandler<HTMLDivElement>;
+  openModal?: MouseEventHandler<HTMLDivElement>;
   width?: number;
   height?: number;
   textsize?: string;

@@ -1,6 +1,6 @@
 "use client"
 import React, {useState, useEffect} from 'react';
-import styles from './booking.module.css';
+import styles from './Booking.module.css';
 import { Button, ModalBooking } from '../'
 
 function Booking({buttonTitle}:any) {

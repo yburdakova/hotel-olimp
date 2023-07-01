@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { room1, room2, room3, wave } from '@/public';
 import { Room } from '../'
-import styles from './rooms.module.css'
+import styles from './Rooms.module.css'
 import { RoomsProps } from '@/constants/interfaces';
 
 function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: RoomsProps) {

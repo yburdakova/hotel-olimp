@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import styles from './slider.module.css';
+import styles from './Slider.module.css';
 
 
 const Slider = ({ images }: any) => {

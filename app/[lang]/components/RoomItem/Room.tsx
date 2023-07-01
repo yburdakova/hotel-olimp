@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './room.module.css';
+import styles from './Room.module.css';
 import { Button } from '../';
 
 import { RoomItemProps } from '@/constants/interfaces';
@@ -22,7 +22,7 @@ function Room({  title, image, price, beds, facilities, facilitiesList, buttonTi
                 </div>
                 <a href="https://cloud.shelter.ru/hotels/HotelOlimp" target='_blank'>
                 <div className={styles.button_container}>
-                    <Button text={buttonTitle}/>
+                    <Button text={buttonTitle} />
                 </div>
                 </a>
             </div>

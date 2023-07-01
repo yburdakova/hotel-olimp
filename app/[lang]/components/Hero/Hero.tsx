@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
-import styles from './hero.module.css'
+import styles from './Hero.module.css'
 
 import { resort_bg } from '@/public';
 import { Slider, Header, Booking } from '..';

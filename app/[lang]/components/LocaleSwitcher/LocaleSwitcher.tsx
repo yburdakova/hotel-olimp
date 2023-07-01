@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-import styles from './localeSwitcher.module.css';
+import styles from './LocaleSwitcher.module.css';
 import { LocaleSwitcherProps } from '@/constants/interfaces';
 
 export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
