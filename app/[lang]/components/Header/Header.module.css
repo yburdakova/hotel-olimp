@@ -165,3 +165,12 @@
     padding: 0 10px;
 }
 }
+@media(max-width:410px){
+  .logo_title{
+    font-size: 12px;
+  }
+  .container{
+    width: 100%;
+    padding: 0 5px;
+}
+}
