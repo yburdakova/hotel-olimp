@@ -1,4 +1,22 @@
-
+.lang_item_falg{
+  transition: all 0.3s ease 0s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.flag{
+  
+  transition: all 0.3s ease 0s;
+  border-radius: 5px;
+  display: flex;
+  border: 0.5px solid #2D70B2;
+  width: 38px;
+  height: 29px;
+}
+/* text-3xl border */
+.flag:hover{
+  transform: translateY(-10px);
+}
 .lang_item{
   font-size: 22px;
   color: var(--primary-color);
@@ -20,7 +38,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 .lang_item:before{
   content: '';
@@ -42,5 +60,11 @@
 @media (max-width: 768px){
   .lang_item{
     padding-right: 5px;
+  }
+  .flag:hover{
+    transform: none;
+  }
+  .lang_item_falg{
+    padding: 5px;
   }
 }

@@ -128,6 +128,8 @@ export interface ResortProps {
 export interface LocaleSwitcherProps {
   lang: string;
   row: boolean;
+  flag?: boolean;
+  word?: boolean;
 }
 
 export interface SightCardprops {
@@ -136,7 +138,8 @@ export interface SightCardprops {
   description: string, 
   image: StaticImageData, 
   active: number, 
-  handleClick: (arg0: number)=> void
+  handleClick: (arg0: number)=> void,
+  link: string
 }
 
 export interface ButtonProps {

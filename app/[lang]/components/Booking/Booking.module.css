@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #2D71B2;
-    border-radius: 30px;
     margin-top: -40px;
-    background-color: white;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    border-radius: 30px;
+    border-bottom: 2px solid #26323d;
+    background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 .container{
     display: flex;

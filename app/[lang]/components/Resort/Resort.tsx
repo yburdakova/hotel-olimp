@@ -12,38 +12,43 @@ function Resort({ title, text, cards }: ResortProps) {
         {
             title: cards.card1.title,
             description: cards.card1.description,
-            image: game_park
+            image: game_park,
+            link:'https://www.tripadvisor.com/Attraction_Review-g1598756-d8756182-Reviews-Amusement_Park_Tsitsinatela-Kobuleti_Adjara_Region.html'
         },
         {
             title: cards.card2.title,
             description: cards.card2.description,
-            image: arena
+            image: arena,
+            link: 'https://www.tripadvisor.com/Attraction_Review-g12595476-d10805540-Reviews-Black_Sea_Arena-Shekvetili_Guria_Region.html'
         },
         {
             title: cards.card3.title,
             description: cards.card3.description,
-            image: dendropark
+            image: dendropark,
+            link: 'https://www.tripadvisor.com/Attraction_Review-g6959029-d24179841-Reviews-Shekvetili_Dendrological_Park-Shekhvetili_Guria_Region.html'
         },
         {
             title: cards.card4.title,
             description: cards.card4.description,
-            image: music_park
+            image: music_park,
+            link:'https://www.tripadvisor.com/Attraction_Review-g12595476-d21242672-Reviews-Musicians_Park-Shekvetili_Guria_Region.html'
         },
         {
             title: cards.card5.title,
             description: cards.card5.description,
-            image: botanicgarden
+            image: botanicgarden,
+            link:'https://www.tripadvisor.com/Attraction_Review-g297576-d1085317-Reviews-Batumi_Botanical_Gardens-Batumi_Adjara_Region.html'
         }
     ];
 
     const [active, setActive] = useState(1);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActive((prevActive) => (prevActive >= 4 ? 0 : prevActive + 1));
-        }, 4000);
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setActive((prevActive) => (prevActive >= 4 ? 0 : prevActive + 1));
+    //     }, 7000);
+    //     return () => clearInterval(interval);
+    // }, []);
     
     return (
         <div className="mt-6 component" id="resort">
@@ -52,7 +57,7 @@ function Resort({ title, text, cards }: ResortProps) {
                     {title}
                 </div>
                     
-                <div className='w-[100%] lg:w-[50%]'>
+                <div className='w-[100%] lg:w-[58%]'>
                     <div className="mt-10 component_text">{text}</div>
                 </div>
 
@@ -66,7 +71,8 @@ function Resort({ title, text, cards }: ResortProps) {
                             description={card.description}
                             image={card.image}
                             active={active}
-                            handleClick={setActive} />
+                            handleClick={setActive} 
+                            link={card.link}/>
                     )}
                 </div>
             </div>

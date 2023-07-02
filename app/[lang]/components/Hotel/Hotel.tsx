@@ -33,10 +33,7 @@ function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps
     
 
 const serviseItems = [
-    {
-        icon: <MdAvTimer/>,
-        text: servises.servise1
-    },
+
     {
         icon: <MdRestaurant/>,
         text: servises.servise2
@@ -56,10 +53,6 @@ const serviseItems = [
     {
         icon: <FaShower/>,
         text: servises.servise6
-    },
-    {
-        icon: <MdLocalAirport/>,
-        text: servises.servise7
     }
     
 ]
@@ -93,15 +86,13 @@ const serviseItems = [
                                 </div>
                             )}
                         </div>
-                        {/* <button onClick={handleOpenPopup}>Open Popup</button> */}
-                        {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}
                         <div className={styles.button_container}>
                             <Button text={buttonTitle} openModal={handleOpenPopup} textsize='3xl'/>
                         </div>
                     </div>
                 </div>
             </div>
-            
+            {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}
         </div>
     )
 }

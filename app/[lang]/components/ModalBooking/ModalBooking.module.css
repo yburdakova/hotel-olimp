@@ -1,6 +1,7 @@
 
   .open {
     display: flex;
+    position: relative;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -10,7 +11,7 @@
     background-color: rgba(25, 68, 112, 0.8);
     justify-content: center;
     align-items: center;
-    z-index: 100008;
+    z-index: 1000008;
   }
   .title {
     font-size: 24px;

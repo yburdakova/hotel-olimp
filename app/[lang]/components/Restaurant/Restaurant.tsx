@@ -67,10 +67,10 @@ function Restaurant( { dictionary }: RestaurantProps) {
                     {restaurantItems.map( (item, index)  => 
                         <a href={item.url} target="_blank" key={`link-${index}`}>
                             <div className={`${styles.restaurant_item} relative overflow-hidden rounded-3xl `}>
-                                <div className={`${styles.item_image} relative flex `}>
+                                <div className={`${styles.item_image} relative flex  overflow-hidden `}>
                                     <div className='w-[100%] h-[100%] bg-gray-600 opacity-50 absolute'/>
                                     <Image src={item.image} alt="dish-image" className='h-[100%] w-[100%]'/>
-                                    <div className="w-[100%] h-[100%] text-3xl text-white absolute z-10 flex justify-center items-center p-8 text-center">
+                                    <div className="w-[100%] h-[100%] text-3xl font-semibold text-white absolute z-10 flex justify-center items-center p-8 text-center">
                                         {item.name}
                                     </div>
                                 </div>

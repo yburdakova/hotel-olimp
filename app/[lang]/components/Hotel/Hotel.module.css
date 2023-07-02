@@ -3,8 +3,8 @@
     margin-right: min(max(10px, 1vw), 60px)
 }
 .hotel_star{
-    width: min(max(16px, 4vw), 60px);
-    height: min(max(16px, 4vw), 60px);
+    width: min(max(16px, 4vw), 50px);
+    height: min(max(16px, 4vw), 50px);
     margin-right: min(max(10px, 1vw), 20px)
 }
 .hotel_star:last-child{
@@ -19,9 +19,6 @@
     width: min(max(400px, 40vw), 600px);
     overflow: hidden;
     border-radius: 50px;
-    border: 2px solid #2D71B2;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
 }
 .hotel_img{
     object-fit: cover;
@@ -37,11 +34,9 @@
     margin-top: 20px;
 }
 .button_container{
+    margin-top: 20px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding-right: 30px; 
-    margin-top: 15px;
 }
 
 @media (max-width: 1024px) {

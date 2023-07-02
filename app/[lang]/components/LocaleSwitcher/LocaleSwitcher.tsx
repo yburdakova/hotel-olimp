@@ -2,11 +2,12 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 import styles from './LocaleSwitcher.module.css';
 import { LocaleSwitcherProps } from '@/constants/interfaces';
 
-export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
+export default function LocaleSwitcher({ lang, row, flag }: LocaleSwitcherProps) {
 
   const pathName = usePathname()
   const redirectedPathName = (locale: string) => {
@@ -28,11 +29,23 @@ export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
   return (
     <div>
       { isLang &&
-        <div className={`flex justify-between first:pl-0 last:pr-0  ${row? "lg:flex-row": "lg:flex-col"} flex-col` }>
+        <div className={`flex justify-around first:pl-0 last:pr-0  ${row? "lg:flex-row": "lg:flex-col"} flex-col w-[120px]` }>
           {languageLinks.map(link =>
-            <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
-              {link == 'en' ? "ENG" : link == 'ka' ? "GEO" : "РУС"}
+          flag ?
+            <Link key={link} href={redirectedPathName(link)} className={styles.lang_item_falg}>
+              {link == 'en' ? 
+                <span className={`${styles.flag}  fi fi-gb`}></span> 
+              : link == 'ka' ? 
+                <span className={`${styles.flag} text-3xl border fi fi-ge`}></span> 
+              : <span className={`${styles.flag} text-3xl border fi fi-ru`}></span>}
             </Link>
+          : <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
+              {link == 'en' ? 
+                "English"
+              : link == 'ka' ? 
+                "ქართული"
+              : "Русский"}
+          </Link> 
           )}
         </div>
     }
@@ -40,6 +53,13 @@ export default function LocaleSwitcher({ lang, row }: LocaleSwitcherProps) {
   )
 }
 
+{/* <Link key={link} href={redirectedPathName(link)} className={styles.lang_item}>
+{link == 'en' ? 
+  <span className="text-3xl border fi fi-gb"></span> 
+: link == 'ka' ? 
+  <span className="text-3xl border fi fi-ge"></span> 
+: <span className="text-3xl border fi fi-ru"></span>}
+</Link> */}
 // Variant 2 - custom selection 
 
   // import { i18n } from '../../../../i18n-config';

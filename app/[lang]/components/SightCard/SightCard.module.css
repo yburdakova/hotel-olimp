@@ -1,21 +1,21 @@
 /* card */
 .sightcard{
   width: 180px;
-  height: 480px;
+  height: 440px;
   position: relative;
   border-radius: 50px;
   transition: all 1s ease 0s;
   transform-origin: 0 100%;
   transition: all 1s ease 0s;
+  overflow: hidden;
 }
+
 .sightcard:hover, .activesightcard:hover{
   cursor: pointer;
 }
 .sightcard_text{
   position: absolute;
   z-index: 5;
-  width: 100%;
-  height: 100%;
   transform: rotate(-90deg);
   transform-origin: 0 0;
   top: 85%;
@@ -23,60 +23,96 @@
   transition: all 1s ease 0s;
 }
 .sightcard_title{
-  font-size: min(max(16px, 5vw), 36px);
+  font-size: min(max(16px, 5vw), 30px);
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: bold;
   transition: all 1s ease 0s;
 }
 .card_description{
   opacity: 0;
+  transition: all 1s ease 0.3s;
 }
 
 /* active card */
 .activesightcard {
   width: 630px;
-  height: 480px;
+  height: 440px;
   position: relative;
   border-radius: 50px;
   transition: all 1s ease 0s;
   transform-origin: 0 100%;
-  
+  display: flex;
 }
-
+.pod{
+  width: 100%;
+  height: 110px;
+  background-color:#084b78;
+  align-self: flex-end;
+  border-radius: 0px 0px 50px 50px;
+  opacity: 0.7;
+  transition: all 0.3s ease 0s;
+}
+.activesightcard_description{
+  z-index: 5;
+  position: absolute;
+  font-size: min(max(16px, 4vw), 20px);
+  top: 340px;
+  left: 10%;
+  right: 10%;
+  color: #fff;
+  margin-bottom: 2rem;
+  opacity: 1;
+  transition: all 1s ease 0.3s;
+}
+.arrow{
+  display: flex;
+  position: absolute;
+  z-index: 5;
+  bottom: 20px;
+  right: 80px;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  transition: all 1s ease 0.3s;
+}
+.activesight_arrow{
+  display: flex;
+  position: absolute;
+  z-index: 5;
+  bottom: 20px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  transition: all 1s ease 0.3s;
+}
+.arrow_img{
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+}
+.arrow_img:hover{
+  -webkit-transform: rotateZ(27deg) scale(1.1);
+  -ms-transform: rotate(27deg) scale(1.1);
+  transform: rotateZ(27deg) scale(1.1);
+}
 .activesightcard_text{
   position: absolute;
   z-index: 5;
   transform: rotate(0deg);
   transform-origin: 0 0;
-  top: 85%;
+  top: 374px;
   left: 10%;
   transition: all 1s ease 0s;
 }
 
 .activesightcard_title{
-  font-size: min(max(16px, 5vw), 36px);
+  font-size: min(max(16px, 5vw), 30px);
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(6, 6, 10), 0 0 0.2em rgb(0, 0, 0);
   font-weight: bold;
   transition: all 1s ease 0s;
-}
-
-.activesightcard_description{
-  position: absolute;
-  font-size: min(max(16px, 4vw), 22px);
-  top: 10%;
-  left: 10%;
-  right: 10%;
-  opacity: 1;
-  color: #fff;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(6, 6, 10), 0 0 0.2em rgb(0, 0, 0);
-  transition: all 1s ease 0.3s;
-
-  
 }
 .sightcard_img{
   height: 100%;
@@ -89,7 +125,7 @@
   border-radius: 50px;
 }
 .sightcard_glassmorphism{
-  background-color: #3F9EDE;
+  background-color: #2d74a2;
   border-radius: 50px;
   width: 100%;
   height: 100%;
@@ -129,6 +165,10 @@
     top: 85%;
     left: 10%;
   }
-
+  .activesightcard_description{
+    top: 590px;
+    padding-right: 60px;
+    padding-top: 5px;
+  }
 
 }

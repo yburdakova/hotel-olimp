@@ -46,7 +46,7 @@ function Header( {title, subtitle, menu, lang }: HeaderProps) {
                 <div className={styles.menu_block}>
                     <Link href="#restaurant" className={styles.menu_item}>{menu.restaurant}</Link>
                     <Link  href="#contacts"className={styles.menu_item}>{menu.contacts}</Link>
-                    <LocaleSwitcher lang={lang} row/>
+                    <LocaleSwitcher lang={lang} row flag/>
                 </div>
             </div>
             </div>

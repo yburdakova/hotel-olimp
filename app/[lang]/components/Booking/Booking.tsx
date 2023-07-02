@@ -9,9 +9,9 @@ function Booking({buttonTitle, guestsDictionary}:any) {
     const [selectedDate, setSelectedDate] = useState(currentDate);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-    const handleDateChange = (e) => {
+    const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedDate(e.target.value);
-      };
+    };
     
     const handleOpenPopup = () => {
         setIsPopupOpen(true);

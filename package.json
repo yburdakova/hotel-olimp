@@ -16,6 +16,7 @@
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
+    "flag-icons": "^6.7.0",
     "framer-motion": "^10.12.17",
     "last": "^1.1.0",
     "negotiator": "^0.6.3",

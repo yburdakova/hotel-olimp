@@ -14,6 +14,7 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Currency from './Currency/Currency';
 import ModalBooking from './ModalBooking/ModalBooking';
+import Anchor from './Anchor/Anchor'
 
 
 
@@ -33,5 +34,6 @@ export {
     OlimpMap,
     Footer,
     Currency,
-    ModalBooking
+    ModalBooking,
+    Anchor
 }

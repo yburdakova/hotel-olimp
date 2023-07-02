@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
-import { trLogo } from '@/public';
+import { home } from '@/public';
 import './globals.css';
 
 
@@ -61,7 +61,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         />
         <Link href="#top">
           <div className="anchor">
-            <Image src={trLogo} alt="logo" className='w-[100%]'/>
+            <Image src={home} alt="logo" className='w-[100%]'/>
           </div>
         </Link>
         
