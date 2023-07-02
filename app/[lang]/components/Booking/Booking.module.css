@@ -36,4 +36,7 @@
     .container{
         flex-direction: column;
     }
+    .box{
+        margin-top: -110px;
+    }
 }

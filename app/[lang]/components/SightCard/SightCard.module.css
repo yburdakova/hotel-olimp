@@ -167,8 +167,17 @@
   }
   .activesightcard_description{
     top: 590px;
-    padding-right: 60px;
+    padding-right: 40px;
     padding-top: 5px;
   }
-
+  .activesight_arrow{
+    right: 20px;
+  }
 }
+
+@media(max-width: 410px){
+  .activesightcard_description{
+    font-size: 12px;
+  }
+}
+
