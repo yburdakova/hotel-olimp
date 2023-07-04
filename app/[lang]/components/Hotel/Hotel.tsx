@@ -66,7 +66,7 @@ function Hotel({ title, info, servisesTitle, servises, buttonTitle }: HotelProps
     
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [activeInfo, setActiveInfo] = useState(hotelInfo[0]);
-    const galleryRef = useRef(null);
+    const galleryRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
     const slideWidth = 208;
 

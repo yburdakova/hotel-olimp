@@ -56,10 +56,15 @@ export interface DictionaryProps {
   hotelComponent :{
     title : string;
     text : string;
-    info:{
-      info1 : string;
-      info2 : string;
-    }
+    info: {
+      info1: string;
+      info2: string;
+      info3: string;
+      info4: string;
+      info5: string;
+      info6: string;
+      info7: string;
+    },
     servisesTitle : string;
     servises : {
       servise1 : string;
