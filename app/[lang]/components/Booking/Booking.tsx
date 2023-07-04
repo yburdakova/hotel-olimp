@@ -59,11 +59,11 @@ function Booking({buttonTitle, guestsDictionary}:any) {
                         <div className={styles.item}>
                             <label htmlFor="guests" className={styles.label}>{guestsDictionary["title"]}</label>
                             <select name="guests" className={styles.input}>
-                                <option>1 <span>{guestsDictionary["one"]}</span></option>
-                                <option>2 <span>{guestsDictionary["several"]}</span></option>
-                                <option>3 <span>{guestsDictionary["several"]}</span></option>
-                                <option>4 <span>{guestsDictionary["several"]}</span></option>
-                                <option>5 <span>{guestsDictionary["many"]}</span></option>
+                                <option>1 {guestsDictionary["one"]}</option>
+                                <option>2 {guestsDictionary["several"]}</option>
+                                <option>3 {guestsDictionary["several"]}</option>
+                                <option>4 {guestsDictionary["several"]}</option>
+                                <option>5 {guestsDictionary["many"]}</option>
                             </select>
                         </div>
                         {isPopupOpen && <ModalBooking isOpen={isPopupOpen} onClose={handleClosePopup} src='https://olimp.burdakova.com/'/>}

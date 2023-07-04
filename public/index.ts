@@ -2,9 +2,7 @@ import resort_bg from './assets/images/resort_bg.png';
 import logo from './assets/images/logo.jpg';
 import trLogo from './assets/images/logo-wbg.png'
 import star from './assets/images/star.png';
-import hotel from './assets/images/hotel-olimp.jpeg'
 import wave from './assets/images/background.svg'
-import footerwave from './assets/images/wave-footer.png'
 import wave02 from './assets/images/wave02.svg'
 
 //slider
@@ -22,6 +20,15 @@ import arena from './assets/images/arena.jpeg';
 import dendropark from './assets/images/dendropark.jpeg';
 import music_park from './assets/images/music-park.jpg';
 import botanicgarden from './assets/images/botanic2.jpeg'
+
+//hotel info
+import hotel from './assets/images/hotel-olimp.jpeg';
+import pool from './assets/images/pool.jpeg';
+import pool2 from './assets/images/pool2.png';
+import pool3 from './assets/images/pool3.jpg';
+import playgroung from './assets/images/playground.jpeg';
+import territory from './assets/images/territory.png';
+import territory2 from './assets/images/territory2.jpg';
 
 //rooms
 import room1 from './assets/images/room1.png';
@@ -52,12 +59,27 @@ import geoflag from './assets/images/geoflag.png';
 import rusflag from './assets/images/ruflag.png';
 import euroflag from './assets/images/euroflag.png';
 
+//menu
+import salads_en from './assets/images/menu/salads-en.png';
+import salads_ka from './assets/images/menu//salads-ka.png';
+import salads_ru from './assets/images/menu/salads-ru.png';
+
 export {
     logo,
     trLogo,
     star,
     hotel,
+    pool,
+    pool2,
+    pool3,
+    playgroung,
+    territory,
+    territory2,
 
+    salads_en,
+    salads_ka,
+    salads_ru,
+    
     resort_bg,
     game_park,
     arena,
@@ -79,7 +101,6 @@ export {
 
     wave,
     wave02,
-    footerwave,
 
     alcohol,
     coffe,

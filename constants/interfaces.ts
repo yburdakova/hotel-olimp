@@ -54,17 +54,21 @@ export interface DictionaryProps {
     }
   },
   hotelComponent :{
-    title :  string;
-    text :  string;
+    title : string;
+    text : string;
+    info:{
+      info1 : string;
+      info2 : string;
+    }
     servisesTitle : string;
     servises : {
       servise1 : string;
-      servise2 :  string;
-      servise3 :  string;
+      servise2 : string;
+      servise3 : string;
       servise4 : string;
-      servise5 :  string;
-      servise6 :  string;
-      servise7 :  string;
+      servise5 : string;
+      servise6 : string;
+      servise7 : string;
     }
   },
   roomsComponent :{
@@ -152,14 +156,15 @@ export interface ButtonProps {
 
 export interface HotelProps {
   title: DictionaryProps["hotelComponent"]['title'];
-  text: DictionaryProps["hotelComponent"]['text'];
+  info: DictionaryProps["hotelComponent"]['info'];
   servisesTitle: DictionaryProps["hotelComponent"]["servisesTitle"];
   servises: DictionaryProps["hotelComponent"]["servises"];
   buttonTitle: DictionaryProps["button"]
 }
 
 export interface RestaurantProps {
-  dictionary: DictionaryProps["restaurant"]
+  dictionary: DictionaryProps["restaurant"];
+  lang: string
 }
 
 export interface SocialsProps {
@@ -219,4 +224,10 @@ export interface CurrencyInfoProps {
   validFromDate?: string;
   image?: StaticImageData,
   filter?: CurrencyInfoProps | ((prevState: CurrencyInfoProps | null) => CurrencyInfoProps | null)
+}
+
+export interface MenuItem {
+  name: string;
+  image?: StaticImageData,
+  url: StaticImageData,
 }

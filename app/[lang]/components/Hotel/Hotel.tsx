@@ -1,16 +1,74 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import {MdRestaurant, MdLocalAirport, MdAvTimer} from 'react-icons/md'
+import {MdRestaurant, MdLocalAirport, MdAvTimer, MdPool} from 'react-icons/md'
 import {FaUmbrellaBeach, FaWifi, FaShower} from 'react-icons/fa'
 import {LuParkingCircle} from 'react-icons/lu';
 import styles from './Hotel.module.css';
-import { star, hotel } from '@/public';
+import { star, hotel, pool, pool2, pool3, playgroung, territory, territory2 } from '@/public';
 import { Button, ModalBooking} from '../'
 import { HotelProps } from '@/constants/interfaces';
 
-function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps) {
+function Hotel({ title, info, servisesTitle, servises, buttonTitle }: HotelProps) {
+
+    const serviseItems = [
+        {
+            icon: <MdRestaurant/>,
+            text: servises.servise2
+        },
+        {
+            icon: <FaUmbrellaBeach/>,
+            text: servises.servise3
+        },
+        {
+            icon: <FaWifi/>,
+            text: servises.servise4
+        },
+        {
+            icon: <LuParkingCircle/>,
+            text: servises.servise5
+        },
+        {
+            icon: <FaShower/>,
+            text: servises.servise6
+        }
+    ]
+    const hotelInfo = [
+        {
+            img: hotel,
+            text: info.info1
+        },
+        {
+            img: pool,
+            text: info.info2
+        },
+        {
+            img: pool2,
+            text: info.info3
+        },
+        {
+            img: pool3,
+            text: info.info4
+        },
+        {
+            img: playgroung,
+            text: info.info5
+        },
+        {
+            img: territory,
+            text: info.info6
+        },
+        {
+            img: territory2,
+            text: info.info7
+        }
+    ]
+    
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [activeInfo, setActiveInfo] = useState(hotelInfo[0]);
+    const galleryRef = useRef(null);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const slideWidth = 208;
 
     const handleOpenPopup = () => {
         setIsPopupOpen(true);
@@ -18,6 +76,37 @@ function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps
 
     const handleClosePopup = () => {
         setIsPopupOpen(false);
+    };
+
+    const handleGetInfoItem = (index:number) => {
+        setActiveInfo(hotelInfo[index]);
+};
+
+    const handleScroll = (direction: string) => {
+        console.log(direction);
+        if (!galleryRef.current) return;
+        const galleryWidth = galleryRef.current.offsetWidth;
+        const maxScrollPosition = galleryRef.current.scrollWidth - galleryWidth;
+        const slideCount = Math.ceil(maxScrollPosition / slideWidth) + 1;
+    
+        let newPosition;
+        if (direction === 'left') {
+            newPosition = scrollPosition - slideWidth;
+            if (newPosition < 0) {
+                newPosition = maxScrollPosition - slideWidth;
+            }
+        } else {
+            newPosition = scrollPosition + slideWidth;
+            if (newPosition >= maxScrollPosition) {
+                newPosition = 0;
+            }
+        }
+    
+        galleryRef.current.scrollTo({
+            left: newPosition,
+            behavior: 'smooth',
+        });
+        setScrollPosition(newPosition);
     };
 
     useEffect(() => {
@@ -32,30 +121,6 @@ function Hotel({ title, text, servisesTitle, servises, buttonTitle }: HotelProps
     }, [isPopupOpen]);
     
 
-const serviseItems = [
-
-    {
-        icon: <MdRestaurant/>,
-        text: servises.servise2
-    },
-    {
-        icon: <FaUmbrellaBeach/>,
-        text: servises.servise3
-    },
-    {
-        icon: <FaWifi/>,
-        text: servises.servise4
-    },
-    {
-        icon: <LuParkingCircle/>,
-        text: servises.servise5
-    },
-    {
-        icon: <FaShower/>,
-        text: servises.servise6
-    }
-    
-]
 
     return (
         <div className="mt-20 component" id="hotel">
@@ -72,12 +137,27 @@ const serviseItems = [
                     <div className='line'></div>
                 </div>
                 <div className={styles.hotel_content}>
-                    <div className={styles.hotel_image}>
-                        <Image src={hotel} alt="hotel" className={styles.hotel_img}/>
+                    <div className={styles.photos}>
+                        <div className={styles.gallery}>
+                            <div className={styles.slider} ref={galleryRef}>
+                                {hotelInfo.map((item, index)=> 
+                                    <div className={styles.gallery_item} onClick={()=>handleGetInfoItem(index)} key={`slide-${index}`}>
+                                        <Image src={item.img} alt='info-preview' className={styles.gallery_img}/>
+                                    </div>
+                                )}
+                            </div>
+                            <button onClick={()=> {handleScroll('left')}} className={`${styles.button} left-2 rotate-180`}>&#10148;</button>
+                            <button onClick={()=> {handleScroll('right')}} className={`${styles.button} right-2`}>&#10148;</button>
+                        </div>
+                        {activeInfo&&
+                        <div className={styles.hotel_image}>
+                            <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img"></Image>
+                        </div>
+                        }
                     </div>
                     <div className={styles.hotel_info}>
-                        <div className="component_text">{text}</div>
-                        <div className="hotel_servises">
+                        <div className={styles.text}>{activeInfo.text}</div>
+                        <div className={styles.servises}>
                             <div className="mt-6 component_text bold">{servisesTitle}</div>
                             {serviseItems.map((servise, index) =>
                                 <div className={styles.servise_item} key={`servise-${index}`}>
@@ -85,9 +165,9 @@ const serviseItems = [
                                     <div className="ml-6 component_text">{servise.text}</div>
                                 </div>
                             )}
-                        </div>
-                        <div className={styles.button_container}>
+                            <div className={styles.button_container}>
                             <Button text={buttonTitle} openModal={handleOpenPopup} textsize='3xl'/>
+                            </div>
                         </div>
                     </div>
                 </div>

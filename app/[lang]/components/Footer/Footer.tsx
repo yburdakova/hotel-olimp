@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './Footer.module.css';
-import { trLogo, wave } from '@/public';
+import { trLogo, wave02 } from '@/public';
 import { LocaleSwitcher, Currency} from '../';
 import { FooterProps } from '@/constants/interfaces';
 
@@ -44,8 +44,8 @@ function Footer( {title, subtitle, menu, lang}: FooterProps) {
           </div>
         </div>
       </div>
-      <div className='w-[100%]'><Image src={wave} className='w-[100%]' alt="wave"/></div>
-        <div className="mb-5 text-sm text-gray-300 md:text-base developer"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
+      <div className='w-[100%] xl:mt-[-100px] mt-0'><Image src={wave02} className='w-[100%]' alt="wave"/></div>
+      <div className=" w-[80%] mb-5 xl:mt-[-20px] mt-0 text-sm text-gray-300 md:text-base"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
     </div>
   )
 }

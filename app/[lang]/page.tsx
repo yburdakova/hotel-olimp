@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
-import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer} from './components'
+import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer, Anchor} from './components'
 import { home } from '@/public';
 import './globals.css';
 
@@ -29,7 +29,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
       />
         <Hotel
           title={dictionary.hotelComponent.title} 
-          text={dictionary.hotelComponent.text}
+          info={dictionary.hotelComponent.info}
           servisesTitle={dictionary.hotelComponent.servisesTitle}
           servises={dictionary.hotelComponent.servises}
           buttonTitle={dictionary.button}
@@ -45,6 +45,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         />
         <Restaurant
           dictionary={dictionary.restaurant}
+          lang={lang}
         />
         <Socials 
           title={dictionary.socialsTitle}
@@ -59,11 +60,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           menu={dictionary.menu}
           lang={lang}
         />
-        <Link href="#top">
-          <div className="anchor">
-            <Image src={home} alt="logo" className='w-[100%]'/>
-          </div>
-        </Link>
+        <Anchor/>
         
     </div>
   )

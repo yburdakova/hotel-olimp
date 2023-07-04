@@ -22,7 +22,7 @@ function Hero({title, subtitle, menu, lang, buttonTitle, bookingDictionary }: He
 
                 <Slider images={sliderImages} />
 
-            <Booking buttonTitle={buttonTitle} guestsDictionary={bookingDictionary}/>
+            <Booking buttonTitle={buttonTitle} guestsDictionary={bookingDictionary} lang={lang}/>
             <div className={`${styles.resort_bg} `}>
                 <div >
                     <Image src={resort_bg} alt="resort" className={styles.resort_bg_image} />

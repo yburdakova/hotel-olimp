@@ -1,54 +1,84 @@
-import React from 'react';
+'use client'
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 
-import { alcohol, coffe, desert, garnish, maindish, salads, pasta, fromoven } from '@/public';
+import { alcohol, coffe, desert, garnish, maindish, salads, pasta, fromoven, salads_en, salads_ru, salads_ka } from '@/public';
 import styles from './Restaurant.module.css';
-import { RestaurantProps } from '@/constants/interfaces';
+import { RestaurantProps, MenuItem } from '@/constants/interfaces';
 
-function Restaurant( { dictionary }: RestaurantProps) {
+function Restaurant( { dictionary, lang }: RestaurantProps) {
 
     const restaurantItems = [
         {
             name: dictionary.alcohol,
             image: alcohol,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=8&lang=1"
+            url: lang=='en' ? salads_en :lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.coffe,
             image: coffe,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=9&lang=1"
+            url: lang=='en' ? salads_en :lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.desert,
             image:desert,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=1&lang=1"
+            url: lang=='en' ? salads_en :lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.garnish,
             image:garnish,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=2&lang=1"
+            url: lang=='en' ? salads_en :lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.maindish,
             image:maindish,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=3&lang=1"
+            url: lang=='en' ? salads_en :lang=='ka'? salads_ka : salads_ru
+
         },
         {
             name: dictionary.salads,
             image:salads,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=4&lang=1"
+            url: lang=='en' ? salads_en : lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.pasta,
             image:pasta,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=5&lang=1"
+            url: lang=='en' ? salads_en : lang=='ka'? salads_ka : salads_ru
         },
         {
             name: dictionary.fromoven,
             image:fromoven,
-            url: "https://hotelolimp.kovzy.com/qr-menu/shop?catId=6&lang=1"
+            url: lang=='en' ? salads_en : lang=='ka'? salads_ka : salads_ru
         }
     ]
+
+    const [indexMenu, setIndexMenu] = useState<number | null>(null);
+    const [menuItem, setMenuItem] = useState<MenuItem>({} as MenuItem);
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
+    
+    const getIndex = (index: number) => {
+        setIndexMenu(index);
+    };
+
+    useEffect(() => {
+        if (indexMenu !== null) {
+        setMenuItem(restaurantItems[indexMenu]);
+        }
+    }, [indexMenu]);
+
+useEffect(()=>{
+    console.log(menuItem)
+    setIsOpenMenu(true)
+},[menuItem])
+
+useEffect(()=>{
+    console.log(isOpenMenu)
+    
+},[isOpenMenu])
+const closeMenu=() => {
+    setIsOpenMenu(false)
+    setIndexMenu(null)
+}
 
     return (
         <div className='component' id="restaurant">
@@ -65,7 +95,7 @@ function Restaurant( { dictionary }: RestaurantProps) {
             <div className="component_container">
                 <div className="grid grid-cols-1 gap-6 my-16 items_container sm:grid-cols-2 lg:grid-cols-4" >
                     {restaurantItems.map( (item, index)  => 
-                        <a href={item.url} target="_blank" key={`link-${index}`}>
+                        <div key={`link-${index}`} onClick={()=>getIndex(index)}>
                             <div className={`${styles.restaurant_item} relative overflow-hidden rounded-3xl `}>
                                 <div className={`${styles.item_image} relative flex  overflow-hidden `}>
                                     <div className='w-[100%] h-[100%] bg-gray-600 opacity-50 absolute'/>
@@ -75,9 +105,20 @@ function Restaurant( { dictionary }: RestaurantProps) {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                            
+                        </div>
                     )}
                 </div>
+                {isOpenMenu && menuItem.url && (
+                    <div className={styles.open}>
+                        <div className={styles.menu_container}>
+                            <Image src={menuItem.url} alt={`menu-${menuItem.name}`} className={styles.menu_img} />
+                        </div>
+                        <button className={styles.button} onClick={closeMenu}>
+                            Close Menu
+                        </button>
+                    </div>
+                )}
             </div>
             </div>
         </div>
@@ -85,3 +126,4 @@ function Restaurant( { dictionary }: RestaurantProps) {
 }
 
 export default Restaurant
+

@@ -43,12 +43,12 @@ function Resort({ title, text, cards }: ResortProps) {
 
     const [active, setActive] = useState(1);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setActive((prevActive) => (prevActive >= 4 ? 0 : prevActive + 1));
-    //     }, 7000);
-    //     return () => clearInterval(interval);
-    // }, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActive((prevActive) => (prevActive >= 4 ? 0 : prevActive + 1));
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
     
     return (
         <div className="mt-6 component" id="resort">
