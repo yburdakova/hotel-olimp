@@ -83,7 +83,6 @@ function Hotel({ title, info, servisesTitle, servises, buttonTitle }: HotelProps
 };
 
     const handleScroll = (direction: string) => {
-        console.log(direction);
         if (!galleryRef.current) return;
         const galleryWidth = galleryRef.current.offsetWidth;
         const maxScrollPosition = galleryRef.current.scrollWidth - galleryWidth;
@@ -123,8 +122,8 @@ function Hotel({ title, info, servisesTitle, servises, buttonTitle }: HotelProps
 
 
     return (
-        <div className="mt-20 component" id="hotel">
-            <div className="mt-10 component_container">
+        <div className="mt-6 md:mt-20 component" id="hotel">
+            <div className="mt-2 md:mt-10 component_container">
                 <div className="flex items-center justify-center component_title">
                     <div className={styles.hotel_stars}>
                         <Image src={star} key='star-1' alt='star' className={styles.hotel_star}/>

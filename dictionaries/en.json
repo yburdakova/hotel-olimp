@@ -96,7 +96,7 @@
             }       
         }
     },
-    "restaurant":{
+    "restaurant": {
         "title": "Bar and restaurant",
         "alcohol": "Alcohol",
         "coffe": "Coffe",
@@ -104,8 +104,12 @@
         "garnish": "Garnish",
         "maindish": "Main dishes",
         "salads": "Salads",
-        "pasta": "Pasta",
+        "soups": "Soups",
         "fromoven": "Just from oven"
+    },
+    "socials": {
+        "follow": "Follow us on Instagram",
+        "button": "Load more"
     }
 }
 

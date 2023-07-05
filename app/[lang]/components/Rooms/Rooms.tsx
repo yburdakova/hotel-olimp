@@ -35,7 +35,7 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
     ];
 
     return (
-        <div className='mt-20 component' id="rooms">
+        <div className='mt-6 md:mt-20 component' id="rooms">
             <div className="component_container" >
                 <div className="flex items-center justify-center mt-10 component_title">
                     <div className='line'></div>

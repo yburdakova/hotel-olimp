@@ -55,7 +55,7 @@ body {
 .component_title{
   color: var(--primary-color);
   font-weight: 800;
-  font-size: min(max(26px, 4vw), 40px);;
+  font-size: min(max(26px, 4vw), 40px);
   text-transform: uppercase;
 }
 .component_text{

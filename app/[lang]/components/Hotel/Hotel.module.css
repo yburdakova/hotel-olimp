@@ -107,6 +107,7 @@
     .hotel_content{
         display: flex;
         flex-direction: column;
+        margin-top: 30px;
     }
     .photos{
         width: 100%;
@@ -124,5 +125,19 @@
     }
     .button_container{
         padding-right: 0px; 
+        justify-content: center;
+    }
+    .button{
+        display: none;
+    }
+    .hotel_image{
+        height: 360px;
+    }
+    .gallery{
+        height: 80px;
+    }
+    .gallery_item{
+        width: 120px;
+        margin-right: 10px;
     }
 }

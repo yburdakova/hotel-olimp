@@ -35,7 +35,6 @@ function Currency() {
 
     useEffect(() => {
         if (currencyData) {
-            console.log(currencyData);
             setLocalData(currencyData[0].currencies);
         }
     }, [currencyData]);
@@ -47,7 +46,6 @@ function Currency() {
             });
             setActualData(() => filteredArray); 
         }
-        console.log(actualData)
     }, [localData]);
 
 
@@ -55,11 +53,6 @@ function Currency() {
         const newValue = parseInt(e.target.value, 10);
         setValue(newValue);
     }
-
-    useEffect(() => {
-        console.log (value)
-        
-    }), [value]
 
     return (
         <div className={styles.container}>

@@ -1,10 +1,10 @@
 'use client'
 import React, { useRef } from 'react';
-
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { PiPhoneBold } from 'react-icons/pi';
 import { BsGeoAlt } from 'react-icons/bs';
 import { MdOutlineEmail } from 'react-icons/md';
+
 import { OlimpMapProps } from '@/constants/interfaces';
 
 
@@ -15,7 +15,7 @@ function OlimpMap({ lang, title }: OlimpMapProps) {
     const ymaps = useRef(null);
 
     return (
-        <div className='component' id="contacts">
+        <div className='mt-20 component' id="contacts">
             <div className="component_container">
                 <div className="title_continer">
                     <div className="flex items-center justify-center component_title">

@@ -14,7 +14,8 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Currency from './Currency/Currency';
 import ModalBooking from './ModalBooking/ModalBooking';
-import Anchor from './Anchor/Anchor'
+import Anchor from './Anchor/Anchor';
+import PostItem from './PostItem/PostItem';
 
 
 
@@ -35,5 +36,6 @@ export {
     Footer,
     Currency,
     ModalBooking,
-    Anchor
+    Anchor,
+    PostItem
 }

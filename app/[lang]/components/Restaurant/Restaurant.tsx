@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 
-import { alcohol, coffe, desert, garnish, maindish, salads, pasta, fromoven, salads_en, salads_ru, salads_ka } from '@/public';
+import { alcohol, coffe, desert, garnish, maindish, salads, pasta, fromoven, salads_en, salads_ru, salads_ka, soup } from '@/public';
 import styles from './Restaurant.module.css';
 import { RestaurantProps, MenuItem } from '@/constants/interfaces';
 
@@ -41,8 +41,8 @@ function Restaurant( { dictionary, lang }: RestaurantProps) {
             url: lang=='en' ? salads_en : lang=='ka'? salads_ka : salads_ru
         },
         {
-            name: dictionary.pasta,
-            image:pasta,
+            name: dictionary.soups,
+            image: soup,
             url: lang=='en' ? salads_en : lang=='ka'? salads_ka : salads_ru
         },
         {
@@ -67,23 +67,18 @@ function Restaurant( { dictionary, lang }: RestaurantProps) {
     }, [indexMenu]);
 
 useEffect(()=>{
-    console.log(menuItem)
     setIsOpenMenu(true)
 },[menuItem])
 
-useEffect(()=>{
-    console.log(isOpenMenu)
-    
-},[isOpenMenu])
 const closeMenu=() => {
     setIsOpenMenu(false)
     setIndexMenu(null)
 }
 
     return (
-        <div className='component' id="restaurant">
+        <div className='mt-6 component md:mt-20' id="restaurant">
             <div className="component_container">
-            <div className="px-8 mt-10 title_container">
+            <div className="px-8 mt-2 md:mt-10 title_container">
                 <div className="flex items-center justify-center component_title">
                     <div className="mx-3 text-center">{dictionary.title}</div>
                     <div className='dot'></div>
@@ -91,7 +86,7 @@ const closeMenu=() => {
                 </div>
             </div>
             </div>
-            <div className="bg-[#D0EBFF] w-[100%] mt-24 flex justify-center items-center">
+            <div className="bg-[#D0EBFF] w-[100%] md:mt-24 mt-10 flex justify-center items-center">
             <div className="component_container">
                 <div className="grid grid-cols-1 gap-6 my-16 items_container sm:grid-cols-2 lg:grid-cols-4" >
                     {restaurantItems.map( (item, index)  => 

@@ -8,9 +8,10 @@ import { LocaleSwitcher, Currency} from '../';
 import { FooterProps } from '@/constants/interfaces';
 
 function Footer( {title, subtitle, menu, lang}: FooterProps) {
+  
   return (
     <div className="component">
-      <div className="relative component_container">
+      <div className="relative component_container ">
         <div className="flex items-center justify-center mt-10 component_title">
             <div className='line'></div>
             <div className='dot'></div>
@@ -45,7 +46,7 @@ function Footer( {title, subtitle, menu, lang}: FooterProps) {
         </div>
       </div>
       <div className='w-[100%] xl:mt-[-100px] mt-0'><Image src={wave02} className='w-[100%]' alt="wave"/></div>
-      <div className=" w-[80%] mb-5 xl:mt-[-20px] mt-0 text-sm text-gray-300 md:text-base"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
+      <div className=" w-[80%] mb-5 xl:mt-[-20px] mt-3  text-xs text-gray-300 md:text-base"><a href="http://burdakova.com/" target='_blank'>Designed and developed by Yana Burdakova</a>, 2023</div>
     </div>
   )
 }

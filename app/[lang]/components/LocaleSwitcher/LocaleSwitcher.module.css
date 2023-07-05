@@ -59,7 +59,7 @@
 }
 @media (max-width: 768px){
   .lang_item{
-    padding-right: 5px;
+    padding-right: 20px;
   }
   .flag:hover{
     transform: none;

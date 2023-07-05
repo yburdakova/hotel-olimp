@@ -44,6 +44,7 @@ import maindish from './assets/images/maindish.jpg';
 import salads from './assets/images/salads.jpg';
 import pasta from './assets/images/pasta.jpg';
 import fromoven from './assets/images/fromoven.jpg';
+import soup from './assets/images/soup.jpeg'
 
 //socials icons
 import instagram from './assets/icons/insta-icon.svg';
@@ -110,6 +111,7 @@ export {
     salads,
     pasta,
     fromoven,
+    soup,
 
     instagram,
     telegram,

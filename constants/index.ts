@@ -25,12 +25,12 @@ export const socials = [
     {
         name: 'Telegram',
         image: telegram,
-        link: 'https://www.instagram.com/olimp_shekvetili/'
+        link: 'https://tele.click/Olimphotel'
     },
     {
         name: 'Facebook',
         image: facebook,
-        link: 'https://www.instagram.com/olimp_shekvetili/'
+        link: 'https://www.facebook.com/groups/1601253506790026'
     },
     {
         name: 'WhatsAppp',

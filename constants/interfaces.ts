@@ -108,8 +108,12 @@ export interface DictionaryProps {
     garnish :  string;
     maindish :  string;
     salads : string;
-    pasta :  string;
+    soups :  string;
     fromoven :  string;
+  },
+  socials: {
+    follow: string,
+    button: string
   }
 }
 
@@ -173,8 +177,22 @@ export interface RestaurantProps {
 }
 
 export interface SocialsProps {
-  title: DictionaryProps["menu"]["socials"]
+  title: DictionaryProps["menu"]["socials"];
+  button_text: DictionaryProps["socials"]["button"];
+  follow_text: DictionaryProps["socials"]["follow"]
 }
+
+export interface InstagramData {
+  id: string;
+  caption: string;
+  media_type: string;
+  media_url: string;
+  username: string;
+  timestamp: string;
+  permalink: string;
+  thumbnail_url?:  string
+}
+
 
 export interface FooterProps {
   title: string;

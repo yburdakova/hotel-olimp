@@ -49,6 +49,8 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         />
         <Socials 
           title={dictionary.socialsTitle}
+          follow_text={dictionary["socials"].follow}
+          button_text={dictionary["socials"].button}
         />
         <OlimpMap
           lang={lang}

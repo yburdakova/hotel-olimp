@@ -1,12 +1,75 @@
+'use client'
+import { useState, useEffect, useRef } from 'react';
 import Script from 'next/script';
 import React from 'react';
 import Image from 'next/image';
 
+import PostItem from '../PostItem/PostItem';
 import { socials } from '@/constants';
 import styles from './Socials.module.css';
-import { SocialsProps } from '@/constants/interfaces';
+import { SocialsProps, InstagramData } from '@/constants/interfaces';
 
-function Socials({ title }: SocialsProps) {
+
+function Socials({ title, follow_text, button_text }: SocialsProps) {
+    
+    
+    const [instagramData, setInstagramData] = useState<InstagramData[] | null>(null);
+    const [numberOflines, setNumberOflines] = useState(2);
+    const [isLoading, setIsLoading] = useState(true);
+    const elementRef = useRef<HTMLDivElement>(null);
+    const [heightInstagramLine, setHeightInstagramLine] = useState(0)
+    const [heightInstagramContainer, setHeightInstagramContainer] = useState(0)
+    const [screenWidth, setScreenWidth] = useState(0);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        setScreenWidth(window.innerWidth);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.BASE_URL}`;
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                setInstagramData(data.data);
+                setIsLoading(false);
+            } catch (error) {
+                console.error('Error fetching Instagram data:', error);
+                setIsLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (!isLoading && instagramData) {
+            console.log(instagramData);
+        }
+    }, [isLoading, instagramData]);
+    
+    useEffect(() => {
+        if (elementRef.current) {
+            const element = elementRef.current;
+            const rect = element.getBoundingClientRect();
+            setHeightInstagramLine(rect.height);
+        }
+    }, [isLoading, screenWidth]);
+    
+    useEffect(() => {
+        setHeightInstagramContainer (numberOflines*heightInstagramLine)
+    }, [numberOflines, screenWidth, heightInstagramLine])
+    
+    const addLine = () => {
+        setNumberOflines(numberOflines+1)
+    }
+    
     return (
         <div className='relative mt-20 component' id="socials">
             <div className="mt-10 component_container">
@@ -25,9 +88,37 @@ function Socials({ title }: SocialsProps) {
                     <div className="mx-3 text-center">{title}</div>
                 </div>
             </div>
-            <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></Script>
-            <div className="elfsight-app-9de58e30-bda8-4008-807c-ffa5e3c40ad5"></div>
-            <div className='panel absolute w-[100%] h-[60px] bg-white z-[100000] bottom-0'></div>
+            {isLoading 
+            ?  <p>Loading...</p>
+            :  <div className={styles.instagram_container}>
+                    <div className={styles.instagram_title_container}>
+                        <div className={styles.instagram_title}>
+                            {follow_text}
+                        </div>
+                    </div>
+                    <div className={styles.feed_wrapper} style={{height: heightInstagramContainer}}>
+                        <div className={styles.feed_container}>
+                            {instagramData?.map(item => 
+                                <div ref={elementRef} className={styles.post_container} key={item.id} >
+                                    <PostItem
+                                        id={item.id}
+                                        caption={item.caption}
+                                        type={item.media_type}
+                                        img={item.media_type == "VIDEO" ? item.thumbnail_url : item.media_url}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div className={styles.button_container}>
+                        <div className={styles.button}>
+                            <button className={styles.button_title} onClick={addLine}>
+                                {button_text}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }  
         </div>
     )
 }
