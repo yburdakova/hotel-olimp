@@ -1,10 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer, Anchor} from './components'
-import { home } from '@/public';
 import './globals.css';
 
 

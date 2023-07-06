@@ -105,14 +105,17 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
                                         caption={item.caption}
                                         type={item.media_type}
                                         img={item.media_type == "VIDEO" ? item.thumbnail_url : item.media_url}
+                                        url={item.media_url}
+                                        username={item.username}
+                                        date={item.timestamp}
                                     />
                                 </div>
                             )}
                         </div>
                     </div>
                     <div className={styles.button_container}>
-                        <div className={styles.button}>
-                            <button className={styles.button_title} onClick={addLine}>
+                        <div className={styles.button} onClick={addLine}>
+                            <button className={styles.button_title} >
                                 {button_text}
                             </button>
                         </div>

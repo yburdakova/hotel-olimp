@@ -13,7 +13,7 @@ export default function Root({
 }) {
   return (
     <html lang={params.lang}>
-      <body>{children}</body>
+      <body style={{margin:0, padding:0}}>{children}</body>
     </html>
   )
 }
