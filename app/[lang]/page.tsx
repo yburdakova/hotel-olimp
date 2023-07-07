@@ -2,12 +2,16 @@
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer, Anchor} from './components'
+import Hotel2 from './components/Hotel2/Hotel2'
 import './globals.css';
+import { getHotelCards } from '@/lib/mongo/hotelcards';
+
 
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
   
   const dictionary = await getDictionary(lang)
+
 
   return (
     <div className='relative'>
@@ -25,6 +29,14 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         cards={dictionary.resortComponent.sights}
       />
         <Hotel
+          title={dictionary.hotelComponent.title} 
+          info={dictionary.hotelComponent.info}
+          servisesTitle={dictionary.hotelComponent.servisesTitle}
+          servises={dictionary.hotelComponent.servises}
+          buttonTitle={dictionary.button}
+        />
+        <Hotel2
+          lang={lang}
           title={dictionary.hotelComponent.title} 
           info={dictionary.hotelComponent.info}
           servisesTitle={dictionary.hotelComponent.servisesTitle}

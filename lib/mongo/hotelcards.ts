@@ -20,7 +20,7 @@ async function init() {
     await init()
 })()
 
-//HOTEL CARDS
+//GET HOTEL CARDS
 
 export async function getHotelCards() {
     try {
@@ -37,3 +37,16 @@ export async function getHotelCards() {
         return { error: 'Falied to fetch hotelcards!'}
     }
 };
+
+// ADD NEW CARD
+
+export async function insertHotelCard(cardData:any) {
+    try {
+        if (!hotelcards) await init();
+        const result = await hotelcards.insertOne(cardData);
+        return result;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Failed to insert hotel card");
+}
+}

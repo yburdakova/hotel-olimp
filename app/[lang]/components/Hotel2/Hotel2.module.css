@@ -1,0 +1,143 @@
+.hotel_stars{
+    display: flex;
+    margin-right: min(max(10px, 1vw), 60px)
+}
+.hotel_star{
+    width: min(max(16px, 4vw), 50px);
+    height: min(max(16px, 4vw), 50px);
+    margin-right: min(max(10px, 1vw), 20px)
+}
+.hotel_star:last-child{
+    margin-right:0;
+}
+
+.hotel_content{
+    display: flex;
+    margin-top: 60px;
+}
+.photos{
+    width: 60%;
+}
+.gallery{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    height: 140px;
+    margin-bottom: 20px;
+}
+.slider{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.gallery_item{
+    flex-shrink: 0;
+    width: 190px;
+    height: 100%;
+    margin-right: 20px;
+}
+.gallery_item:hover{
+    cursor:pointer
+}
+.gallery_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.hotel_image{
+    display: flex;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+.hotel_img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 25%;
+    background-color:var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0.5;
+    color: white;
+    margin: 10px;
+    z-index: 10;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.button:hover{
+    opacity: 0.8;
+}
+
+.hotel_info{
+    width: 40%;
+    margin-left: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    font-size: min(max(16px, 4vw), 26px);
+    font-weight: normal;
+    line-height: 150%;
+    flex: 1;
+    align-self: flex-start;
+}
+.servises{
+}
+.servise_item{
+    display: flex;
+    margin-top: 10px;
+}
+.button_container{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .hotel_content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .photos{
+        width: 100%;
+    }
+    .slider{
+        overflow-x:auto;
+    }
+    .hotel_image{
+        width: 100%;
+    }
+    .hotel_info{
+        margin-top: 20px;
+        margin-left: 0px;
+        width: 100%;
+    }
+    .button_container{
+        padding-right: 0px; 
+        justify-content: center;
+    }
+    .button{
+        display: none;
+    }
+    .hotel_image{
+        height: 360px;
+    }
+    .gallery{
+        height: 80px;
+    }
+    .gallery_item{
+        width: 120px;
+        margin-right: 10px;
+    }
+}

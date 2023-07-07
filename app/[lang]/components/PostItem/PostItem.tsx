@@ -70,7 +70,7 @@ useEffect(() => {
     }
 
     return (
-        <div className="w-[100%]" onClick={openActive}>
+        <a className="w-[100%]" onClick={openActive} href={`https://www.instagram.com/olimp_shekvetili/`} target='_blank'>
             <div className={styles.container} onMouseEnter={showCaption} onMouseLeave={hideCaption}>
                 <div className={styles.media}>
                     <div className={styles.image_wrapper}>
@@ -89,42 +89,7 @@ useEffect(() => {
                     </div>
                 }
             </div>
-            { isActive && shapeImage &&
-                <div className={styles.open}>
-                    <div className={styles.active_container}>
-                        <div className={styles.username}>
-                            {username}
-                        </div>
-                        <div className="active_media">
-                            {type === "VIDEO" 
-                                ?   <div className={styles.active_video_container}>
-                                        <video controls autoPlay className={styles.active_video}>
-                                            <source src={url} type="video/mp4" />
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                :   <div className={shapeImage == 'vertical' 
-                                        ? styles.vertical_img_container
-                                        : shapeImage =='horizontal' ? styles.horizontal_img_container
-                                        : styles.square_img_container
-                                    }>
-                                        <Image src={url} alt="post" width={300} height={300} className={styles.active_img}/>
-                                    </div>
-                            }
-                        </div>
-                        <div className="">
-                            {formatedDate}
-                        </div>
-                        <div className={styles.active_caption}>
-                            {caption}
-                        </div>
-                    </div>
-                    <button className={styles.button} onClick={(event) => closeActive(event)}>
-                        Close Menu
-                    </button>
-                </div>
-            }
-        </div>
+        </a>
 
     )
 }

@@ -102,14 +102,14 @@ export interface DictionaryProps {
   },
   restaurant :{
     title :  string;
-    alcohol :  string;
-    coffe :  string;
-    desert :  string;
-    garnish :  string;
+    beverages :  string;
+    starters :  string;
+    khachapuri :  string;
+    sides :  string;
     maindish :  string;
     salads : string;
     soups :  string;
-    fromoven :  string;
+    pizza :  string;
   },
   socials: {
     follow: string,
@@ -164,6 +164,7 @@ export interface ButtonProps {
 }
 
 export interface HotelProps {
+  data?:any
   title: DictionaryProps["hotelComponent"]['title'];
   info: DictionaryProps["hotelComponent"]['info'];
   servisesTitle: DictionaryProps["hotelComponent"]["servisesTitle"];
