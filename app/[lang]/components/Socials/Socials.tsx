@@ -35,7 +35,7 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.BASE_URL}`;
+                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.INSTAGRAM_TOKEN}`;
                 const response = await fetch(apiUrl);
                 const data = await response.json();
                 setInstagramData(data.data);

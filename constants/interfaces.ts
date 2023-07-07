@@ -168,7 +168,8 @@ export interface HotelProps {
   info: DictionaryProps["hotelComponent"]['info'];
   servisesTitle: DictionaryProps["hotelComponent"]["servisesTitle"];
   servises: DictionaryProps["hotelComponent"]["servises"];
-  buttonTitle: DictionaryProps["button"]
+  buttonTitle: DictionaryProps["button"];
+  lang?: string;
 }
 
 export interface RestaurantProps {
