@@ -4,9 +4,6 @@ import { Locale } from '../../i18n-config'
 import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer, Anchor} from './components'
 import Hotel2 from './components/Hotel2/Hotel2'
 import '../../styles/globals.css'
-import { getHotelCards } from '@/lib/mongo/hotelcards';
-
-
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
   
