@@ -98,7 +98,7 @@ const closeMenu=() => {
             <div className="component_container">
                 <div className="grid grid-cols-1 gap-6 my-16 items_container sm:grid-cols-2 lg:grid-cols-4">
                     {restaurantItems.map((item, index) => (
-                        <div key={`link-${index}`} onClick={() => getIndex(index)} className="self-start h-[220px]">
+                        <div key={`link-${index}`} onClick={() => getIndex(index)} className="self-start h-[220px] cursor-pointer">
                         <div className={`${styles.restaurant_item} relative overflow-hidden rounded-3xl h-full`}>
                             <div className={`${styles.item_image} relative flex overflow-hidden h-full`}>
                             <div className="absolute w-full h-full bg-gray-600 opacity-50" />
