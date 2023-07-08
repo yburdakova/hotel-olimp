@@ -1,8 +1,8 @@
 'use client'
-import { useState, useEffect, useRef } from 'react';
-import Script from 'next/script';
-import React from 'react';
+
+import React, { useState, useEffect, useRef }  from 'react';
 import Image from 'next/image';
+import axios from 'axios';
 
 import PostItem from '../PostItem/PostItem';
 import { socials } from '@/constants';
@@ -36,8 +36,8 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
         const fetchData = async () => {
             try {
                 const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.INSTAGRAM_TOKEN}`;
-                const response = await fetch(apiUrl);
-                const data = await response.json();
+                const response = await axios.get(apiUrl);
+                const data = response.data;
                 setInstagramData(data.data);
                 setIsLoading(false);
             } catch (error) {
@@ -45,8 +45,9 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
                 setIsLoading(false);
             }
         };
+      
         fetchData();
-    }, []);
+      }, []);
 
     useEffect(() => {
         if (!isLoading && instagramData) {

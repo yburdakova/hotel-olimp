@@ -5,20 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'DejaVuSerif';
-  src: url('./../../public/assets/fonts/DejaVuSerif.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'DejaVuSerif';
-  src: url('./../../public/assets/fonts/DejaVuSerif-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
 *{
   margin:0;
   padding:0;
