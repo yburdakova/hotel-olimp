@@ -1,7 +1,6 @@
 
 import '../../../styles/globals.css'
-import AddHotelCard from './AddHotelCard/AddHotelCard';
-import GetHotelCards from './GetHotelCards/GetHotelCards';
+import HotelCards from './HotelCards/HotelCards';
 
 
 const Dashboard = () => {
@@ -9,8 +8,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <AddHotelCard/>
-      <GetHotelCards/>
+      <HotelCards/>
     </>
 
   );
