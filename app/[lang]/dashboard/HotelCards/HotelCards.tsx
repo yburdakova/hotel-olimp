@@ -97,27 +97,30 @@ const HotelCards = () => {
                 {isLoading ? "Uploading..." : ""}
                 </div>
                 <div className={styles.description}>
+                <div className="ml-3 text-xs">Описание</div>
                 <textarea
                     name="ru"
                     value={descriptions.ru}
                     onChange={handleChangeDescription}
-                    placeholder="Описание (русский)"
+                    placeholder="на русском языке ..."
                     rows={4}
                     className={styles.input}
                 />
+                <div className="ml-3 text-xs">Description</div>
                 <textarea
                     name="en"
                     value={descriptions.en}
                     onChange={handleChangeDescription}
-                    placeholder="Description (English)"
+                    placeholder="in english ..."
                     rows={4}
                     className={styles.input}
                 />
+                <div className="ml-3 text-xs">აღწერა</div>
                 <textarea
                     name="ge"
                     value={descriptions.ge}
                     onChange={handleChangeDescription}
-                    placeholder="აღწერა (ქართული)"
+                    placeholder="ქართულად..."
                     rows={4}
                     className={styles.input}
                 />
