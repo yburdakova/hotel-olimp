@@ -3,14 +3,16 @@ import axios from "axios";
 import React, { FormEvent, useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from './HotelCards.module.css';
+import { FaUpload, FaEdit } from 'react-icons/fa'
+import { AiFillDelete } from 'react-icons/ai'
+import { FileMetadata, FileData } from "@/constants/interfaces";
 
 const HotelCards = () => {
     const ref = useRef<HTMLInputElement>(null);
-    const [urls, setUrls] = useState<string[]>([]);
-    const [files, setFiles] = useState([]);
+    const [files, setFiles] = useState<FileData[]>([]);
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [descriptions, setDescriptions] = useState<{ [key: string]: string }>({
+    const [descriptions, setDescriptions] = useState<FileMetadata>({
         ru: "",
         en: "",
         ge: "",
@@ -49,11 +51,9 @@ const HotelCards = () => {
         });
         setIsLoading(true); // Устанавливаем isLoading в true при начале загрузки
         await axios.post("/api/upload", formData);
-        setUrls(files.map((file) => `/api/uploads/${file.name}`));
         setIsLoading(false); // Устанавливаем isLoading в false после завершения загрузки
         setDescriptions({ ru: "", en: "", ge: "" }); // Очищаем значения полей ввода
         setPreviewUrl(null); // Сбрасываем превью изображения
-        
         const response = await axios.get('/api/upload');
         setFiles(response.data.files); // Обновляем состояние files
       };
@@ -63,7 +63,6 @@ const HotelCards = () => {
         try {
             const response = await axios.get("/api/upload");
             setFiles(response.data.files);
-            setUrls(response.data.files.map((file: any) => `/api/uploads/${file.filename}`));
         } catch (error) {
             console.error(error);
         }
@@ -125,10 +124,10 @@ const HotelCards = () => {
                 </div>
                 <button
                     type="submit"
-                    className="px-2 py-1 rounded-md bg-violet-50 text-violet-500"
+                    className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2]"
                     disabled={isLoading}
                 >
-                    Upload
+                    <FaUpload className={styles.icon}/>
                 </button>
             </form>
             <div className=""></div>
@@ -136,7 +135,6 @@ const HotelCards = () => {
             
             <div>
             <h1 className={styles.subtitle}>Hotel Cards</h1>
-            {/* jdfckdfjvbdkj */}
             <div className={styles.list}>
                 {files.map((file, index) => (
                 <div key={file._id} className={styles.item_container}>
@@ -159,11 +157,14 @@ const HotelCards = () => {
                             <hr />
                             <p className={styles.paragraph}>{file.metadata.ge}</p>
                         </div>
+                        <div className={styles.actions}>
+                            <button><AiFillDelete className={styles.icon}/></button>
+                            <button><FaEdit className={styles.icon}/></button>
+                        </div>
                     </div>
                 </div>
                 ))}
             </div> 
-            {/* ckngkfjgvfgj */}
             </div>
             </div>
         </div>

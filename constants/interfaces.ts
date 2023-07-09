@@ -256,3 +256,15 @@ export interface MenuItem {
   image?: StaticImageData,
   url: StaticImageData,
 }
+
+export interface FileMetadata {
+  ru: string;
+  en: string;
+  ge: string;
+}
+
+export interface FileData {
+  _id: string;
+  filename: string;
+  metadata: FileMetadata;
+}
