@@ -160,10 +160,13 @@ const HotelCards = () => {
                             <hr />
                             <p className={styles.paragraph}>{file.metadata.ge}</p>
                         </div>
-                        <div className={styles.actions}>
-                            <button><AiFillDelete className={styles.icon}/></button>
-                            <button><FaEdit className={styles.icon}/></button>
-                        </div>
+                        <button
+                                type="submit"
+                                className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2]"
+                                disabled={isLoading}
+                            >
+                                <AiFillDelete className={styles.icon}/>
+                            </button>
                     </div>
                 </div>
                 ))}
