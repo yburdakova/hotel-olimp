@@ -4,7 +4,6 @@ import trLogo from './assets/images/logo-wbg.png'
 import star from './assets/images/star.png';
 import wave from './assets/images/background.svg'
 import wave02 from './assets/images/wave02.svg'
-import terrasa from './assets/icons/terassa.png'
 
 //slider
 import silde01 from './assets/images/caption.jpeg';
@@ -98,7 +97,6 @@ export {
     playgroung,
     territory,
     territory2,
-    terrasa,
 
     salads_en,
     salads_ka,

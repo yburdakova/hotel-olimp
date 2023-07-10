@@ -63,13 +63,14 @@
         },
         "servisesTitle":"At guest's service",
         "servises": {
-            "servise1": "24 hour front desk",
-            "servise2": "Bar and restaurant",
-            "servise3": "Garden and private beach",
-            "servise4": "Free WiFi",
-            "servise5": "Free parking",
-            "servise6": "Private bathroom",
-            "servise7": "Transfer from/to Batumi Airport"
+            "servise1": "Restaurant",
+            "servise2": "Tropical garden with swings",
+            "servise3": "Two pools",
+            "servise4": "Playground",
+            "servise5": "Panoramic terraces",
+            "servise6": "Closed parking",
+            "servise7": "Free WiFi",
+            "servise8": "Bungalow and Fountain"
         }
     },
     "roomsComponent":{

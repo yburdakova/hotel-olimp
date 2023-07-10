@@ -2,120 +2,82 @@ import { StaticImageData } from "next/image";
 import {  MouseEventHandler } from "react";
 
 export interface DictionaryProps {
-  language: string;
-  code:  string;
-  button: string;
-  currency : string;
-  bookingTime : string;
-  socialsTitle : string;
-  contactsTitle :  string;
-  guests: {
-    title?: string;
-    one: string,
-    several?: string;
-    many?: string;
-},
-  heroComponent : {
-    hotelName :  string;
-    resortName :  string;
-  },
-  menu : {
-    resort :  string;
-    hotel :  string;
-    rooms : string;
-    restaurant :  string;
-    contacts :  string;
-    socials :  string;
-  },
-  resortComponent : {
-    title :  string;
-    text :  string;
-    sights : {
-      card1 :{
-        title :  string;
-        description :  string;
-      },
-      card2 :{
-        title :  string;
-        description :  string;
-      },
-      card3 :{
-        title : string;
-        description :  string;
-      },
-      card4 :{
-        title :  string;
-        description :  string;
-      },
-      card5 :{
-        title :  string;
-        description :  string;
-      }
-    }
-  },
-  hotelComponent :{
-    title : string;
-    text : string;
-    info: {
-      info1: string;
-      info2: string;
-      info3: string;
-      info4: string;
-      info5: string;
-      info6: string;
-      info7: string;
-    },
-    servisesTitle : string;
-    servises : {
-      servise1 : string;
-      servise2 : string;
-      servise3 : string;
-      servise4 : string;
-      servise5 : string;
-      servise6 : string;
-      servise7 : string;
-    }
-  },
-  roomsComponent :{
-      title : string;
-      text :  string;
-      roomsTitles : {
-        room1Title : string;
-        room2Title :  string;
-        room3Title :  string;
-      },
-      room :{
-        numbersOfbeds :  string;
-        facilities : string;
-        facilitiesList : {
-          ac :  string;
-          tv :  string;
-          fridge :  string;
-          pot :  string;
-          bathroom :  string;
-          hairdryer :  string;
-          shower :  string;
-          bath :  string;
-          closet :  string;
-        }       
-    }
-  },
-  restaurant :{
-    title :  string;
-    beverages :  string;
-    starters :  string;
-    khachapuri :  string;
-    sides :  string;
-    maindish :  string;
-    salads : string;
-    soups :  string;
-    pizza :  string;
-  },
-  socials: {
-    follow: string,
-    button: string
+    language: string;
+    code: string;
+    button: string;
+    currency: string;
+    bookingTime: string;
+    socialsTitle: string;
+    contactsTitle: string;
+    guests: {
+      title: string;
+      one: string;
+      several: string;
+      many: string;
+    };
+    heroComponent: {
+      hotelName: string;
+      resortName: string;
+    };
+    menu: {
+      resort: string;
+      hotel: string;
+      rooms: string;
+      restaurant: string;
+      contacts: string;
+      socials: string;
+    };
+    resortComponent: {
+      title: string;
+      text: string;
+      sights: {
+        [key: string]: {
+          title: string;
+          description: string;
+        };
+      };
+    };
+    hotelComponent: {
+      title: string;
+      info: {
+        [key: string]: string;
+      };
+      servisesTitle: string;
+      servises: {
+        [key: string]: string;
+      };
+    };
+    roomsComponent: {
+      title: string;
+      text: string;
+      roomsTitles: {
+        [key: string]: string;
+      };
+      room: {
+        numbersOfbeds: string;
+        facilities: string;
+        facilitiesList: {
+          [key: string]: string;
+        };
+      };
+    };
+    restaurant: {
+      title: string;
+      beverages: string;
+      starters: string;
+      khachapuri: string;
+      sides: string;
+      maindish: string;
+      salads: string;
+      soups: string;
+      pizza: string;
+    };
+    socials: {
+      follow: string;
+      button: string;
+    };
   }
-}
+  
 
 export interface OlimpMapProps {
   lang: string;
@@ -264,7 +226,7 @@ export interface FileMetadata {
 }
 
 export interface FileData {
-  _id: string;
+  _id?: string;
   filename: string;
   metadata: FileMetadata;
 }

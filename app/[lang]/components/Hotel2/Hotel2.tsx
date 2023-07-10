@@ -1,52 +1,54 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import axios from 'axios';
 import Image from 'next/image';
-import {MdRestaurant, MdBalcony, MdPool} from 'react-icons/md'
+import {MdRestaurant, MdPool} from 'react-icons/md';
+import { GrOverview }from 'react-icons/gr';
 import { FaWifi} from 'react-icons/fa'
 import {LuParkingCircle} from 'react-icons/lu';
 import {  GiKidSlide, GiPalmTree }from 'react-icons/gi';
 import { TbFountain }from 'react-icons/tb';
 import styles from './Hotel2.module.css';
-import { star, hotel, pool, pool2, pool3, playgroung, territory, territory2, terrasa } from '@/public';
+import { star, hotel, pool, pool2, pool3, playgroung, territory, territory2} from '@/public';
 import { Button, ModalBooking} from '../'
-import { HotelProps } from '@/constants/interfaces';
-import TerrasaIcon from '@/public/assets/icons/TerrasaIcon';
+import { HotelProps, FileData } from '@/constants/interfaces';
 
 
-function Hotel2({ title, info, servisesTitle, servises, buttonTitle }: HotelProps) {
+
+function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: HotelProps) {
 
     const serviseItems = [
         {
             icon: <MdRestaurant/>,
-            text: "Ресторан"
+            text: servises.servise1
         },
         {
             icon: <GiPalmTree/>,
-            text: "Тропический сад с качелями"
+            text: servises.servise2
         },
         {
             icon: <MdPool/>,
-            text: "Два бассейна"
+            text: servises.servise3
         },
         {
             icon: <GiKidSlide/>,
-            text: "Детская площадка"
+            text: servises.servise4
         },
         {
-            icon: <TerrasaIcon/>,
-            text: "Панорамные террасы"
+            icon: <GrOverview/>,
+            text: servises.servise5
         },
         {
             icon: <LuParkingCircle/>,
-            text: "Закрытая парковка"
+            text: servises.servise6
         },
         {
             icon: <FaWifi/>,
-            text: "Бесплатный Wi-Fi"
+            text: servises.servise7
         },
         {
             icon: <TbFountain/>,
-            text: "Бунгало и Фонтан"
+            text: servises.servise8
         }
     ]
     const hotelInfo = [
@@ -82,10 +84,34 @@ function Hotel2({ title, info, servisesTitle, servises, buttonTitle }: HotelProp
     
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [activeInfo, setActiveInfo] = useState(hotelInfo[0]);
+    const [activeBdInfo, setActiveBdInfo] = useState<FileData| null>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [cards, setCards] = useState<FileData[]>([]);
+    const [bdConnetion, setBDConnetion] = useState(false)
     const slideWidth = 208;
 
+    const fetchData = useCallback(async () => {
+        try {
+            const response = await axios.get("/api/upload");
+            console.log(response.data.files)
+            setCards(response.data.files);
+            setBDConnetion(true)
+        } catch (error) {
+            console.error(error);
+        }
+    }, []); 
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+        console.log(cards)
+    }, [bdConnetion]);
+
+    
     const handleOpenPopup = () => {
         setIsPopupOpen(true);
     };
@@ -97,6 +123,14 @@ function Hotel2({ title, info, servisesTitle, servises, buttonTitle }: HotelProp
     const handleGetInfoItem = (index:number) => {
         setActiveInfo(hotelInfo[index]);
 };
+
+const handleGetBdItem = (index:number) => {
+    setActiveBdInfo(cards[index]);
+};
+
+useEffect(() => {
+    console.log(activeBdInfo)
+}, [activeBdInfo]);
 
     const handleScroll = (direction: string) => {
         if (!galleryRef.current) return;
@@ -154,34 +188,58 @@ function Hotel2({ title, info, servisesTitle, servises, buttonTitle }: HotelProp
                 <div className={styles.hotel_content}>
                     <div className={styles.photos}>
                         <div className={styles.gallery}>
-                            <div className={styles.slider} ref={galleryRef}>
+                            {bdConnetion
+                            ? <div className={styles.slider} ref={galleryRef}>
+                                {cards.map((card, index)=> 
+                                    <div className={styles.gallery_item} onClick={()=>handleGetBdItem(index)} key={`slide-${index}`}>
+                                        <Image 
+                                            src={`/api/uploads/${card.filename}`} 
+                                            alt={card.filename} 
+                                            width={200} 
+                                            height={180} 
+                                            className={styles.gallery_img}/>
+                                    </div>
+                                )}
+                            </div>
+                            : <div className={styles.slider} ref={galleryRef}>
                                 {hotelInfo.map((item, index)=> 
                                     <div className={styles.gallery_item} onClick={()=>handleGetInfoItem(index)} key={`slide-${index}`}>
                                         <Image src={item.img} alt='info-preview' className={styles.gallery_img}/>
                                     </div>
                                 )}
                             </div>
+                            }
                             <button onClick={()=> {handleScroll('left')}} className={`${styles.button} left-2 rotate-180`}>&#10148;</button>
                             <button onClick={()=> {handleScroll('right')}} className={`${styles.button} right-2`}>&#10148;</button>
                         </div>
                         {activeInfo&&
                         <div className={styles.hotel_image}>
-                            <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img"></Image>
+                            {
+                                activeBdInfo 
+                                ? <Image src={`/api/uploads/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={200} height={180}></Image>
+                                : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={200} height={180}></Image>
+                            }
+                            
                         </div>
                         }
                     </div>
                     <div className={styles.hotel_info}>
-                        <div className={styles.text}>{activeInfo.text}</div>
+                        <div className={styles.text}>
+                            {activeBdInfo && lang=='ka' ? activeBdInfo.metadata.ge 
+                            : activeBdInfo && lang=='en' ? activeBdInfo.metadata.en 
+                            : activeBdInfo ? activeBdInfo.metadata.ru
+                            : activeInfo.text}
+                        </div>
                         <div className={styles.servises}>
                             <div className="mt-6 component_text bold">{servisesTitle}</div>
                             {serviseItems.map((servise, index) =>
                                 <div className={styles.servise_item} key={`servise-${index}`}>
-                                    <div className="text-3xl">{servise.icon}</div>
-                                    <div className="ml-6 component_text">{servise.text}</div>
+                                    <div className={styles.servise_icon}>{servise.icon}</div>
+                                    <div className={styles.servise_item_text}>{servise.text}</div>
                                 </div>
                             )}
                             <div className={styles.button_container}>
-                            <Button text={buttonTitle} openModal={handleOpenPopup} textsize='3xl'/>
+                            <Button text={buttonTitle} openModal={handleOpenPopup} textsize='text-[20px]'/>
                             </div>
                         </div>
                     </div>

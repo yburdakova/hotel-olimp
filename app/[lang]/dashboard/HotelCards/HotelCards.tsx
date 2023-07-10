@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { FormEvent, useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from './HotelCards.module.css';
-import { FaUpload, FaEdit } from 'react-icons/fa'
+import { FaUpload } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 import { FileMetadata, FileData } from "@/constants/interfaces";
 
@@ -43,20 +43,19 @@ const HotelCards = () => {
         const formData = new FormData();
         const files = Array.from(input.files ?? []);
         for (const file of files) {
-          formData.append(file.name, file);
+            formData.append(file.name, file);
         }
-        // Добавляем описания фотографий в formData
         Object.entries(descriptions).forEach(([lang, description]) => {
-          formData.append(lang, description);
+            formData.append(lang, description);
         });
-        setIsLoading(true); // Устанавливаем isLoading в true при начале загрузки
+        setIsLoading(true); 
         await axios.post("/api/upload", formData);
-        setIsLoading(false); // Устанавливаем isLoading в false после завершения загрузки
-        setDescriptions({ ru: "", en: "", ge: "" }); // Очищаем значения полей ввода
-        setPreviewUrl(null); // Сбрасываем превью изображения
+        setIsLoading(false); 
+        setDescriptions({ ru: "", en: "", ge: "" }); 
+        setPreviewUrl(null); 
         const response = await axios.get('/api/upload');
-        setFiles(response.data.files); // Обновляем состояние files
-      };
+        setFiles(response.data.files); 
+    };
 
     
     const fetchData = useCallback(async () => {
@@ -67,6 +66,16 @@ const HotelCards = () => {
             console.error(error);
         }
     }, []);
+
+    const handleDelete = async (filename: string) => {
+        try {
+            await axios.delete(`/api/uploads/${filename}`);
+            const response = await axios.get('/api/upload');
+            setFiles(response.data.files);
+        } catch (error) {
+            console.error(error);
+        }
+    };
     
     useEffect(() => {
         fetchData();
@@ -161,12 +170,14 @@ const HotelCards = () => {
                             <p className={styles.paragraph}>{file.metadata.ge}</p>
                         </div>
                         <button
-                                type="submit"
-                                className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2]"
-                                disabled={isLoading}
-                            >
-                                <AiFillDelete className={styles.icon}/>
-                            </button>
+                            id="del_button"
+                            type="button"
+                            className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2]"
+                            disabled={isLoading}
+                            onClick={() => handleDelete(file.filename)}
+                        >
+                            <AiFillDelete className={styles.icon} />
+                        </button>
                     </div>
                 </div>
                 ))}
