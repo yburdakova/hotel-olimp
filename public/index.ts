@@ -53,6 +53,9 @@ import facebook from './assets/icons/fb-icon.svg';
 import whatsapp from './assets/icons/whatsapp-icon.svg';
 import home from './assets/icons/home-icon.svg';
 import arrow from './assets/icons/arrow-icon.svg';
+import bedx2 from './assets/icons/bedx2.svg';
+import bedx1 from './assets/icons/bedx1.svg';
+import sofa from './assets/icons/sofa.svg';
 
 //flags
 import usaflag from './assets/images/usaflag.png';
@@ -161,6 +164,10 @@ export {
     whatsapp,
     home,
     arrow,
+
+    bedx2,
+    bedx1,
+    sofa,
 
     usaflag,
     geoflag,

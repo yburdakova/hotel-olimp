@@ -223,7 +223,14 @@ export interface FileMetadata {
   ru: string;
   en: string;
   ge: string;
+  runame?:string,
+  enname?:string;
+  gename?:string;
+  bedx2?: number,
+  bedx1?: number, 
+  sofa?: number
 }
+
 
 export interface FileData {
   _id?: string;
