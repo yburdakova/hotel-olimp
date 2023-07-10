@@ -1,4 +1,4 @@
-.room_container{
+.room_container {
     width: 100%;
     border-radius: 50px;
     border: 2px solid #2D70B2;
@@ -9,56 +9,82 @@
     opacity: 0.8;
     transition: all 0.3s ease 0s;
 }
-
 .room_container:hover{
     border: 2px solid #fff;
     background: #D0EBFF;
 }
-.title{
-    font-size: min(max(16px, 4vw), 26px);
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-.info{
-    margin: 30px 30px 30px 0;
-}
-.beds{
-    font-size: min(max(16px, 4vw), 26px);
-    font-weight: 800;
-    line-height: 150%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.facilities{
-    font-size: min(max(16px, 4vw), 26px);
-    line-height: 150%;
-    margin-top: 15px;
-}
-.room_image{
+
+.room_image {
     display: flex;
-    width: 100%;
     overflow: hidden;
     border-radius: 50px;
-    margin: 30px
-}
-.room_img{
-    width: 100%;
-    object-fit: cover;
-}
-.price {
-    font-size: min(max(16px, 4vw), 26px);
-    font-weight: 800;
-    line-height: 150%;
-    margin-top: 25px;
+    margin: 30px;
+    margin-right: 25px;
+    flex-basis: 40%;
 }
 
-.button_container{
+.room_img {
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30px; 
-    margin-top: 15px;
+    object-fit: cover;
+    height: auto;
 }
+
+.info {
+    margin: 30px 30px 30px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+}
+
+.title {
+    width: 70%;
+    font-size: min(max(16px, 4vw), 26px);
+    text-transform: uppercase;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.describe {
+    width: 100%;
+    flex-grow: 1;
+    font-size: min(max(14px, 4vw), 20px);
+}
+
+.bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-end; 
+}
+
+.icons {
+    display: flex;
+    align-items: flex-start;
+    align-items: flex-end; 
+}
+
+.bedx2,
+.bedx1,
+.sofa {
+    display: flex;
+    margin-right: 10px;
+    align-items: flex-end; 
+}
+
+.icon_img {
+    height: 100%;
+    width: auto;
+    margin-right: 5px;
+}
+
+.button_container {
+    margin-left: auto;
+    align-items: flex-end; 
+}
+
 @media(max-width:768px){
     .room_container{
         flex-direction: column;
@@ -68,10 +94,23 @@
         width: 100%;
         margin: 0;
     }
+    .title{
+        width: 100%;
+        margin-top: 10px;
+    }
     .info{
         margin: 5px;
     }
     .button_container{
         padding-right: 0px; 
+        margin-bottom: 10px;
+    }
+    .icons{
+        margin-bottom: 10px;
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
     }
 }

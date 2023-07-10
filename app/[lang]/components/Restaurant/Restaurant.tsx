@@ -84,7 +84,7 @@ const closeMenu=() => {
 }
 
     return (
-        <div className='mt-6 component md:mt-20' id="restaurant">
+        <div className='mt-4 component ' id="restaurant">
             <div className="component_container">
                 <div className="px-8 mt-2 md:mt-10 title_container">
                     <div className="flex items-center justify-center component_title">

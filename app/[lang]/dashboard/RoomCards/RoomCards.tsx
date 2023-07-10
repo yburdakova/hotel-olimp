@@ -103,7 +103,7 @@ const RoomsCards = () => {
                     </div>
                 </div>
             <div className={styles.addform}>
-            <div className={styles.subtitle}>Add new hotel card</div>
+            <div className={styles.subtitle}>Add new room card</div>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.new_img}>
                 <input type="file" name="files" ref={ref} multiple className={styles.input} onChange={handleChange} />
@@ -175,7 +175,7 @@ const RoomsCards = () => {
         </div>
             
             <div>
-            <h1 className={styles.subtitle}>Hotel Cards</h1>
+            <h1 className={styles.subtitle}>Room Cards</h1>
             <div className={styles.list}>
                 {files.map((file, index) => (
                 <div key={file._id} className={styles.item_container}>

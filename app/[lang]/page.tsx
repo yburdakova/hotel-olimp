@@ -36,10 +36,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
       <Rooms
         title={dictionary.roomsComponent.title} 
         text={dictionary.roomsComponent.text} 
-        roomsTitles={dictionary.roomsComponent.roomsTitles}
-        currencyLiteral={dictionary.currency}
-        time={dictionary.bookingTime}
-        roomDictionary={dictionary.roomsComponent.room}
+        roomsInfo={dictionary.roomsComponent.rooms}
         buttonTitle={dictionary.button}
       />
       <Restaurant

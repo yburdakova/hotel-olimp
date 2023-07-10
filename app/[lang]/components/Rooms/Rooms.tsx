@@ -5,33 +5,58 @@ import { Room } from '../'
 import styles from './Rooms.module.css'
 import { RoomsProps } from '@/constants/interfaces';
 
-function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: RoomsProps) {
+function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
 
-    const rooms = [
+    const roomsCollection = [
         {
-            title: roomsTitles.room1Title,
-            price:`${2500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 2`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room1
+            image: room1,
+            name: roomsInfo.room1.name,
+            description: roomsInfo.room1.description,
+            bedx2: 1,
+            bedx1: 0,
+            sofa: 0,
         },
         {
-            title: roomsTitles.room2Title,
-            price:`${3500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 4`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room2
+            image: room2,
+            name: roomsInfo.room2.name,
+            description: roomsInfo.room2.description,
+            bedx2: 1,
+            bedx1: 1,
+            sofa: 0,
         },
         {
-            title: roomsTitles.room3Title,
-            price:`${5500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 2`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room3
+            image: room3,
+            name: roomsInfo.room3.name,
+            description: roomsInfo.room3.description,
+            bedx2: 1,
+            bedx1: 1,
+            sofa: 0,
         },
+        {
+            image: room1,
+            name: roomsInfo.room4.name,
+            description: roomsInfo.room4.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 0,
+        },
+        {
+            image: room2,
+            name: roomsInfo.room5.name,
+            description: roomsInfo.room5.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 1,
+        },
+        {
+            image: room1,
+            name: roomsInfo.room6.name,
+            description: roomsInfo.room6.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 1,
+        }
+        
     ];
 
     return (
@@ -45,15 +70,15 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
                     <div className='line'></div>
                 </div>
                 <div className="mt-6 text-center component_text">{text}</div>
-                {rooms.map ((room, index) => 
+                {roomsCollection.map ((room, index) => 
                     <Room
                         key={`room-${index}`}
-                        price={room.price}
-                        title={room.title}
+                        name={room.name}
                         image={room.image}
-                        beds={room.beds}
-                        facilities={room.facilities}
-                        facilitiesList={room.facilitiesList}
+                        numberBedx2={room.bedx2}
+                        numberBedx1={room.bedx1}
+                        numberSofa={room.sofa}
+                        description={room.description}
                         buttonTitle={buttonTitle}
                     />
                 )}

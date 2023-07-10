@@ -50,14 +50,10 @@ export interface DictionaryProps {
     roomsComponent: {
       title: string;
       text: string;
-      roomsTitles: {
-        [key: string]: string;
-      };
-      room: {
-        numbersOfbeds: string;
-        facilities: string;
-        facilitiesList: {
-          [key: string]: string;
+      rooms: {
+        [key: string]: {
+          name: string;
+          description: string;
         };
       };
     };
@@ -168,20 +164,17 @@ export interface FooterProps {
 export interface RoomsProps {
   title: DictionaryProps["roomsComponent"]["title"];
   text: DictionaryProps["roomsComponent"]["text"];
-  roomsTitles: DictionaryProps["roomsComponent"]["roomsTitles"];
-  currencyLiteral: DictionaryProps["currency"];
-  time: DictionaryProps["bookingTime"];
+  roomsInfo: DictionaryProps["roomsComponent"]["rooms"];
   buttonTitle: DictionaryProps["button"];
-  roomDictionary: DictionaryProps["roomsComponent"]["room"]
 }
 
 export interface RoomItemProps {
-  title: DictionaryProps["roomsComponent"]["title"];
+  name: string;
   image: StaticImageData;
-  price: string;
-  beds: string;
-  facilities: string;
-  facilitiesList: string[];
+  numberBedx2: number;
+  numberBedx1: number;
+  numberSofa: number;
+  description: string;
   buttonTitle: DictionaryProps["button"]
 }
 

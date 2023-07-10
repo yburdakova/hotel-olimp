@@ -76,25 +76,31 @@
     "roomsComponent":{
         "title": "Rooms",
         "text": "All rooms are equipped with air conditioning, a flat-screen TV with cable channels, a refrigerator, a kettle, a shower, a hairdryer and a wardrobe. The rooms are equipped with a private bathroom fitted with a bath.",
-        "roomsTitles": {
-            "room1Title": "Double Room",
-            "room2Title": "Family apartment",
-            "room3Title": "Suite with Sea View"
-        },
-        "room":{
-            "numbersOfbeds": "Numbers of beds",
-            "facilities": "Facilities",
-            "facilitiesList": {
-                "ac": "air conditioner",
-                "tv": "TV",
-                "fridge": "refrigerator",
-                "pot": "teapot",
-                "bathroom": "private bathroom",
-                "hairdryer": "hair dryer",
-                "shower": "shower",
-                "bath": "bathtub",
-                "closet": "wardrobe"
-            }       
+        "rooms": {
+            "room1": {
+                "name": "Standard double room with Sea view and a balcony",
+                "description": "The standard double room offers a breathtaking sea view from its private balcony, allowing guests to immerse themselves in the beauty of the Black sea right from the comfort of their room. The room features a cozy double bed, tasteful decor, and modern amenities to ensure a comfortable and memorable stay."
+            },
+            "room2": {
+                "name": "Double or twin room with Sea view and a balcony",
+                "description": "The standard triple room provides a scenic sea view from its private balcony, offering guests a serene and picturesque setting. With three comfortable twin or double beds, modern amenities, and tasteful decor, it ensures a pleasant stay while enjoying the beauty of the Black sea."
+            },
+            "room3": {
+                "name": "Double and twin bed with Sea view and a terrace",
+                "description": "The triple deluxe room provides a scenic sea view from its spacious terrace with terrace furniture allowing guests to unwind while admiring the coastal beauty. With comfortable double and single beds, tasteful furnishings, and modern amenities, this room offers a relaxing and enjoyable stay for a group or family seeking both comfort and a connection with the stunning sea vista."
+            },
+            "room4": {
+                "name": "Double and twin beds with Sea view and a balcony",
+                "description": "Standard quadruple room offers a picturesque sea and forest view from its private balcony, allowing guests to savor the beauty of the Black sea and pine forest while enjoying their stay. With cozy beds, tasteful decor, and modern amenities, this room provides a comfortable and spacious retreat for families or groups seeking both relaxation and a breathtaking coastal experience."
+            },
+            "room5": {
+                "name": "Double and twin beds with Sea view and a terrace",
+                "description": "This 2-bedroom suite boasts a spacious terrace with panoramic sea views, and balcony, providing a serene and scenic setting for guests to unwind. With two separate bedrooms featuring comfortable beds, a well-appointed living area, terrace furniture and modern amenities, this suite offers both relaxation and ample space for a memorable stay overlooking the beautiful seascape, tropical garden and a pool. "
+            },
+            "room6": {
+                "name": "Double and twin beds with Sea view and a terrace",
+                "description":"The 2-bedroom family suite boasts a shared terrace that offers a stunning sea view, providing a serene space for families to unwind and enjoy the coastal scenery together. With two separate bedrooms, comfortable furnishings, and modern amenities, this suite provides ample space and comfort for families seeking a memorable seaside getaway."
+            }
         }
     },
     "restaurant": {
