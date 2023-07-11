@@ -47,6 +47,7 @@ const Slider = ({ images }: any) => {
             className={styles.slider_img}
             width={300}
             height={300}
+            priority
           />
       </div>
       

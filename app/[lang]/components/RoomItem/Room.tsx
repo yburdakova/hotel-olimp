@@ -6,19 +6,19 @@ import { bedx2, bedx1, sofa } from '@/public';
 
 import { RoomItemProps } from '@/constants/interfaces';
 
-function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, buttonTitle }: RoomItemProps) {
+function Room({ name, description, image, bedx2, bedx1, sofa, buttonTitle }: RoomItemProps) {
 
 
     const renderIconsBedx2 = () => {
         const divs = [];
-        for (let i = 0; i < numberBedx2; i++) {
+        for (let i = 0; i < +bedx2; i++) {
             divs.push(<div key={i}><Image src={bedx2} alt={`bedx2-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;
     };
     const renderIconsBedx1 = () => {
         const divs = [];
-        for (let i = 0; i < numberBedx1; i++) {
+        for (let i = 0; i < +bedx1; i++) {
             divs.push(<div key={i}><Image src={bedx1} alt={`bedx1-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;
@@ -26,7 +26,7 @@ function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, 
     
     const renderIconsSofa = () => {
         const divs = [];
-        for (let i = 0; i < numberSofa; i++) {
+        for (let i = 0; i < +sofa; i++) {
             divs.push(<div key={i}><Image src={sofa} alt={`sofa-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;
@@ -35,7 +35,12 @@ function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, 
     return (
         <div className={styles.room_container}>
             <div className={styles.room_image}>
-                <Image src={image} alt='room-image' className={styles.room_img}/>
+                <Image 
+                    src={`/api/uploadsRoomcards/${image}`} 
+                    alt={`room-${image}`} 
+                    className={styles.room_img}
+                    width={1000}
+                    height={600}/>
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>{name}</div>

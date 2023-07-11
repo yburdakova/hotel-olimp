@@ -94,7 +94,6 @@ function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: Hot
     const fetchData = useCallback(async () => {
         try {
             const response = await axios.get("/api/upload");
-            console.log(response.data.files)
             setCards(response.data.files);
             setBDConnetion(true)
         } catch (error) {
@@ -108,7 +107,6 @@ function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: Hot
 
     useEffect(() => {
         fetchData();
-        console.log(cards)
     }, [bdConnetion]);
 
     
@@ -127,10 +125,6 @@ function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: Hot
 const handleGetBdItem = (index:number) => {
     setActiveBdInfo(cards[index]);
 };
-
-useEffect(() => {
-    console.log(activeBdInfo)
-}, [activeBdInfo]);
 
     const handleScroll = (direction: string) => {
         if (!galleryRef.current) return;

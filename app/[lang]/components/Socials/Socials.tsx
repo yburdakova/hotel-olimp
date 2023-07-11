@@ -45,15 +45,9 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
                 setIsLoading(false);
             }
         };
-      
         fetchData();
-      }, []);
+    }, []);
 
-    useEffect(() => {
-        if (!isLoading && instagramData) {
-            console.log(instagramData);
-        }
-    }, [isLoading, instagramData]);
     
     useEffect(() => {
         if (elementRef.current) {

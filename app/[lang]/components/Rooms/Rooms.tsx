@@ -1,11 +1,30 @@
-import React from 'react';
+'use client'
+import React, {useState, useEffect, useCallback} from 'react';
+import axios from 'axios';
 import Image from 'next/image';
 import { room1, room2, room3, wave } from '@/public';
 import { Room } from '../'
 import styles from './Rooms.module.css'
 import { RoomsProps } from '@/constants/interfaces';
 
-function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
+function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
+
+    const [rooms, setRooms] = useState<RoomsProps[]>([]);
+
+    const fetchData = useCallback(async () => {
+        try {
+            const response = await axios.get("/api/uploadRoomcards");
+            setRooms(response.data.files);
+            console.log(rooms)
+        } catch (error) {
+            console.error(error);
+        }
+    }, []); 
+
+    useEffect(() => {
+        fetchData();
+        console.log(rooms)
+    }, []);
 
     const roomsCollection = [
         {
@@ -70,15 +89,15 @@ function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
                     <div className='line'></div>
                 </div>
                 <div className="mt-6 text-center component_text">{text}</div>
-                {roomsCollection.map ((room, index) => 
+                {rooms.map ((room, index) => 
                     <Room
                         key={`room-${index}`}
-                        name={room.name}
-                        image={room.image}
-                        numberBedx2={room.bedx2}
-                        numberBedx1={room.bedx1}
-                        numberSofa={room.sofa}
-                        description={room.description}
+                        name={lang=='en' ? room.metadata.enname : lang=='ka' ? room.metadata.gename : room.metadata.runame }
+                        image={room.filename}
+                        numberBedx2={room.metadata.bedx2}
+                        numberBedx1={room.metadata.bedx1}
+                        numberSofa={room.metadata.sofa}
+                        description={lang=='en' ? room.metadata.en : lang=='ka' ? room.metadata.ge : room.metadata.ru }
                         buttonTitle={buttonTitle}
                     />
                 )}
