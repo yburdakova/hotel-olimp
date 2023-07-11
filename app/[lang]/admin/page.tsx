@@ -1,4 +1,5 @@
 'use client'
+import '../../../styles/globals.css'
 import React, {useState, useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './adminlogin.module.css';

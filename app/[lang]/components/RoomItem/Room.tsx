@@ -4,21 +4,21 @@ import styles from './Room.module.css';
 import { Button } from '../';
 import { bedx2, bedx1, sofa } from '@/public';
 
-import { RoomItemProps } from '@/constants/interfaces';
+import { RoomItemProps, FileMetadata, RoomItemBdProps } from '@/constants/interfaces';
 
-function Room({ name, description, image, bedx2, bedx1, sofa, buttonTitle }: RoomItemProps) {
+function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, buttonTitle }: RoomItemBdProps & FileMetadata & RoomItemProps) {
 
 
     const renderIconsBedx2 = () => {
         const divs = [];
-        for (let i = 0; i < +bedx2; i++) {
+        for (let i = 0; i < numberBedx2; i++) {
             divs.push(<div key={i}><Image src={bedx2} alt={`bedx2-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;
     };
     const renderIconsBedx1 = () => {
         const divs = [];
-        for (let i = 0; i < +bedx1; i++) {
+        for (let i = 0; i < numberBedx1; i++) {
             divs.push(<div key={i}><Image src={bedx1} alt={`bedx1-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;
@@ -26,7 +26,7 @@ function Room({ name, description, image, bedx2, bedx1, sofa, buttonTitle }: Roo
     
     const renderIconsSofa = () => {
         const divs = [];
-        for (let i = 0; i < +sofa; i++) {
+        for (let i = 0; i < numberSofa; i++) {
             divs.push(<div key={i}><Image src={sofa} alt={`sofa-${i}`} width={40} height={40} className={styles.icon_img}/></div>);
         }
         return divs;

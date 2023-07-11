@@ -162,26 +162,32 @@ export interface FooterProps {
 }
 
 export interface RoomsProps {
+  lang?:string;
   title: DictionaryProps["roomsComponent"]["title"];
   text: DictionaryProps["roomsComponent"]["text"];
   roomsInfo: DictionaryProps["roomsComponent"]["rooms"];
   buttonTitle: DictionaryProps["button"];
 }
 
-export interface RoomItemProps {
-  name: string;
-  image: StaticImageData;
+export interface RoomItemBdProps {
+  name?: string;
+  image?: string | undefined; // Обновленный тип
   numberBedx2: number;
   numberBedx1: number;
   numberSofa: number;
-  description: string;
-  buttonTitle: DictionaryProps["button"]
+  description?: string;
+  buttonTitle: DictionaryProps["button"];
 }
 
-export interface JsonProps {
-
+export interface RoomItemProps {
+  name?: string;
+  image?: StaticImageData;
+  bedx2?: number;
+  bedx1?: number;
+  sofa?: number;
+  description?: string;
+  buttonTitle: DictionaryProps["button"];
 }
-
 
 export interface CurrencyDataProps {
   0: CurrencyDataItemProps[];
@@ -213,9 +219,9 @@ export interface MenuItem {
 }
 
 export interface FileMetadata {
-  ru: string;
-  en: string;
-  ge: string;
+  ru?: string;
+  en?: string;
+  ge?: string;
   runame?:string,
   enname?:string;
   gename?:string;
@@ -223,6 +229,7 @@ export interface FileMetadata {
   bedx1?: number, 
   sofa?: number
 }
+
 
 
 export interface FileData {

@@ -42,6 +42,8 @@
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
+    background-color: white;
+    color: #2D70B2;
 
 }
 .error{
