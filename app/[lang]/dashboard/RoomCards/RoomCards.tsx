@@ -25,7 +25,15 @@ const RoomsCards = () => {
         sofa: 0
     });
 
-    const handleChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setDescriptions((prevDescriptions) => ({
+            ...prevDescriptions,
+            [name]: value,
+        }));
+    };
+
+    const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setDescriptions((prevDescriptions) => ({
             ...prevDescriptions,
@@ -56,18 +64,27 @@ const RoomsCards = () => {
             formData.append(lang, description);
         });
         setIsLoading(true); 
-        await axios.post("/api/upload", formData);
+        await axios.post("/api/uploadRoomcards", formData);
         setIsLoading(false); 
-        setDescriptions({ ru: "", en: "", ge: "" }); 
+        setDescriptions({ 
+            runame:"",
+            ru: "",
+            enname:"",
+            en: "",
+            gename:"",
+            ge: "",
+            bedx2: 0,
+            bedx1: 0, 
+            sofa: 0
+        }); 
         setPreviewUrl(null); 
-        const response = await axios.get('/api/upload');
+        const response = await axios.get("/api/uploadRoomcards");
         setFiles(response.data.files); 
     };
 
-    
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get("/api/upload");
+            const response = await axios.get("/api/uploadRoomcards");
             setFiles(response.data.files);
         } catch (error) {
             console.error(error);
@@ -76,8 +93,8 @@ const RoomsCards = () => {
 
     const handleDelete = async (filename: string) => {
         try {
-            await axios.delete(`/api/uploads/${filename}`);
-            const response = await axios.get('/api/upload');
+            await axios.delete(`/api/uploadsRoomcards/${filename}`);
+            const response = await axios.get('/api/uploadRoomcards');
             setFiles(response.data.files);
         } catch (error) {
             console.error(error);
@@ -114,34 +131,52 @@ const RoomsCards = () => {
                 </div>
                 <div className={styles.description}>
                 <div className="ml-3 text-xs">Название номера</div>
-                <input name="runame" type="text" className={styles.input} placeholder="на русском языке ..." value={descriptions.runame}/>
+                <input 
+                    name="runame" 
+                    type="text" 
+                    className={styles.input} 
+                    placeholder="на русском языке ..." 
+                    value={descriptions.runame}
+                    onChange={handleInputChange}/>
                 <div className="ml-3 text-xs">Описание</div>
                 <textarea
                     name="ru"
                     value={descriptions.ru}
-                    onChange={handleChangeDescription}
+                    onChange={handleTextareaChange}
                     placeholder="на русском языке ..."
                     rows={4}
                     className={styles.input}
                 />
                 <div className="ml-3 text-xs">Room name</div>
-                <input type="text" name="enname"className={styles.input} placeholder="in english ..." value={descriptions.enname}/>
+                <input 
+                    type="text" 
+                    name="enname"
+                    className={styles.input} 
+                    placeholder="in english ..." 
+                    value={descriptions.enname}
+                    onChange={handleInputChange}/>
                 <div className="ml-3 text-xs">Description</div>
                 <textarea
                     name="en"
                     value={descriptions.en}
-                    onChange={handleChangeDescription}
+                    onChange={handleTextareaChange}
                     placeholder="in english ..."
                     rows={4}
                     className={styles.input}
                 />
                 <div className="ml-3 text-xs">ოთახის სახელი</div>
-                <input type="text" name="gename" className={styles.input} placeholder="ქართულად..." value={descriptions.gename}/>
+                <input 
+                    type="text" 
+                    name="gename" 
+                    className={styles.input} 
+                    placeholder="ქართულად..." 
+                    value={descriptions.gename}
+                    onChange={handleInputChange}/>
                 <div className="ml-3 text-xs">აღწერა</div>
                 <textarea
                     name="ge"
                     value={descriptions.ge}
-                    onChange={handleChangeDescription}
+                    onChange={handleTextareaChange}
                     placeholder="ქართულად..."
                     rows={4}
                     className={styles.input}
@@ -150,15 +185,15 @@ const RoomsCards = () => {
                 <div className="flex bedstype">
                     <div className="flex bedstype_item">
                         <Image src={bedx2} alt='bedx2' width={40} height={40}/>
-                        <input className={styles.input} name="bedx2" value={descriptions.bedx2}/>
+                        <input className={styles.input} name="bedx2" value={descriptions.bedx2} onChange={handleInputChange}/>
                     </div>
                     <div className="flex">
                         <Image src={bedx1} alt='bedx2' width={20} height={40}/>
-                        <input className={styles.input} name="bedx1" value={descriptions.bedx1}/>
+                        <input className={styles.input} name="bedx1" value={descriptions.bedx1} onChange={handleInputChange}/>
                     </div>
                     <div className="flex">
                         <Image src={sofa} alt='bedx2' width={60} height={20}/>
-                        <input className={styles.input} name="sofa" value={descriptions.sofa}/>
+                        <input className={styles.input} name="sofa" value={descriptions.sofa} onChange={handleInputChange}/>
                     </div>
                 </div>
                 
@@ -183,7 +218,7 @@ const RoomsCards = () => {
                         <div className={styles.item_number}>{index+1}.</div>
                         <div className={styles.item_image}>
                             <Image 
-                                src={`/api/uploads/${file.filename}`} 
+                                src={`/api/uploadsRoomcards/${file.filename}`} 
                                 alt={file.filename} 
                                 width={200} 
                                 height={180}
@@ -192,11 +227,11 @@ const RoomsCards = () => {
                         </div>
                         
                         <div className={styles.description_container}>
-                            <p className={styles.paragraph}>{file.metadata.ru}</p>
+                            <p className={styles.paragraph}>{file.metadata.runame}</p>
                             <hr />
-                            <p className={styles.paragraph}>{file.metadata.en}</p>
+                            <p className={styles.paragraph}>{file.metadata.enname}</p>
                             <hr />
-                            <p className={styles.paragraph}>{file.metadata.ge}</p>
+                            <p className={styles.paragraph}>{file.metadata.gename}</p>
                         </div>
                         <button
                             id="del_button"

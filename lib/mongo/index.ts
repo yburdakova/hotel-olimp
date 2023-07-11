@@ -3,6 +3,8 @@ import { MongoClient, GridFSBucket } from "mongodb";
 declare global {
     var client: MongoClient | null;
     var bucket: GridFSBucket | null;
+    var roomCardsClient: MongoClient | null; 
+    var roomCardsBucket: GridFSBucket | null;
 }
 
 const MONGODB_URI = process.env.DB_KEY;
@@ -31,6 +33,24 @@ export async function connectToDb() {
     return { client, bucket: bucket! };
 }
 
+export async function connectToRoomCardsDb() {
+    if (global.roomCardsClient) {
+        return {
+            client: global.roomCardsClient,
+            bucket: global.roomCardsBucket!,
+        };
+    }
+    
+    const client = (global.roomCardsClient = new MongoClient(MONGODB_URI!, {}));
+    const bucket = (global.roomCardsBucket = new GridFSBucket(client.db("room_cards"), {
+    bucketName: "images",
+    }));
+
+    await global.roomCardsClient.connect();
+    console.log("Connected to the Room Cards Database");
+    return { client, bucket: bucket! };
+}
+
 export async function fileExists(filename: string): Promise<boolean> {
 const { client } = await connectToDb();
 const count = await client
@@ -40,3 +60,13 @@ const count = await client
 
 return !!count;
 }
+
+export async function fileRoomcardsExists(filename: string): Promise<boolean> {
+    const { client } = await connectToRoomCardsDb(); // Подключение к базе данных "room_cards"
+    const count = await client
+        .db("room_cards")
+        .collection("images.files")
+        .countDocuments({ filename });
+  
+    return !!count;
+  }
