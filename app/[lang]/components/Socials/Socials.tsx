@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import Script from 'next/script';
 import React from 'react';
 import Image from 'next/image';
@@ -11,8 +12,8 @@ import { SocialsProps, InstagramData } from '@/constants/interfaces';
 
 
 function Socials({ title, follow_text, button_text }: SocialsProps) {
-    
-    
+
+    const [token, setToken] = useState(process.env.INSTAGRAM_TOKEN)
     const [instagramData, setInstagramData] = useState<InstagramData[] | null>(null);
     const [numberOflines, setNumberOflines] = useState(2);
     const [isLoading, setIsLoading] = useState(true);
@@ -34,10 +35,11 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
     
     useEffect(() => {
         const fetchData = async () => {
+            console.log (token)
             try {
-                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.BASE_URL}`;
-                const response = await fetch(apiUrl);
-                const data = await response.json();
+                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${token}`;
+                const response = await axios.get(apiUrl);
+                const data = response.data;
                 setInstagramData(data.data);
                 setIsLoading(false);
             } catch (error) {
@@ -49,12 +51,6 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
     }, []);
 
     useEffect(() => {
-        if (!isLoading && instagramData) {
-            console.log(instagramData);
-        }
-    }, [isLoading, instagramData]);
-    
-    useEffect(() => {
         if (elementRef.current) {
             const element = elementRef.current;
             const rect = element.getBoundingClientRect();
@@ -65,30 +61,30 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
     useEffect(() => {
         setHeightInstagramContainer (numberOflines*heightInstagramLine)
     }, [numberOflines, screenWidth, heightInstagramLine])
-    
+
     const addLine = () => {
         setNumberOflines(numberOflines+1)
     }
     
     return (
         <div className='relative mt-20 component' id="socials">
-            <div className="mt-10 component_container">
-                <div className="flex flex-col items-center justify-center mb-20 component_title md:flex-row ">
-                    <div className='line'></div>
-                    <div className='dot'></div>
-                    <div className={styles.icons_container}>
-                            { socials. map ( item => 
-                                <a href={item.link} target="_blank" rel="noopener noreferrer" key={`link-${item.name}}`}>
-                                    <div className={styles.icon}>
-                                        <Image src={item.image} alt={item.name} className={styles.icon_img}/>
-                                    </div>
-                                </a>
-                            )}
-                        </div>
-                    <div className="mx-3 text-center">{title}</div>
-                </div>
+        <div className="mt-10 component_container">
+            <div className="flex flex-col items-center justify-center mb-20 component_title md:flex-row ">
+                <div className='line'></div>
+                <div className='dot'></div>
+                <div className={styles.icons_container}>
+                        { socials. map ( item => 
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" key={`link-${item.name}}`}>
+                                <div className={styles.icon}>
+                                    <Image src={item.image} alt={item.name} className={styles.icon_img}/>
+                                </div>
+                            </a>
+                        )}
+                    </div>
+                <div className="mx-3 text-center">{title}</div>
             </div>
-            {isLoading 
+        </div>
+        {isLoading 
             ?  <p>Loading...</p>
             :  <div className={styles.instagram_container}>
                     <div className={styles.instagram_title_container}>
@@ -105,14 +101,17 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
                                         caption={item.caption}
                                         type={item.media_type}
                                         img={item.media_type == "VIDEO" ? item.thumbnail_url : item.media_url}
+                                        url={item.media_url}
+                                        username={item.username}
+                                        date={item.timestamp}
                                     />
                                 </div>
                             )}
                         </div>
                     </div>
                     <div className={styles.button_container}>
-                        <div className={styles.button}>
-                            <button className={styles.button_title} onClick={addLine}>
+                        <div className={styles.button} onClick={addLine}>
+                            <button className={styles.button_title} >
                                 {button_text}
                             </button>
                         </div>
@@ -124,4 +123,3 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
 }
 
 export default Socials
-
