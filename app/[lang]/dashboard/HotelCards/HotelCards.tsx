@@ -1,5 +1,4 @@
 'use client'
-import axios from "axios";
 import React, { FormEvent, useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from './HotelCards.module.css';
@@ -48,20 +47,41 @@ const HotelCards = () => {
         Object.entries(descriptions).forEach(([lang, description]) => {
             formData.append(lang, description);
         });
-        setIsLoading(true); 
-        await axios.post("/api/upload", formData);
-        setIsLoading(false); 
-        setDescriptions({ ru: "", en: "", ge: "" }); 
-        setPreviewUrl(null); 
-        const response = await axios.get('/api/upload');
-        setFiles(response.data.files); 
+        setIsLoading(true);
+    
+        try {
+            await fetch("/api/upload", {
+                method: "POST",
+                body: formData
+            });
+    
+            setIsLoading(false);
+            setDescriptions({ ru: "", en: "", ge: "" });
+            setPreviewUrl(null);
+    
+            const response = await fetch("/api/upload");
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     };
+    
 
     
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get("/api/upload");
-            setFiles(response.data.files);
+            const response = await fetch("/api/upload");
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
@@ -69,9 +89,17 @@ const HotelCards = () => {
 
     const handleDelete = async (filename: string) => {
         try {
-            await axios.delete(`/api/uploads/${filename}`);
-            const response = await axios.get('/api/upload');
-            setFiles(response.data.files);
+            await fetch(`/api/uploads/${filename}`, {
+                method: 'DELETE'
+            });
+    
+            const response = await fetch('/api/upload');
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
@@ -86,7 +114,7 @@ const HotelCards = () => {
     }, [files]);
     
     return (
-        <div className="component">
+        <div className="component" id='hotelcards'>
             <div className="component_container">
             <div className="mt-2 md:mt-10 title_container">
                     <div className="flex items-center justify-center component_title">

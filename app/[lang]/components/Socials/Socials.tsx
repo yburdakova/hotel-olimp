@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, useRef }  from 'react';
 import Image from 'next/image';
-import axios from 'axios';
-
 import PostItem from '../PostItem/PostItem';
 import { socials } from '@/constants';
 import styles from './Socials.module.css';
@@ -36,10 +34,14 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
         const fetchData = async () => {
             try {
                 const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${process.env.INSTAGRAM_TOKEN}`;
-                const response = await axios.get(apiUrl);
-                const data = response.data;
-                setInstagramData(data.data);
-                setIsLoading(false);
+                const response = await fetch(apiUrl);
+                if (response.ok) {
+                    const data = await response.json();
+                    setInstagramData(data.data);
+                    setIsLoading(false);
+                } else {
+                    throw new Error("Request failed with status: " + response.status);
+                }
             } catch (error) {
                 console.error('Error fetching Instagram data:', error);
                 setIsLoading(false);

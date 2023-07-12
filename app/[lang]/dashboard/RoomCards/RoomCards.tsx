@@ -1,5 +1,4 @@
 'use client'
-import axios from "axios";
 import React, { FormEvent, useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from './RoomsCards.module.css';
@@ -25,6 +24,20 @@ const RoomsCards = () => {
         sofa: 0
     });
 
+    const fetchData = useCallback(async () => {
+        try {
+            const response = await fetch("/api/uploadRoomcards");
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
+    
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setDescriptions((prevDescriptions) => ({
@@ -63,39 +76,55 @@ const RoomsCards = () => {
         Object.entries(descriptions).forEach(([lang, description]) => {
             formData.append(lang, description);
         });
-        setIsLoading(true); 
-        await axios.post("/api/uploadRoomcards", formData);
-        setIsLoading(false); 
-        setDescriptions({ 
-            runame:"",
-            ru: "",
-            enname:"",
-            en: "",
-            gename:"",
-            ge: "",
-            bedx2: 0,
-            bedx1: 0, 
-            sofa: 0
-        }); 
-        setPreviewUrl(null); 
-        const response = await axios.get("/api/uploadRoomcards");
-        setFiles(response.data.files); 
-    };
-
-    const fetchData = useCallback(async () => {
+        setIsLoading(true);
+    
         try {
-            const response = await axios.get("/api/uploadRoomcards");
-            setFiles(response.data.files);
+            await fetch("/api/uploadRoomcards", {
+                method: "POST",
+                body: formData
+            });
+    
+            setIsLoading(false);
+            setDescriptions({
+                runame: "",
+                ru: "",
+                enname: "",
+                en: "",
+                gename: "",
+                ge: "",
+                bedx2: 0,
+                bedx1: 0,
+                sofa: 0
+            });
+            setPreviewUrl(null);
+    
+            const response = await fetch("/api/uploadRoomcards");
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
-    }, []);
+    };
+    
+
 
     const handleDelete = async (filename: string) => {
         try {
-            await axios.delete(`/api/uploadsRoomcards/${filename}`);
-            const response = await axios.get('/api/uploadRoomcards');
-            setFiles(response.data.files);
+            await fetch(`/api/uploadsRoomcards/${filename}`, {
+                method: 'DELETE'
+            });
+    
+            const response = await fetch('/api/uploadRoomcards');
+            if (response.ok) {
+                const data = await response.json();
+                setFiles(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
@@ -110,7 +139,7 @@ const RoomsCards = () => {
     }, [files]);
     
     return (
-        <div className="component">
+        <div className="component" id="roomcards">
             <div className="component_container">
             <div className="mt-2 md:mt-10 title_container">
                     <div className="flex items-center justify-center component_title">

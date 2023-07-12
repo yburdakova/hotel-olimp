@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import axios from 'axios';
 import Image from 'next/image';
 import {MdRestaurant, MdPool} from 'react-icons/md';
 import { GrOverview }from 'react-icons/gr';
@@ -93,13 +92,18 @@ function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: Hot
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get("/api/upload");
-            setCards(response.data.files);
-            setBDConnetion(true)
+            const response = await fetch("/api/upload");
+            if (response.ok) {
+                const data = await response.json();
+                setCards(data.files);
+                setBDConnetion(true);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
-    }, []); 
+    }, []);
 
     useEffect(() => {
         fetchData();

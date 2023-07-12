@@ -1,7 +1,6 @@
 'use client'
 import React, {useState, useEffect, useCallback} from 'react';
-import axios from 'axios';
-import { room1, room2, room3, wave } from '@/public';
+import { room1, room2, room3 } from '@/public';
 import { Room } from '../'
 import { RoomsProps, FileData } from '@/constants/interfaces';
 
@@ -11,13 +10,18 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await axios.get("/api/uploadRoomcards");
-            setBDConnetion(true)
-            setRooms(response.data.files);
+            const response = await fetch("/api/uploadRoomcards");
+            if (response.ok) {
+                const data = await response.json();
+                setBDConnetion(true);
+                setRooms(data.files);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
         } catch (error) {
             console.error(error);
         }
-    }, []); 
+    }, []);
 
     useEffect(() => {
         fetchData();

@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import '../../../styles/globals.css'
 import HotelCards from './HotelCards/HotelCards';
 import RoomsCards from './RoomCards/RoomCards';
@@ -18,14 +19,14 @@ const Dashboard = () => {
                     <div className='line'></div>
                 </div>
         <div className="flex">
-        <div className="mr-4">
-            main slider
+          <div className="mr-4">
+            <Link href='#hotelcards'>main slider</Link>
           </div>
           <div className="mr-4">
-            hotel cards
+            <Link href='#hotelcards'>hotel cards</Link>
           </div>
           <div className="">
-            room cards
+            <Link href='#roomcards'>room cards</Link>
           </div>
         </div>
       </div>
