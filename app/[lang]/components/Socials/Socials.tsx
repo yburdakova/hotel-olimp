@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Script from 'next/script';
 import React from 'react';
 import Image from 'next/image';
 
@@ -9,6 +8,24 @@ import PostItem from '../PostItem/PostItem';
 import { socials } from '@/constants';
 import styles from './Socials.module.css';
 import { SocialsProps, InstagramData } from '@/constants/interfaces';
+
+const fetchData = async (token:string) => {
+    try {
+        const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${token}`;
+        const response = await fetch(apiUrl);
+        const text = await response.text();
+        try {
+            const data = JSON.parse(text);
+            return data.data;
+        } catch (error) {
+            console.error('Error parsing Instagram data:', error);
+            return [];
+        }
+    } catch (error) {
+            console.error('Error fetching Instagram data:', error);
+            return [];
+    }
+};
 
 
 function Socials({ title, follow_text, button_text }: SocialsProps) {
@@ -33,22 +50,20 @@ function Socials({ title, follow_text, button_text }: SocialsProps) {
         };
     }, []);
     
+
     useEffect(() => {
-        const fetchData = async () => {
-            console.log (token)
-            try {
-                const apiUrl = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp,thumbnail_url,permalink&access_token=${token}`;
-                const response = await axios.get(apiUrl);
-                const data = response.data;
-                setInstagramData(data.data);
+        if (token) {
+            fetchData(token)
+                .then((data) => {
+                setInstagramData(data);
                 setIsLoading(false);
-            } catch (error) {
+                })
+                .catch((error) => {
                 console.error('Error fetching Instagram data:', error);
                 setIsLoading(false);
+                });
             }
-        };
-        fetchData();
-    }, []);
+    }, [token]);
 
     useEffect(() => {
         if (elementRef.current) {
