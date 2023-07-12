@@ -16,9 +16,7 @@ function PostItem ({ id, type, img, caption, url, username, date }: any) {
     </svg>)
 
     const [isCaption, setIsCaption] = useState(false);
-    const [isActive, setIsActive] = useState(false);
     const [formatedDate, setFormatedDate] = useState('');
-    const [shapeImage, setShapeImage] = useState('')
 
     function formatDate(date: Date) {
         const propsDate = new Date(date);
@@ -31,27 +29,6 @@ useEffect(() => {
     setFormatedDate(formatDate(date))
 }, [])
 
-useEffect(() => {
-    const imgElement = document.createElement('img');
-    imgElement.onload = () => {
-        console.log(`ширина: ${imgElement.width}б высота: ${imgElement.height}px`);
-        if(imgElement.width>imgElement.height){
-            setShapeImage('horizontal');
-            console.log(shapeImage);
-        } else if (imgElement.width<imgElement.height) {
-            setShapeImage('vertical');
-            console.log(shapeImage);
-        } else {
-            setShapeImage('square');
-            console.log(shapeImage);
-        }
-    };
-    imgElement.src = url;
-    return () => {
-        imgElement.onload = null;
-    };
-}, [url]);
-
     const showCaption= () => {
         setIsCaption(true);
     }
@@ -59,22 +36,19 @@ useEffect(() => {
     const hideCaption= () => {
         setIsCaption(false);
     }
-    
-    const openActive = () => {
-        setIsActive(true)
-    }
-
-    const closeActive = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.stopPropagation();
-        setIsActive(false)
-    }
 
     return (
-        <a className="w-[100%]" onClick={openActive} href={`https://www.instagram.com/olimp_shekvetili/`} target='_blank'>
+        <a className="w-[100%]" href={`https://www.instagram.com/olimp_shekvetili/`} target='_blank'>
             <div className={styles.container} onMouseEnter={showCaption} onMouseLeave={hideCaption}>
                 <div className={styles.media}>
                     <div className={styles.image_wrapper}>
-                        <Image src={img} alt={id} fill={true} className={styles.img}/>
+                        <Image 
+                            src={img} 
+                            alt={id} 
+                            fill={true} 
+                            className={styles.img} 
+                            sizes="(max-width: 768px) 100vw, 50vw" 
+                            priority={true}/>
                         <span className={styles.icon_type}>
                             {type === "VIDEO" ? videoIcon : type === "CAROUSEL_ALBUM" ? caruselIcon : ''}
                         </span>

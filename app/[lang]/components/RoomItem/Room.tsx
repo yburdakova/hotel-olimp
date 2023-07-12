@@ -35,7 +35,9 @@ function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, 
     return (
         <div className={styles.room_container}>
             <div className={styles.room_image}>
-                <Image src={image} alt='room-image' className={styles.room_img}/>
+                <Image src={image} alt='room-image' className={styles.room_img} 
+                    width={1000}
+                    height={600}/>
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>{name}</div>
