@@ -8,6 +8,7 @@ declare global {
 }
 
 const MONGODB_URI = process.env.DB_KEY;
+console.log (MONGODB_URI)
 
 if (!MONGODB_URI) {
     throw new Error(
@@ -67,6 +68,6 @@ export async function fileRoomcardsExists(filename: string): Promise<boolean> {
         .db("room_cards")
         .collection("images.files")
         .countDocuments({ filename });
-  
+
     return !!count;
-  }
+}

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { Readable } from "stream";
 
 export async function POST(req: Request) {
-    const { bucket } = await connectToRoomCardsDb(); // Подключение к базе данных "room_cards"
+    const { bucket } = await connectToRoomCardsDb();
 
     const data = await req.formData();
 

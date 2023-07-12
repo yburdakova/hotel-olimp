@@ -30,8 +30,6 @@ export async function GET(req: Request, { params }: Params) {
   });
 }
 
-
-
 export async function DELETE(req: Request, { params }: Params) {
   const { bucket, client } = await connectToDb();
 
