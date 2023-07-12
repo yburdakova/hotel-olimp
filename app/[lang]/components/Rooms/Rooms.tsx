@@ -7,6 +7,7 @@ import { RoomsProps } from '@/constants/interfaces';
 
 function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
 
+    //
     // const fetchData = useCallback(async () => {
     //     try {
     //         const response = await axios.get("/api/uploadRoomcards");
