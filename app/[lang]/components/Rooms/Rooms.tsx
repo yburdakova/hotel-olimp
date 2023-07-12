@@ -9,7 +9,7 @@ function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
 
     // const fetchData = useCallback(async () => {
     //     try {
-    //         const response = await axios.get("/api/upload");
+    //         const response = await axios.get("/api/uploadRoomcards");
     //         console.log(response.data.files)
     //         setCards(response.data.files);
     //         setBDConnetion(true)
