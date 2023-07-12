@@ -100,17 +100,17 @@ export interface DictionaryProps {
         }       
     }
   },
-  restaurant :{
-    title :  string;
-    alcohol :  string;
-    coffe :  string;
-    desert :  string;
-    garnish :  string;
-    maindish :  string;
-    salads : string;
-    soups :  string;
-    fromoven :  string;
-  },
+  restaurant: {
+    title: string;
+    beverages: string;
+    starters: string;
+    khachapuri: string;
+    sides: string;
+    maindish: string;
+    salads: string;
+    soups: string;
+    pizza: string;
+  };
   socials: {
     follow: string,
     button: string
@@ -172,7 +172,7 @@ export interface HotelProps {
 }
 
 export interface RestaurantProps {
-  dictionary: DictionaryProps["restaurant"];
+  dictionary: DictionaryProps['restaurant'];
   lang: string
 }
 

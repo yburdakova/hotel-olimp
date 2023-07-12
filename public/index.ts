@@ -36,14 +36,14 @@ import room2 from './assets/images/room2.png';
 import room3 from './assets/images/room3.png';
 
 //restaurant
-import alcohol from './assets/images/alcohol.png';
-import coffe from './assets/images/coffe.png';
-import desert from './assets/images/desert.jpg';
+import beverages from './assets/images/beverages.jpeg';
+import snacks from './assets/images/snacks.png';
+import hachapuri from './assets/images/hachapuri.jpeg';
 import garnish from './assets/images/garnish.jpg';
 import maindish from './assets/images/maindish.jpg';
 import salads from './assets/images/salads.jpg';
 import pasta from './assets/images/pasta.jpg';
-import fromoven from './assets/images/fromoven.jpg';
+import pizza from './assets/images/pizza.jpeg';
 import soup from './assets/images/soup.jpeg'
 
 //socials icons
@@ -53,6 +53,9 @@ import facebook from './assets/icons/fb-icon.svg';
 import whatsapp from './assets/icons/whatsapp-icon.svg';
 import home from './assets/icons/home-icon.svg';
 import arrow from './assets/icons/arrow-icon.svg';
+import bedx2 from './assets/icons/bedx2.svg';
+import bedx1 from './assets/icons/bedx1.svg';
+import sofa from './assets/icons/sofa.svg';
 
 //flags
 import usaflag from './assets/images/usaflag.png';
@@ -64,6 +67,27 @@ import euroflag from './assets/images/euroflag.png';
 import salads_en from './assets/images/menu/salads-en.png';
 import salads_ka from './assets/images/menu//salads-ka.png';
 import salads_ru from './assets/images/menu/salads-ru.png';
+import main_en from './assets/images/menu/main-en.png';
+import main_ru from './assets/images/menu/main-ru.png';
+import main_ka from './assets/images/menu/main-ka.png';
+import pizza_ka from './assets/images/menu/pizza-ka.png';
+import pizza_ru from './assets/images/menu/pizza-ru.png';
+import pizza_en from './assets/images/menu/pizza-en.png';
+import snacks_en from './assets/images/menu/snacks-en.png';
+import snacks_ru from './assets/images/menu/snacks-ru.png';
+import snacks_ka from './assets/images/menu/snacks-ka.png';
+import beverages_en from './assets/images/menu/beverages-en.png';
+import beverages_ru from './assets/images/menu/beverages-ru.png';
+import beverages_ka from './assets/images/menu/beverages-ka.png';
+import khachapuri_en from './assets/images/menu//khachapuri-en.png';
+import khachapuri_ru from './assets/images/menu//khachapuri-ru.png';
+import khachapuri_ka from './assets/images/menu//khachapuri-ka.png';
+import soups_en from './assets/images/menu/soups-en.png';
+import soups_ka from './assets/images/menu/soups-ka.png';
+import soups_ru from './assets/images/menu/soups-ru.png';
+import garnish_en from './assets/images/menu/garnish-en.png';
+import garnish_ru from './assets/images/menu/garnish-ru.png';
+import garnish_ka from './assets/images/menu/garnish-ka.png';
 
 export {
     logo,
@@ -80,6 +104,27 @@ export {
     salads_en,
     salads_ka,
     salads_ru,
+    main_en,
+    main_ru,
+    main_ka,
+    pizza_ka,
+    pizza_ru,
+    pizza_en,
+    snacks_en,
+    snacks_ru,
+    snacks_ka,
+    beverages_en,
+    beverages_ka,
+    beverages_ru,
+    khachapuri_en,
+    khachapuri_ru,
+    khachapuri_ka,
+    soups_en,
+    soups_ru,
+    soups_ka,
+    garnish_en,
+    garnish_ru,
+    garnish_ka,
     
     resort_bg,
     game_park,
@@ -103,14 +148,14 @@ export {
     wave,
     wave02,
 
-    alcohol,
-    coffe,
-    desert,
+    beverages,
+    snacks,
+    hachapuri,
     garnish,
     maindish,
     salads,
     pasta,
-    fromoven,
+    pizza,
     soup,
 
     instagram,
@@ -119,6 +164,10 @@ export {
     whatsapp,
     home,
     arrow,
+
+    bedx2,
+    bedx1,
+    sofa,
 
     usaflag,
     geoflag,
