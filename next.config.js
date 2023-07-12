@@ -6,7 +6,10 @@ const nextConfig = {
     },
     images: {
         domains: ['scontent-atl3-1.cdninstagram.com', 'scontent-atl3-2.cdninstagram.com', 'drive.google.com', 'olimp.burdakova.com'],
-    }
+    },
+    resolve: {
+        preferRelative: true,
+    },
 }
 
 module.exports = nextConfig;
