@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "debug": "^4.3.4",
     "@formatjs/intl-localematcher": "^0.4.0",
     "@pbe/react-yandex-maps": "^1.2.4",
     "@splidejs/react-splide": "^0.7.12",
