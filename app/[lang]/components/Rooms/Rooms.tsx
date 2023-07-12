@@ -7,6 +7,17 @@ import { RoomsProps } from '@/constants/interfaces';
 
 function Rooms({ title, text, roomsInfo, buttonTitle}: RoomsProps) {
 
+    // const fetchData = useCallback(async () => {
+    //     try {
+    //         const response = await axios.get("/api/upload");
+    //         console.log(response.data.files)
+    //         setCards(response.data.files);
+    //         setBDConnetion(true)
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }, []); 
+
     const roomsCollection = [
         {
             image: room1,
