@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import Image from 'next/image';
 import { room1, room2, room3, wave } from '@/public';
 import { Room } from '../'
