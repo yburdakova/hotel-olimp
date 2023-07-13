@@ -170,22 +170,12 @@ export interface RoomsProps {
 }
 
 export interface RoomItemBdProps {
-  name?: string;
-  image?: string | undefined; // Обновленный тип
+  name: string | undefined;
+  image: string | StaticImageData; 
   numberBedx2: number;
   numberBedx1: number;
   numberSofa: number;
-  description?: string;
-  buttonTitle: DictionaryProps["button"];
-}
-
-export interface RoomItemProps {
-  name?: string;
-  image?: StaticImageData;
-  bedx2?: number;
-  bedx1?: number;
-  sofa?: number;
-  description?: string;
+  description: string | undefined;
   buttonTitle: DictionaryProps["button"];
 }
 

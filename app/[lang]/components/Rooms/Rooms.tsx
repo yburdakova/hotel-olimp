@@ -96,12 +96,12 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
                         {rooms.map ((room, index) => 
                                 <Room
                                     key={`room-${index}`}
-                                    name={lang=='en' ? room.metadata?.enname : lang=='ka' ? room.metadata?.gename : room.metadata?.runame }
+                                    name={lang === 'en' ? room.metadata?.enname : lang === 'ka' ? room.metadata?.gename : room.metadata?.runame}
                                     image={`/api/uploadsRoomcards/${room.filename}`}
-                                    numberBedx2={room.metadata?.bedx2}
-                                    numberBedx1={room.metadata?.bedx1}
-                                    numberSofa={room.metadata?.sofa}
-                                    description={lang=='en' ? room.metadata?.en : lang=='ka' ? room.metadata?.ge : room.metadata?.ru }
+                                    numberBedx2={room.metadata && room.metadata.bedx2 ? +room.metadata.bedx2 : 0}
+                                    numberBedx1={room.metadata && room.metadata.bedx1 ? +room.metadata.bedx1 : 0}
+                                    numberSofa={room.metadata && room.metadata.sofa ? +room.metadata.sofa : 0}
+                                    description={lang === 'en' ? room.metadata?.en : lang === 'ka' ? room.metadata?.ge : room.metadata?.ru}
                                     buttonTitle={buttonTitle}
                                 />
                         )}

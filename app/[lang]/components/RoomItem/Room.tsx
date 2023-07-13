@@ -3,8 +3,9 @@ import Image from 'next/image';
 import styles from './Room.module.css';
 import { Button } from '../';
 import { bedx2, bedx1, sofa } from '@/public';
+import { RoomItemBdProps } from '@/constants/interfaces';
 
-function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, buttonTitle }: any) {
+function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, buttonTitle }: RoomItemBdProps) {
 
 
     const renderIconsBedx2 = () => {
