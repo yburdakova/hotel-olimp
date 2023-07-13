@@ -223,9 +223,9 @@ const handleGetBdItem = (index:number) => {
                     </div>
                     <div className={styles.hotel_info}>
                         <div className={styles.text}>
-                            {activeBdInfo && lang=='ka' ? activeBdInfo.metadata.ge 
-                            : activeBdInfo && lang=='en' ? activeBdInfo.metadata.en 
-                            : activeBdInfo ? activeBdInfo.metadata.ru
+                            {activeBdInfo && lang=='ka' ? activeBdInfo.metadata?.ge 
+                            : activeBdInfo && lang=='en' ? activeBdInfo.metadata?.en 
+                            : activeBdInfo ? activeBdInfo.metadata?.ru
                             : activeInfo.text}
                         </div>
                         <div className={styles.servises}>
