@@ -20,9 +20,9 @@ const Dashboard = () => {
                     <div className='line'></div>
                 </div>
         <div className="flex w-[100%] justify-center">
-          <div className="mr-4">
+          {/* <div className="mr-4">
             <Link href='#mainslider' className='mr-4 text-2xl uppercase'>main slider</Link>
-          </div>
+          </div> */}
           <div className="mr-4">
             <Link href='#hotelcards'className='mr-4 text-2xl uppercase'>hotel cards</Link>
           </div>
@@ -31,9 +31,20 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <SliderCards/>
+      {/* <SliderCards/> */}
       <HotelCards/>
       <RoomsCards/>
+      <div className="flex w-[100%] justify-center mb-20 mt-20">
+          {/* <div className="mr-4">
+            <Link href='#mainslider' className='mr-4 text-2xl uppercase'>main slider</Link>
+          </div> */}
+          <div className="mr-4">
+            <Link href='#hotelcards'className='mr-4 text-2xl uppercase'>hotel cards</Link>
+          </div>
+          <div className="">
+            <Link href='#roomcards'className='mr-4 text-2xl uppercase'>room cards</Link>
+          </div>
+        </div>
     </div>
 
   );
