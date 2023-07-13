@@ -95,12 +95,12 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
                         {rooms.map ((room, index) => 
                                 <Room
                                     key={`room-${index}`}
-                                    name={lang=='en' ? room.metadata.enname : lang=='ka' ? room.metadata.gename : room.metadata.runame }
+                                    name={lang=='en' ? room.metadata?.enname : lang=='ka' ? room.metadata?.gename : room.metadata?.runame }
                                     image={room.filename}
-                                    numberBedx2={room.metadata.bedx2}
-                                    numberBedx1={room.metadata.bedx1}
-                                    numberSofa={room.metadata.sofa}
-                                    description={lang=='en' ? room.metadata.en : lang=='ka' ? room.metadata.ge : room.metadata.ru }
+                                    numberBedx2={room.metadata?.bedx2}
+                                    numberBedx1={room.metadata?.bedx1}
+                                    numberSofa={room.metadata?.sofa}
+                                    description={lang=='en' ? room.metadata?.en : lang=='ka' ? room.metadata?.ge : room.metadata?.ru }
                                     buttonTitle={buttonTitle}
                                 />
                             )}
