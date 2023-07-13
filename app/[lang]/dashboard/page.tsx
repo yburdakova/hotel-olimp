@@ -3,6 +3,7 @@ import Link from 'next/link';
 import '../../../styles/globals.css'
 import HotelCards from './HotelCards/HotelCards';
 import RoomsCards from './RoomCards/RoomCards';
+import SliderCards from './SliderCards/SliderCards';
 
 
 const Dashboard = () => {
@@ -18,19 +19,19 @@ const Dashboard = () => {
                     <div className='dot'></div>
                     <div className='line'></div>
                 </div>
-        <div className="flex">
+        <div className="flex w-[100%] justify-center">
           <div className="mr-4">
-            <Link href='#hotelcards'>main slider</Link>
+            <Link href='#mainslider' className='mr-4 text-2xl uppercase'>main slider</Link>
           </div>
           <div className="mr-4">
-            <Link href='#hotelcards'>hotel cards</Link>
+            <Link href='#hotelcards'className='mr-4 text-2xl uppercase'>hotel cards</Link>
           </div>
           <div className="">
-            <Link href='#roomcards'>room cards</Link>
+            <Link href='#roomcards'className='mr-4 text-2xl uppercase'>room cards</Link>
           </div>
         </div>
       </div>
-      
+      <SliderCards/>
       <HotelCards/>
       <RoomsCards/>
     </div>

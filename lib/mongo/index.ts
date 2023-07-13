@@ -5,10 +5,11 @@ declare global {
     var bucket: GridFSBucket | null;
     var roomCardsClient: MongoClient | null; 
     var roomCardsBucket: GridFSBucket | null;
+    var mainsliderClient: MongoClient | undefined;
+    var mainsliderBucket: GridFSBucket | undefined;
 }
 
 const MONGODB_URI = process.env.DB_KEY;
-console.log (MONGODB_URI)
 
 if (!MONGODB_URI) {
     throw new Error(
@@ -52,6 +53,24 @@ export async function connectToRoomCardsDb() {
     return { client, bucket: bucket! };
 }
 
+export async function connectToMainsliderDb() {
+    if (global.mainsliderClient) {
+        return {
+            client: global.mainsliderClient,
+            bucket: global.mainsliderBucket!,
+        };
+    }
+    
+    const client = (global.mainsliderClient = new MongoClient(MONGODB_URI!, {}));
+    const bucket = (global.mainsliderBucket = new GridFSBucket(client.db("main_slider"), {
+    bucketName: "images",
+    }));
+
+    await global.mainsliderClient.connect();
+    console.log("Connected to the Room Cards Database");
+    return { client, bucket: bucket! };
+}
+
 export async function fileExists(filename: string): Promise<boolean> {
 const { client } = await connectToDb();
 const count = await client
@@ -63,9 +82,19 @@ return !!count;
 }
 
 export async function fileRoomcardsExists(filename: string): Promise<boolean> {
-    const { client } = await connectToRoomCardsDb(); // Подключение к базе данных "room_cards"
+    const { client } = await connectToRoomCardsDb(); 
     const count = await client
         .db("room_cards")
+        .collection("images.files")
+        .countDocuments({ filename });
+
+    return !!count;
+}
+
+export async function fileMainsliderExists(filename: string): Promise<boolean> {
+    const { client } = await connectToMainsliderDb(); 
+    const count = await client
+        .db("main_slider")
         .collection("images.files")
         .countDocuments({ filename });
 

@@ -127,11 +127,11 @@ const HotelCards = () => {
             <div className={styles.subtitle}>Add new hotel card</div>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.new_img}>
-                <input type="file" name="files" ref={ref} multiple className={styles.input} onChange={handleChange} />
-                <div className={styles.preview}>
-                    {previewUrl && <Image src={previewUrl} alt="Preview"  width={200} height={180} className={styles.preview_img}/>}
-                </div>
-                {isLoading ? "Uploading..." : ""}
+                    <input type="file" name="files" ref={ref} multiple className={styles.input} onChange={handleChange} />
+                    <div className={styles.preview}>
+                        {previewUrl && <Image src={previewUrl} alt="Preview"  width={200} height={180} className={styles.preview_img}/>}
+                    </div>
+                    {isLoading ? "Uploading..." : ""}
                 </div>
                 <div className={styles.description}>
                 <div className="ml-3 text-xs">Описание</div>
@@ -191,16 +191,16 @@ const HotelCards = () => {
                         </div>
                         
                         <div className={styles.description_container}>
-                            <p className={styles.paragraph}>{file.metadata.ru}</p>
+                            <p className={styles.paragraph}>{file.metadata?.ru}</p>
                             <hr />
-                            <p className={styles.paragraph}>{file.metadata.en}</p>
+                            <p className={styles.paragraph}>{file.metadata?.en}</p>
                             <hr />
-                            <p className={styles.paragraph}>{file.metadata.ge}</p>
+                            <p className={styles.paragraph}>{file.metadata?.ge}</p>
                         </div>
                         <button
                             id="del_button"
                             type="button"
-                            className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2]"
+                            className="px-2 py-1 rounded-md bg-[#D5EDFF] text-[#2D70B2] m-2"
                             disabled={isLoading}
                             onClick={() => handleDelete(file.filename)}
                         >

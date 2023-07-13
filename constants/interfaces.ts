@@ -235,5 +235,5 @@ export interface FileMetadata {
 export interface FileData {
   _id?: string;
   filename: string;
-  metadata: FileMetadata;
+  metadata?: FileMetadata;
 }
