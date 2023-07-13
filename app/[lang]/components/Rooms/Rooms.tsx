@@ -1,6 +1,6 @@
 'use client'
 import React, {useState, useEffect, useCallback} from 'react';
-import { room1, room2, room3 } from '@/public';
+import { room1, room2, room3, room4, room5, room6 } from '@/public';
 import { Room } from '../'
 import { RoomsProps, FileData } from '@/constants/interfaces';
 
@@ -15,6 +15,7 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
                 const data = await response.json();
                 setBDConnetion(true);
                 setRooms(data.files);
+                setBDConnetion(true);
             } else {
                 throw new Error("Request failed with status: " + response.status);
             }
@@ -53,7 +54,7 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
             sofa: 0,
         },
         {
-            image: room1,
+            image: room4,
             name: roomsInfo.room4.name,
             description: roomsInfo.room4.description,
             bedx2: 1,
@@ -61,7 +62,7 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
             sofa: 0,
         },
         {
-            image: room2,
+            image: room5,
             name: roomsInfo.room5.name,
             description: roomsInfo.room5.description,
             bedx2: 1,
@@ -69,7 +70,7 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
             sofa: 1,
         },
         {
-            image: room1,
+            image: room6,
             name: roomsInfo.room6.name,
             description: roomsInfo.room6.description,
             bedx2: 1,
@@ -90,34 +91,34 @@ function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
                     <div className='line'></div>
                 </div>
                 <div className="mt-6 text-center component_text">{text}</div>
-                {rooms.length > 0  
+                {bdConnetion 
                 ?   <>
                         {rooms.map ((room, index) => 
                                 <Room
                                     key={`room-${index}`}
                                     name={lang=='en' ? room.metadata?.enname : lang=='ka' ? room.metadata?.gename : room.metadata?.runame }
-                                    image={room.filename}
+                                    image={`/api/uploadsRoomcards/${room.filename}`}
                                     numberBedx2={room.metadata?.bedx2}
                                     numberBedx1={room.metadata?.bedx1}
                                     numberSofa={room.metadata?.sofa}
                                     description={lang=='en' ? room.metadata?.en : lang=='ka' ? room.metadata?.ge : room.metadata?.ru }
                                     buttonTitle={buttonTitle}
                                 />
-                            )}
+                        )}
                     </>
-                : <>
-                            {roomsCollection.map ((room, index) => 
-                                <Room
-                                    key={`room-${index}`}
-                                    name={room.name}
-                                    image={room.image}
-                                    numberBedx2={room.bedx2}
-                                    numberBedx1={room.bedx1}
-                                    numberSofa={room.sofa}
-                                    description={room.description}
-                                    buttonTitle={buttonTitle}/>
-                            )}
-                </>
+                :   <>
+                        {roomsCollection.map ((room, index) => 
+                            <Room
+                                key={`room-${index}`}
+                                name={room.name}
+                                image={room.image}
+                                numberBedx2={room.bedx2}
+                                numberBedx1={room.bedx1}
+                                numberSofa={room.sofa}
+                                description={room.description}
+                                buttonTitle={buttonTitle}/>
+                        )}
+                    </>
                 }  
                 
             </div>

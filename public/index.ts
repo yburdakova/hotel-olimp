@@ -31,9 +31,13 @@ import territory from './assets/images/territory.png';
 import territory2 from './assets/images/territory2.jpg';
 
 //rooms
-import room1 from './assets/images/room1.png';
-import room2 from './assets/images/room2.png';
-import room3 from './assets/images/room3.png';
+import room1 from './assets/images/rooms/room1.jpg';
+import room2 from './assets/images/rooms/room2.jpg';
+import room3 from './assets/images/rooms/room3.jpg';
+import room4 from './assets/images/rooms/room4.jpg';
+import room5 from './assets/images/rooms/room5.jpg';
+import room6 from './assets/images/rooms/room6.jpg';
+
 
 //restaurant
 import beverages from './assets/images/beverages.jpeg';
@@ -144,6 +148,9 @@ export {
     room1,
     room2,
     room3,
+    room4,
+    room5,
+    room6,
 
     wave,
     wave02,

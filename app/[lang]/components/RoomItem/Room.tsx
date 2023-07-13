@@ -34,11 +34,12 @@ function Room({ name, description, image, numberBedx2, numberBedx1, numberSofa, 
         <div className={styles.room_container}>
             <div className={styles.room_image}>
                 <Image 
-                    src={`/api/uploadsRoomcards/${image}`} 
-                    alt={`room-${image}`} 
+                    src={image} 
+                    alt='room' 
                     className={styles.room_img}
                     width={1000}
-                    height={600}/>
+                    height={600}
+                />
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>{name}</div>

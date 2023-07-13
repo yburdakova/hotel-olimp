@@ -202,7 +202,12 @@ const handleGetBdItem = (index:number) => {
                             : <div className={styles.slider} ref={galleryRef}>
                                 {hotelInfo.map((item, index)=> 
                                     <div className={styles.gallery_item} onClick={()=>handleGetInfoItem(index)} key={`slide-${index}`}>
-                                        <Image src={item.img} alt='info-preview' className={styles.gallery_img}/>
+                                        <Image 
+                                            src={item.img} 
+                                            alt='info-preview' 
+                                            width={200} 
+                                            height={180} 
+                                            className={styles.gallery_img}/>
                                     </div>
                                 )}
                             </div>
