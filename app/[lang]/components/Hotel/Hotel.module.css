@@ -85,7 +85,7 @@
     flex-direction: column;
 }
 .text{
-    font-size: min(max(16px, 4vw), 26px);
+    font-size: min(max(16px, 4vw), 22px);
     font-weight: normal;
     line-height: 150%;
     flex: 1;
@@ -96,6 +96,13 @@
 .servise_item{
     display: flex;
     margin-top: 10px;
+}
+.servise_icon{
+    font-size: 1.5rem;
+}
+.servise_item_text{
+    margin-left: 1.5rem;
+    font-size: min(max(16px, 4vw), 22px);
 }
 .button_container{
     margin-top: 20px;

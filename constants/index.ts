@@ -1,5 +1,5 @@
-import { silde01, silde02, silde03, silde04, slide05, slide06, slide07 } from "@/public";
-import { ter1, ter2, ter3, ter4, } from "@/public";
+import { slide1, slide2, slide3, slide4, slide5, slide6 } from "@/public";
+
 import { instagram, telegram, facebook, whatsapp } from '@/public';
 import features from "./features";
 
@@ -8,7 +8,7 @@ export {
 }
 
 export const sliderImages = [
-    ter1, ter2, ter3, ter4
+    slide1, slide2, slide3, slide4, slide5, slide6
 ]
 
 export const socials = [
@@ -25,11 +25,11 @@ export const socials = [
     {
         name: 'Facebook',
         image: facebook,
-        link: 'https://www.facebook.com/groups/1601253506790026'
+        link: 'https://www.facebook.com/OlimpShekvetiliHotel/'
     },
     {
         name: 'WhatsAppp',
         image: whatsapp,
-        link: 'https://www.instagram.com/olimp_shekvetili/'
+        link: 'https://wa.me/995595536060'
     }
 ]

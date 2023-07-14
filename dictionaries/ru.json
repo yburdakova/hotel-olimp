@@ -17,9 +17,9 @@
         "resortName": "Шекветили"
     },
     "menu": {
-        "resort": "О курорте",
-        "hotel": "Наш отель",
-        "rooms": "Наши номера",
+        "resort": "Курорт",
+        "hotel": "Отель",
+        "rooms": "Номера",
         "restaurant": "Ресторан",
         "contacts": "Контакты",
         "socials": "Мы в соцсетях"

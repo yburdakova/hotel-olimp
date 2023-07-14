@@ -45,8 +45,8 @@ const Slider = ({ images }: any) => {
             src={currentImage}
             alt='cover'
             className={styles.slider_img}
-            width={300}
-            height={300}
+            width={2000}
+            height={800}
             priority
           />
       </div>

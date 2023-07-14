@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n-config'
 import { Header, Resort, Hero, Hotel, Rooms, Restaurant, Socials, OlimpMap, Footer, Anchor} from './components'
-import { home } from '@/public';
-import './globals.css';
+import '../../styles/global.css';
 
 
 export default async function Home({ params: { lang }, }: { params: { lang: Locale }}) {
@@ -34,15 +33,13 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
           servises={dictionary.hotelComponent.servises}
           buttonTitle={dictionary.button}
         />
-        {/* <Rooms
+        <Rooms
+          lang={lang}
           title={dictionary.roomsComponent.title} 
           text={dictionary.roomsComponent.text} 
-          roomsTitles={dictionary.roomsComponent.}
-          currencyLiteral={dictionary.currency}
-          time={dictionary.bookingTime}
-          roomDictionary={dictionary.roomsComponent.room}
+          roomsInfo={dictionary.roomsComponent.rooms}
           buttonTitle={dictionary.button}
-        /> */}
+        />
         <Restaurant
           dictionary={dictionary.restaurant}
           lang={lang}

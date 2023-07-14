@@ -17,7 +17,7 @@ function Footer( {title, subtitle, menu, lang}: FooterProps) {
             <div className='dot'></div>
             <div className={styles.header_logo}>
               <div className={styles.logo}>
-                  <Image src={trLogo} alt='logo' className={styles.logo_img} />
+                  <Image src={trLogo} alt='logo' className={styles.logo_img} priority/>
               </div>
               <div className={styles.logo_title}>{title}</div>
               <div className={styles.logo_subtitle}>{subtitle}</div>

@@ -1,56 +1,47 @@
 import resort_bg from './assets/images/resort_bg.png';
-import logo from './assets/images/logo.jpg';
 import trLogo from './assets/images/logo-wbg.png'
 import star from './assets/images/star.png';
 import wave from './assets/images/background.svg'
 import wave02 from './assets/images/wave02.svg'
 
 //slider
-import silde01 from './assets/images/caption.jpeg';
-import silde02 from './assets/images/caption1.jpeg';
-import silde03 from './assets/images/caption2.jpeg';
-import silde04 from './assets/images/caption3.jpeg';
-import slide05 from './assets/images/caption5.jpeg';
-import slide06 from './assets/images/caption6.jpg';
-import slide07 from './assets/images/caption7.jpeg';
-
-import ter2 from './assets/images/slider/ter1.jpg'
-import ter1 from './assets/images/slider/ter2.jpg'
-import ter3 from './assets/images/slider/ter4.jpg'
-import ter4 from './assets/images/slider/ter5.jpg'
+import slide1 from './assets/images/slider/slide1.jpg'
+import slide2 from './assets/images/slider/slide2.jpg'
+import slide3 from './assets/images/slider/slide3.jpg'
+import slide4 from './assets/images/slider/slide4.jpg'
+import slide5 from './assets/images/slider/slide5.jpg'
+import slide6 from './assets/images/slider/slide6.jpg'
 
 
 //sights
-import game_park from './assets/images/game-park.jpeg';
-import arena from './assets/images/arena.jpeg';
-import dendropark from './assets/images/dendropark.jpeg';
-import music_park from './assets/images/music-park.jpg';
-import botanicgarden from './assets/images/botanic2.jpeg'
+import game_park from './assets/images/sights/game-park.jpeg';
+import arena from './assets/images/sights/arena.jpeg';
+import dendropark from './assets/images/sights/dendropark.jpeg';
+import music_park from './assets/images/sights/music-park.jpg';
+import botanicgarden from './assets/images/sights/botanic2.jpeg'
 
 //hotel info
-import hotel from './assets/images/hotel-olimp.jpeg';
-import pool from './assets/images/pool.jpeg';
-import pool2 from './assets/images/pool2.png';
-import pool3 from './assets/images/pool3.jpg';
-import playgroung from './assets/images/playground.jpeg';
-import territory from './assets/images/territory.png';
-import territory2 from './assets/images/territory2.jpg';
+import hotel from './assets/images/hotelcards/hotel-olimp.jpeg';
 
 //rooms
-import room1 from './assets/images/room1.png';
-import room2 from './assets/images/room2.png';
-import room3 from './assets/images/room3.png';
+import noimage from './assets/images/rooms/noimage.jpeg';
+import room1 from './assets/images/rooms/room1.jpg';
+import room2 from './assets/images/rooms/room2.jpg';
+import room3 from './assets/images/rooms/room3.jpg';
+import room4 from './assets/images/rooms/room4.jpg';
+import room5 from './assets/images/rooms/room5.jpg';
+import room6 from './assets/images/rooms/room6.jpg';
+
 
 //restaurant
-import beverages from './assets/images/beverages.jpeg';
-import snacks from './assets/images/snacks.png';
-import hachapuri from './assets/images/hachapuri.jpeg';
-import garnish from './assets/images/garnish.jpg';
-import maindish from './assets/images/maindish.jpg';
-import salads from './assets/images/salads.jpg';
-import pasta from './assets/images/pasta.jpg';
-import pizza from './assets/images/pizza.jpeg';
-import soup from './assets/images/soup.jpeg'
+import beverages from './assets/images/menucards/beverages.jpeg';
+import snacks from './assets/images/menucards/snacks.png';
+import hachapuri from './assets/images/menucards/hachapuri.jpeg';
+import garnish from './assets/images/menucards/garnish.jpg';
+import maindish from './assets/images/menucards/maindish.jpg';
+import salads from './assets/images/menucards/salads.jpg';
+import pizza from './assets/images/menucards/pizza.jpeg';
+import soup from './assets/images/menucards/soup.jpeg'
 
 //socials icons
 import instagram from './assets/icons/insta-icon.svg';
@@ -64,10 +55,10 @@ import bedx1 from './assets/icons/bedx1.svg';
 import sofa from './assets/icons/sofa.svg';
 
 //flags
-import usaflag from './assets/images/usaflag.png';
-import geoflag from './assets/images/geoflag.png';
-import rusflag from './assets/images/ruflag.png';
-import euroflag from './assets/images/euroflag.png';
+import usaflag from './assets/images/flags/usaflag.png';
+import geoflag from './assets/images/flags/geoflag.png';
+import rusflag from './assets/images/flags/ruflag.png';
+import euroflag from './assets/images/flags/euroflag.png';
 
 //menu
 import salads_en from './assets/images/menu/salads-en.png';
@@ -96,16 +87,10 @@ import garnish_ru from './assets/images/menu/garnish-ru.png';
 import garnish_ka from './assets/images/menu/garnish-ka.png';
 
 export {
-    logo,
     trLogo,
     star,
     hotel,
-    pool,
-    pool2,
-    pool3,
-    playgroung,
-    territory,
-    territory2,
+
 
     salads_en,
     salads_ka,
@@ -139,19 +124,20 @@ export {
     music_park,
     botanicgarden,
 
-    silde01,
-    silde02,
-    silde03,
-    silde04,
-    slide05,
-    slide06,
-    slide07,
+    slide1,
+    slide2,
+    slide3,
+    slide4,
+    slide5,
+    slide6,
 
-    ter1, ter2, ter3, ter4,
-
+    noimage,
     room1,
     room2,
     room3,
+    room4,
+    room5,
+    room6,
 
     wave,
     wave02,
@@ -162,7 +148,6 @@ export {
     garnish,
     maindish,
     salads,
-    pasta,
     pizza,
     soup,
 

@@ -37,7 +37,7 @@ function Header( {title, subtitle, menu, lang }: HeaderProps) {
                 </div>
                 <div className={styles.header_logo}>
                     <div className={styles.logo}>
-                        <Image src={trLogo} alt='logo' className={styles.logo_img} />
+                        <Image src={trLogo} alt='logo' className={styles.logo_img} priority />
                         <div className={styles.logo_pod}></div>
                     </div>
                     <div className={styles.logo_title}>{title}</div>

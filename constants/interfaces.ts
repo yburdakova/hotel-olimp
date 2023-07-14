@@ -2,120 +2,78 @@ import { StaticImageData } from "next/image";
 import {  MouseEventHandler } from "react";
 
 export interface DictionaryProps {
-  language: string;
-  code:  string;
-  button: string;
-  currency : string;
-  bookingTime : string;
-  socialsTitle : string;
-  contactsTitle :  string;
-  guests: {
-    title?: string;
-    one: string,
-    several?: string;
-    many?: string;
-},
-  heroComponent : {
-    hotelName :  string;
-    resortName :  string;
-  },
-  menu : {
-    resort :  string;
-    hotel :  string;
-    rooms : string;
-    restaurant :  string;
-    contacts :  string;
-    socials :  string;
-  },
-  resortComponent : {
-    title :  string;
-    text :  string;
-    sights : {
-      card1 :{
-        title :  string;
-        description :  string;
-      },
-      card2 :{
-        title :  string;
-        description :  string;
-      },
-      card3 :{
-        title : string;
-        description :  string;
-      },
-      card4 :{
-        title :  string;
-        description :  string;
-      },
-      card5 :{
-        title :  string;
-        description :  string;
-      }
-    }
-  },
-  hotelComponent :{
-    title : string;
-    text : string;
-    info: {
-      info1: string;
-      info2: string;
-      info3: string;
-      info4: string;
-      info5: string;
-      info6: string;
-      info7: string;
-    },
-    servisesTitle : string;
-    servises : {
-      servise1 : string;
-      servise2 : string;
-      servise3 : string;
-      servise4 : string;
-      servise5 : string;
-      servise6 : string;
-      servise7 : string;
-    }
-  },
-  roomsComponent :{
-      title : string;
-      text :  string;
-      roomsTitles : {
-        room1Title : string;
-        room2Title :  string;
-        room3Title :  string;
-      },
-      room :{
-        numbersOfbeds :  string;
-        facilities : string;
-        facilitiesList : {
-          ac :  string;
-          tv :  string;
-          fridge :  string;
-          pot :  string;
-          bathroom :  string;
-          hairdryer :  string;
-          shower :  string;
-          bath :  string;
-          closet :  string;
-        }       
-    }
-  },
-  restaurant: {
-    title: string;
-    beverages: string;
-    starters: string;
-    khachapuri: string;
-    sides: string;
-    maindish: string;
-    salads: string;
-    soups: string;
-    pizza: string;
-  };
-  socials: {
-    follow: string,
-    button: string
+    language: string;
+    code: string;
+    button: string;
+    currency: string;
+    bookingTime: string;
+    socialsTitle: string;
+    contactsTitle: string;
+    guests: {
+      title: string;
+      one: string;
+      several: string;
+      many: string;
+    };
+    heroComponent: {
+      hotelName: string;
+      resortName: string;
+    };
+    menu: {
+      resort: string;
+      hotel: string;
+      rooms: string;
+      restaurant: string;
+      contacts: string;
+      socials: string;
+    };
+    resortComponent: {
+      title: string;
+      text: string;
+      sights: {
+        [key: string]: {
+          title: string;
+          description: string;
+        };
+      };
+    };
+    hotelComponent: {
+      title: string;
+      info: {
+        [key: string]: string;
+      };
+      servisesTitle: string;
+      servises: {
+        [key: string]: string;
+      };
+    };
+    roomsComponent: {
+      title: string;
+      text: string;
+      rooms: {
+        [key: string]: {
+          name: string;
+          description: string;
+        };
+      };
+    };
+    restaurant: {
+      title: string;
+      beverages: string;
+      starters: string;
+      khachapuri: string;
+      sides: string;
+      maindish: string;
+      salads: string;
+      soups: string;
+      pizza: string;
+    };
+    socials: {
+      follow: string;
+      button: string;
+    };
   }
-}
+  
 
 export interface OlimpMapProps {
   lang: string;
@@ -164,15 +122,17 @@ export interface ButtonProps {
 }
 
 export interface HotelProps {
+  data?:any
   title: DictionaryProps["hotelComponent"]['title'];
   info: DictionaryProps["hotelComponent"]['info'];
   servisesTitle: DictionaryProps["hotelComponent"]["servisesTitle"];
   servises: DictionaryProps["hotelComponent"]["servises"];
-  buttonTitle: DictionaryProps["button"]
+  buttonTitle: DictionaryProps["button"];
+  lang?: string;
 }
 
 export interface RestaurantProps {
-  dictionary: DictionaryProps['restaurant'];
+  dictionary: DictionaryProps["restaurant"];
   lang: string
 }
 
@@ -202,29 +162,22 @@ export interface FooterProps {
 }
 
 export interface RoomsProps {
+  lang?:string;
   title: DictionaryProps["roomsComponent"]["title"];
   text: DictionaryProps["roomsComponent"]["text"];
-  roomsTitles: DictionaryProps["roomsComponent"]["roomsTitles"];
-  currencyLiteral: DictionaryProps["currency"];
-  time: DictionaryProps["bookingTime"];
+  roomsInfo: DictionaryProps["roomsComponent"]["rooms"];
   buttonTitle: DictionaryProps["button"];
-  roomDictionary: DictionaryProps["roomsComponent"]["room"]
 }
 
-export interface RoomItemProps {
-  title: DictionaryProps["roomsComponent"]["title"];
-  image: StaticImageData;
-  price: string;
-  beds: string;
-  facilities: string;
-  facilitiesList: string[];
-  buttonTitle: DictionaryProps["button"]
+export interface RoomItemBdProps {
+  name: string | undefined;
+  image: string | StaticImageData; 
+  numberBedx2: number;
+  numberBedx1: number;
+  numberSofa: number;
+  description: string | undefined;
+  buttonTitle: DictionaryProps["button"];
 }
-
-export interface JsonProps {
-
-}
-
 
 export interface CurrencyDataProps {
   0: CurrencyDataItemProps[];
@@ -253,4 +206,23 @@ export interface MenuItem {
   name: string;
   image?: StaticImageData,
   url: StaticImageData,
+}
+
+export interface FileMetadata {
+  ru?: string;
+  en?: string;
+  ge?: string;
+  runame?:string,
+  enname?:string;
+  gename?:string;
+  bedx2?: number,
+  bedx1?: number, 
+  sofa?: number
+}
+
+
+export interface FileData {
+  _id?: string;
+  filename: string;
+  metadata?: FileMetadata;
 }

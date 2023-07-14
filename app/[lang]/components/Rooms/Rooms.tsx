@@ -1,37 +1,83 @@
-import React from 'react';
-import Image from 'next/image';
-import { room1, room2, room3, wave } from '@/public';
+'use client'
+import React, {useState, useEffect, useCallback} from 'react';
+import { room1, room2, room3, room4, room5, room6 } from '@/public';
 import { Room } from '../'
-import styles from './Rooms.module.css'
-import { RoomsProps } from '@/constants/interfaces';
+import { RoomsProps, FileData } from '@/constants/interfaces';
 
-function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary, buttonTitle}: RoomsProps) {
+function Rooms({ lang, title, text, roomsInfo, buttonTitle}: RoomsProps) {
+    const [bdConnetion, setBDConnetion] = useState(false)
+    const [rooms, setRooms] = useState<FileData[]>([]);
 
-    const rooms = [
+    const fetchData = useCallback(async () => {
+        try {
+            const response = await fetch("/api/uploadRoomCards");
+            if (response.ok) {
+                const data = await response.json();
+                setBDConnetion(true);
+                setRooms(data.files);
+                setBDConnetion(true);
+            } else {
+                throw new Error("Request failed with status: " + response.status);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const roomsCollection = [
         {
-            title: roomsTitles.room1Title,
-            price:`${2500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 2`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room1
+            image: room1,
+            name: roomsInfo.room1.name,
+            description: roomsInfo.room1.description,
+            bedx2: 1,
+            bedx1: 0,
+            sofa: 0,
         },
         {
-            title: roomsTitles.room2Title,
-            price:`${3500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 4`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room2
+            image: room2,
+            name: roomsInfo.room2.name,
+            description: roomsInfo.room2.description,
+            bedx2: 1,
+            bedx1: 1,
+            sofa: 0,
         },
         {
-            title: roomsTitles.room3Title,
-            price:`${5500} ${currencyLiteral} / ${time}`,
-            beds: `${roomDictionary.numbersOfbeds}: 2`,
-            facilities: roomDictionary.facilities,
-            facilitiesList: Object.values(roomDictionary.facilitiesList),
-            image: room3
+            image: room3,
+            name: roomsInfo.room3.name,
+            description: roomsInfo.room3.description,
+            bedx2: 1,
+            bedx1: 1,
+            sofa: 0,
         },
+        {
+            image: room4,
+            name: roomsInfo.room4.name,
+            description: roomsInfo.room4.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 0,
+        },
+        {
+            image: room5,
+            name: roomsInfo.room5.name,
+            description: roomsInfo.room5.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 1,
+        },
+        {
+            image: room6,
+            name: roomsInfo.room6.name,
+            description: roomsInfo.room6.description,
+            bedx2: 1,
+            bedx1: 2,
+            sofa: 1,
+        }
+        
     ];
 
     return (
@@ -45,18 +91,36 @@ function Rooms({ title, text, roomsTitles, currencyLiteral, time, roomDictionary
                     <div className='line'></div>
                 </div>
                 <div className="mt-6 text-center component_text">{text}</div>
-                {rooms.map ((room, index) => 
-                    <Room
-                        key={`room-${index}`}
-                        price={room.price}
-                        title={room.title}
-                        image={room.image}
-                        beds={room.beds}
-                        facilities={room.facilities}
-                        facilitiesList={room.facilitiesList}
-                        buttonTitle={buttonTitle}
-                    />
-                )}
+                {bdConnetion 
+                ?   <>
+                        {rooms.map ((room, index) => 
+                                <Room
+                                    key={`room-${index}`}
+                                    name={lang === 'en' ? room.metadata?.enname : lang === 'ka' ? room.metadata?.gename : room.metadata?.runame}
+                                    image={`/api/uploadsRoomCards/${room.filename}`}
+                                    numberBedx2={room.metadata && room.metadata.bedx2 ? +room.metadata.bedx2 : 0}
+                                    numberBedx1={room.metadata && room.metadata.bedx1 ? +room.metadata.bedx1 : 0}
+                                    numberSofa={room.metadata && room.metadata.sofa ? +room.metadata.sofa : 0}
+                                    description={lang === 'en' ? room.metadata?.en : lang === 'ka' ? room.metadata?.ge : room.metadata?.ru}
+                                    buttonTitle={buttonTitle}
+                                />
+                        )}
+                    </>
+                :   <>
+                        {roomsCollection.map ((room, index) => 
+                            <Room
+                                key={`room-${index}`}
+                                name={room.name}
+                                image={room.image}
+                                numberBedx2={room.bedx2}
+                                numberBedx1={room.bedx1}
+                                numberSofa={room.sofa}
+                                description={room.description}
+                                buttonTitle={buttonTitle}/>
+                        )}
+                    </>
+                }  
+                
             </div>
         </div>
     )
