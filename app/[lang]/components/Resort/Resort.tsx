@@ -57,7 +57,7 @@ function Resort({ title, text, cards }: ResortProps) {
                     {title}
                 </div>
                     
-                <div className='w-[100%] lg:w-[58%]'>
+                <div className='w-[100%]'>
                     <div className="mt-10 component_text">{text}</div>
                 </div>
 

@@ -193,7 +193,7 @@ const handleGetBdItem = (index:number) => {
                                         <Image 
                                             src={`/api/uploads/${card.filename}`} 
                                             alt={card.filename} 
-                                            width={200} 
+                                            width={300} 
                                             height={180} 
                                             className={styles.gallery_img}/>
                                     </div>
@@ -205,7 +205,7 @@ const handleGetBdItem = (index:number) => {
                                         <Image 
                                             src={item.img} 
                                             alt='info-preview' 
-                                            width={200} 
+                                            width={300} 
                                             height={180} 
                                             className={styles.gallery_img}/>
                                     </div>
@@ -219,8 +219,8 @@ const handleGetBdItem = (index:number) => {
                         <div className={styles.hotel_image}>
                             {
                                 activeBdInfo 
-                                ? <Image src={`/api/uploads/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={200} height={180}></Image>
-                                : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={200} height={180}></Image>
+                                ? <Image src={`/api/uploads/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
+                                : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
                             }
                             
                         </div>

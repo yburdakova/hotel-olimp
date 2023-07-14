@@ -1,4 +1,4 @@
-import { ter1, ter2, ter3, ter4 } from "@/public";
+import { ter1, ter3, ter4, newter1, newter2 } from "@/public";
 import { instagram, telegram, facebook, whatsapp } from '@/public';
 import features from "./features";
 
@@ -7,10 +7,11 @@ export {
 }
 
 export const sliderImages = [
+    newter1,
     ter1, 
-    ter2, 
     ter3,
-    ter4,
+    newter2,
+    ter4
 ]
 
 export const socials = [
@@ -27,11 +28,11 @@ export const socials = [
     {
         name: 'Facebook',
         image: facebook,
-        link: 'https://www.facebook.com/groups/1601253506790026'
+        link: 'https://www.facebook.com/OlimpShekvetiliHotel/'
     },
     {
         name: 'WhatsAppp',
         image: whatsapp,
-        link: 'https://www.instagram.com/olimp_shekvetili/'
+        link: 'https://wa.me/995595536060'
     }
 ]

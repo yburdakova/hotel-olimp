@@ -15,9 +15,10 @@ import slide07 from './assets/images/caption7.jpeg';
 
 
 import ter1 from './assets/images/slider/ter2.jpg';
-import ter2 from './assets/images/slider/ter4.jpg';
 import ter3 from './assets/images/slider/ter5.jpg';
 import ter4 from './assets/images/slider/ter1.jpg';
+import newter1 from './assets/images/slider/newter1.jpg';
+import newter2 from './assets/images/slider/newter2.jpg';
 
 //sights
 import game_park from './assets/images/game-park.jpeg';
@@ -150,9 +151,10 @@ export {
     slide07,
 
     ter1,
-    ter2, 
     ter3,
     ter4,
+    newter1,
+    newter2,
 
     room1,
     room2,
