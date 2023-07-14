@@ -8,7 +8,6 @@ import wave02 from './assets/images/wave02.svg'
 //slider
 import silde01 from './assets/images/caption.jpeg';
 import silde02 from './assets/images/caption1.jpeg';
-import silde03 from './assets/images/caption2.jpeg';
 import silde04 from './assets/images/caption3.jpeg';
 import slide05 from './assets/images/caption5.jpeg';
 import slide06 from './assets/images/caption6.jpg';
@@ -145,7 +144,6 @@ export {
 
     silde01,
     silde02,
-    silde03,
     silde04,
     slide05,
     slide06,
@@ -155,7 +153,7 @@ export {
     ter2, 
     ter3,
     ter4,
-    
+
     room1,
     room2,
     room3,
