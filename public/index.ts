@@ -14,6 +14,12 @@ import slide05 from './assets/images/caption5.jpeg';
 import slide06 from './assets/images/caption6.jpg';
 import slide07 from './assets/images/caption7.jpeg';
 
+
+import ter1 from './assets/images/slider/ter2.jpg';
+import ter2 from './assets/images/slider/ter4.jpg';
+import ter3 from './assets/images/slider/ter5.jpg';
+import ter4 from './assets/images/slider/ter1.jpg';
+
 //sights
 import game_park from './assets/images/game-park.jpeg';
 import arena from './assets/images/arena.jpeg';
@@ -145,6 +151,11 @@ export {
     slide06,
     slide07,
 
+    ter1,
+    ter2, 
+    ter3,
+    ter4,
+    
     room1,
     room2,
     room3,
