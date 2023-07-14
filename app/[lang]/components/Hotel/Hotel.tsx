@@ -14,7 +14,7 @@ import { HotelProps, FileData } from '@/constants/interfaces';
 
 
 
-function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: HotelProps) {
+function Hotel({lang, title, info, servisesTitle, servises, buttonTitle }: HotelProps) {
 
     const serviseItems = [
         {
@@ -111,6 +111,7 @@ function Hotel2({lang,  title, info, servisesTitle, servises, buttonTitle }: Hot
 
     useEffect(() => {
         fetchData();
+        
     }, [bdConnetion]);
 
     
@@ -220,7 +221,7 @@ const handleGetBdItem = (index:number) => {
                             {
                                 activeBdInfo 
                                 ? <Image src={`/api/uploadsHotelCards/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
-                                : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
+                                : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={800} height={800}></Image>
                             }
                             
                         </div>
@@ -253,4 +254,4 @@ const handleGetBdItem = (index:number) => {
     )
 }
 
-export default Hotel2
+export default Hotel

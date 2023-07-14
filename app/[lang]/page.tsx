@@ -27,6 +27,7 @@ export default async function Home({ params: { lang }, }: { params: { lang: Loca
         cards={dictionary.resortComponent.sights}
       />
         <Hotel
+          lang={lang}
           title={dictionary.hotelComponent.title} 
           info={dictionary.hotelComponent.info}
           servisesTitle={dictionary.hotelComponent.servisesTitle}
