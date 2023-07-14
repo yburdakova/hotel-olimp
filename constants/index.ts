@@ -1,4 +1,3 @@
-import { silde01, silde02, silde04, slide05, slide06, slide07 } from "@/public";
 import { ter1, ter2, ter3, ter4 } from "@/public";
 import { instagram, telegram, facebook, whatsapp } from '@/public';
 import features from "./features";
