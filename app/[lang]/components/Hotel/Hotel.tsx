@@ -219,7 +219,7 @@ const handleGetBdItem = (index:number) => {
                         <div className={styles.hotel_image}>
                             {
                                 activeBdInfo 
-                                ? <Image src={`/api/uploads/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
+                                ? <Image src={`/api/uploadsHotelCards/${activeBdInfo.filename}`}  className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
                                 : <Image src={activeInfo.img} className={styles.hotel_img} alt="info-img" width={800} height={280}></Image>
                             }
                             
