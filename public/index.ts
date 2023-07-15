@@ -22,6 +22,13 @@ import botanicgarden from './assets/images/sights/botanic2.jpeg'
 
 //hotel info
 import hotel from './assets/images/hotelcards/hotel-olimp.jpeg';
+import hotelcard01 from './assets/images/hotelcards/hotelcard01.jpg'
+import hotelcard02 from './assets/images/hotelcards/hotelcard02.jpeg'
+import hotelcard03 from './assets/images/hotelcards/hotelcard03.jpeg'
+import hotelcard04 from './assets/images/hotelcards/hotelcard04.jpg'
+import hotelcard05 from './assets/images/hotelcards/hotelcard05.jpeg'
+import hotelcard06 from './assets/images/hotelcards/hotelcard06.jpeg'
+import hotelcard07 from './assets/images/hotelcards/hotelcard07.jpeg'
 
 //rooms
 import noimage from './assets/images/rooms/noimage.jpeg';
@@ -89,8 +96,15 @@ import garnish_ka from './assets/images/menu/garnish-ka.png';
 export {
     trLogo,
     star,
-    hotel,
 
+    hotel,
+    hotelcard01,
+    hotelcard02,
+    hotelcard03,
+    hotelcard04,
+    hotelcard05,
+    hotelcard06,
+    hotelcard07,
 
     salads_en,
     salads_ka,

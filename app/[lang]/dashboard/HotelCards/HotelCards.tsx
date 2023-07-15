@@ -182,7 +182,7 @@ const HotelCards = () => {
                         <div className={styles.item_number}>{index+1}.</div>
                         <div className={styles.item_image}>
                             <Image 
-                                src={`/api/uploads/${file.filename}`} 
+                                src={`/api/uploadsHotelCards/${file.filename}`} 
                                 alt={file.filename} 
                                 width={200} 
                                 height={180}

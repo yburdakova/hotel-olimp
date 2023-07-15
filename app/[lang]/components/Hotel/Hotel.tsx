@@ -8,7 +8,14 @@ import {LuParkingCircle} from 'react-icons/lu';
 import {  GiKidSlide, GiPalmTree }from 'react-icons/gi';
 import { TbFountain }from 'react-icons/tb';
 import styles from './Hotel.module.css';
-import { star, hotel} from '@/public';
+import { star,  
+    hotelcard01,
+    hotelcard02,
+    hotelcard03,
+    hotelcard04,
+    hotelcard05,
+    hotelcard06,
+    hotelcard07,} from '@/public';
 import { Button, ModalBooking} from '../'
 import { HotelProps, FileData } from '@/constants/interfaces';
 
@@ -52,31 +59,31 @@ function Hotel({lang, title, info, servisesTitle, servises, buttonTitle }: Hotel
     ]
     const hotelInfo = [
         {
-            img: hotel,
+            img: hotelcard01,
             text: info.info1
         },
         {
-            img: hotel,
+            img: hotelcard02,
             text: info.info2
         },
         {
-            img: hotel,
+            img: hotelcard03,
             text: info.info3
         },
         {
-            img: hotel,
+            img: hotelcard04,
             text: info.info4
         },
         {
-            img: hotel,
+            img: hotelcard05,
             text: info.info5
         },
         {
-            img: hotel,
+            img: hotelcard06,
             text: info.info6
         },
         {
-            img: hotel,
+            img: hotelcard07,
             text: info.info7
         }
     ]

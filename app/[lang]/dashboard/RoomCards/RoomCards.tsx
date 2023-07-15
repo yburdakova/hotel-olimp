@@ -211,21 +211,20 @@ const RoomsCards = () => {
                         className={styles.input}
                     />
                     <div className="">Add number of bed types</div>
-                    <div className="flex bedstype">
-                        <div className="flex bedstype_item">
-                            <Image src={bedx2} alt='bedx2' width={40} height={40}/>
-                            <input className={styles.input} name="bedx2" value={descriptions.bedx2} onChange={handleInputChange}/>
+                        <div className="flex bedstype">
+                            <div className="flex bedstype_item">
+                                <Image src={bedx2} alt='bedx2' width={67} height={79} className={styles.icon_img}/>
+                                <input className={styles.input} name="bedx2" value={descriptions.bedx2} onChange={handleInputChange}/>
+                            </div>
+                            <div className="flex">
+                                <Image src={bedx1} alt='bedx2' width={43} height={79} className={styles.icon_img}/>
+                                <input className={styles.input} name="bedx1" value={descriptions.bedx1} onChange={handleInputChange}/>
+                            </div>
+                            <div className="flex">
+                                <Image src={sofa} alt='sofa' width={84} height={42} className={styles.icon_img}/>
+                                <input className={styles.input} name="sofa" value={descriptions.sofa} onChange={handleInputChange}/>
+                            </div>
                         </div>
-                        <div className="flex">
-                            <Image src={bedx1} alt='bedx2' width={20} height={40}/>
-                            <input className={styles.input} name="bedx1" value={descriptions.bedx1} onChange={handleInputChange}/>
-                        </div>
-                        <div className="flex">
-                            <Image src={sofa} alt='bedx2' width={60} height={20}/>
-                            <input className={styles.input} name="sofa" value={descriptions.sofa} onChange={handleInputChange}/>
-                        </div>
-                    </div>
-                    
                     </div>
                     <button
                         type="submit"
@@ -245,7 +244,7 @@ const RoomsCards = () => {
                                 <div className={styles.item_number}>{index+1}.</div>
                                 <div className={styles.item_image}>
                                     <Image 
-                                        src={`/api/uploadsRoomcards/${file.filename}`} 
+                                        src={`/api/uploadsRoomCards/${file.filename}`} 
                                         alt={file.filename} 
                                         width={200} 
                                         height={180}
