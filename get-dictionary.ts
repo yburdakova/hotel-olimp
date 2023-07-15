@@ -1,10 +1,14 @@
-import 'server-only'
-import type { Locale } from './i18n-config'
+import 'server-only';
+import type { Locale } from './i18n-config';
+
+import enDictionary from './dictionaries/en.json';
+import kaDictionary from './dictionaries/ka.json';
+import ruDictionary from './dictionaries/ru.json';
 
 const dictionaries = {
-    en: () => import('./dictionaries/en.json').then((module) => module.default),
-    ka: () => import('./dictionaries/ka.json').then((module) => module.default),
-    ru: () => import('./dictionaries/ru.json').then((module) => module.default),
-}
+    en: enDictionary,
+    ka: kaDictionary,
+    ru: ruDictionary,
+};
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionary = (locale: Locale) => dictionaries[locale];

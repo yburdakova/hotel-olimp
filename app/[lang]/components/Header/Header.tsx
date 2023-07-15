@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { IoCloseSharp }from 'react-icons/io5';
-
 import styles from './Header.module.css';
 import { trLogo } from '@/public';
 import { HeaderProps } from '@/constants/interfaces';
@@ -20,6 +19,24 @@ function Header( {title, subtitle, menu, lang }: HeaderProps) {
         !isMobileMenu ? setMobileMenu(true) : setMobileMenu(false);
     }
 
+    useEffect(() => {
+        if (isMobileMenu) {
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.top = `-${window.scrollY}px`;
+        } else {
+            const scrollY = document.body.style.top;
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+    }, [isMobileMenu]);
+    
     return (
         <div className={styles.header} id="top">
             <div className="container">
