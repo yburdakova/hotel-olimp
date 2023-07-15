@@ -31,13 +31,14 @@ function PostItem ({ id, type, img, caption}: any) {
             <div className={styles.container} onMouseEnter={showCaption} onMouseLeave={hideCaption}>
                 <div className={styles.media}>
                     <div className={styles.image_wrapper}>
-                        <Image 
-                            src={img} 
-                            alt={id} 
-                            fill={true} 
-                            className={styles.img} 
-                            sizes="(max-width: 768px) 100vw, 50vw" 
-                            priority={true}/>
+                        <div className={styles.img_container}>
+                            <img 
+                                src={img} 
+                                alt={id} 
+                                className={styles.img} 
+                            />
+                        </div>
+                        
                         <span className={styles.icon_type}>
                             {type === "VIDEO" ? videoIcon : type === "CAROUSEL_ALBUM" ? caruselIcon : ''}
                         </span>
