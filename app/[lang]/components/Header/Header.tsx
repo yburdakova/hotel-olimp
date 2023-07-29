@@ -45,12 +45,6 @@ function Header( {title, subtitle, menu, lang }: HeaderProps) {
                     <Link href="#resort" className={styles.menu_item}>{menu.resort}</Link>
                     <Link href="#hotel" className={styles.menu_item}>{menu.hotel}</Link>
                     <Link href="#rooms" className={styles.menu_item}>{menu.rooms}</Link>
-                    {
-                        isMobileMenu
-                        ? <IoCloseSharp color='#2D70B2' size={36} className={styles.burger} onClick={toggleMobileMenu}/>
-                        : <HiMenuAlt3 color='#2D70B2' size={36} className={styles.burger} onClick={toggleMobileMenu}/>
-                    }
-
                 </div>
                 <div className={styles.header_logo}>
                     <div className={styles.logo}>
@@ -79,7 +73,6 @@ function Header( {title, subtitle, menu, lang }: HeaderProps) {
                 </div>
             </div>
             }
-            
         </div>
     )
 }

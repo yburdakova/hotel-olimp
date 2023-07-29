@@ -135,6 +135,11 @@
   width: 100%;
   justify-content: space-between;
 }
+@media(max-width: 1439px){
+  .logo_title{
+    font-size: 16px;
+  }
+}
 @media(max-width: 1024px){
   .burger{
     display: block;
