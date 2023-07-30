@@ -146,9 +146,7 @@
   }
 }
 @media(max-width: 1024px){
-  .logo_title{
-    font-size: 18px;
-  }
+  
   .burger{
     display: block;
   }
